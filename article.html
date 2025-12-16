@@ -1,0 +1,2451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article | Aframira Chronicles</title>
+    
+    <!-- Social Media Meta Tags -->
+    <meta property="og:title" content="Article Title | Aframira Chronicles" />
+    <meta property="og:description" content="Read the full article on Aframira Chronicles" />
+    <meta property="og:image" content="assets/img/logo/linkimage.png" />
+    <meta property="og:url" content="https://www.aframirachronicles.com/article" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Aframira Chronicles" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Article Title | Aframira Chronicles" />
+    <meta name="twitter:description" content="Read the full article on Aframira Chronicles" />
+    <meta name="twitter:image" content="assets/img/logo/linkimage.png" />
+    <meta name="twitter:site" content="@AframiraNews" />
+    
+    <!-- Favicon and Icons -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-180x180.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="apple-touch-icon-144x144.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png" />
+    <meta name="msapplication-TileColor" content="#7ed321" />
+    <meta name="msapplication-TileImage" content="mstile-144x144.png" />
+    <meta name="theme-color" content="#7ed321" />
+    <link rel="manifest" href="site.webmanifest" />
+    
+    <!-- Libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    
+    <!-- Modern CSS Libraries -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+    
+    <!-- Comments System -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/commentbox.io/2.6.0/commentbox.io.min.css">
+    
+    <style>
+        :root {
+            --primary-red: #C10000;
+            --dark-red: #8B0000;
+            --ap-blue: #1847A0;
+            --light-gray: #F5F5F5;
+            --medium-gray: #E0E0E0;
+            --dark-gray: #333333;
+            --text-light: #666666;
+            --white: #FFFFFF;
+            --black: #000000;
+            --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --shadow-light: 0 5px 15px rgba(0, 0, 0, 0.05);
+            --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.12);
+            --shadow-heavy: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background: var(--white);
+            overflow-x: hidden;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+        
+        a:hover {
+            color: var(--primary-red);
+        }
+        
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header - EXACTLY as homepage */
+        .site-header {
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .header-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 0;
+            position: relative;
+        }
+        
+        /* Logo - Always positioned left */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            z-index: 1002;
+            flex-shrink: 0;
+        }
+        
+        .logo {
+            height: 70px;
+            width: auto;
+            transition: var(--transition);
+        }
+        
+        /* Live DateTime */
+        .live-datetime {
+            display: flex;
+            flex-direction: column;
+            margin-left: 20px;
+            align-items: flex-start;
+        }
+        
+        .current-date {
+            font-size: 14px;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+        
+        .current-time {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--dark-gray);
+        }
+        
+        /* Header Actions */
+        .header-actions {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .subscribe-btn {
+            background: var(--primary-red);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 14px;
+            white-space: nowrap;
+        }
+        
+        .subscribe-btn:hover {
+            background: var(--dark-red);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .search-btn {
+            background: none;
+            border: none;
+            font-size: 18px;
+            color: var(--dark-gray);
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+        
+        .search-btn:hover {
+            background: var(--light-gray);
+            color: var(--primary-red);
+        }
+        
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--dark-gray);
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: var(--transition);
+            z-index: 1002;
+        }
+        
+        .mobile-menu-toggle:hover {
+            background: var(--light-gray);
+            color: var(--primary-red);
+        }
+        
+        /* Navigation - EXACTLY as homepage */
+        .ap-main-nav {
+            position: relative;
+        }
+        
+        /* Desktop Navigation */
+        .nav-desktop {
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-list {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav-item {
+            position: relative;
+        }
+        
+        .nav-link {
+            display: flex;
+            align-items: center;
+            padding: 15px 14px;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--dark-gray);
+            white-space: nowrap;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .nav-link i {
+            margin-left: 5px;
+            font-size: 12px;
+            transition: var(--transition);
+        }
+        
+        .nav-item:hover .nav-link {
+            color: var(--primary-red);
+            background: var(--light-gray);
+        }
+        
+        .nav-item:hover .nav-link i {
+            transform: rotate(180deg);
+        }
+        
+        .nav-link.active {
+            color: var(--primary-red);
+            background: linear-gradient(to top, rgba(193, 0, 0, 0.1), transparent);
+        }
+        
+        /* Desktop Mega Menu - EXACTLY as homepage */
+        .mega-menu {
+            position: absolute;
+            left: 0;
+            top: 100%;
+            width: 800px;
+            background: white;
+            box-shadow: var(--shadow-heavy);
+            padding: 30px;
+            display: none;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            z-index: 1001;
+            border-top: 3px solid var(--primary-red);
+            border-radius: 0 0 12px 12px;
+            animation: fadeInDown 0.3s ease;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .nav-item:hover .mega-menu {
+            display: grid;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .mega-column h4 {
+            color: var(--primary-red);
+            margin-bottom: 15px;
+            font-size: 15px;
+            font-weight: 700;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light-gray);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .mega-column a {
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            color: var(--text-light);
+            font-size: 14px;
+            transition: var(--transition);
+        }
+        
+        .mega-column a i {
+            margin-right: 10px;
+            font-size: 14px;
+            opacity: 0.7;
+            transition: var(--transition);
+        }
+        
+        .mega-column a:hover {
+            color: var(--primary-red);
+            padding-left: 10px;
+        }
+        
+        .mega-column a:hover i {
+            opacity: 1;
+            transform: translateX(5px);
+        }
+        
+        /* Mobile Navigation - EXACTLY as homepage */
+        .nav-mobile {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1001;
+            overflow-y: auto;
+            transform: translateX(-100%);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            visibility: hidden;
+            opacity: 0;
+        }
+        
+        .nav-mobile.active {
+            transform: translateX(0);
+            visibility: visible;
+            opacity: 1;
+        }
+        
+        .mobile-nav-content {
+            width: 320px;
+            height: 100%;
+            background: white;
+            padding: 80px 20px 30px;
+            position: relative;
+            transform: translateX(-100%);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-mobile.active .mobile-nav-content {
+            transform: translateX(0);
+        }
+
+        .mobile-nav-header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            background: var(--primary-red);
+            color: white;
+            z-index: 1003;
+        }
+        
+        .mobile-nav-header h3 {
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        .mobile-close-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+        
+        .mobile-close-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .mobile-nav-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+        
+        .mobile-nav-item {
+            border-bottom: 1px solid var(--medium-gray);
+        }
+        
+        .mobile-nav-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 0;
+            font-weight: 600;
+            color: var(--dark-gray);
+            font-size: 16px;
+        }
+        
+        .mobile-nav-link i {
+            transition: var(--transition);
+        }
+        
+        .mobile-nav-link.active i {
+            transform: rotate(180deg);
+        }
+        
+        .mobile-submenu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: var(--light-gray);
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+        
+        .mobile-submenu.active {
+            max-height: 500px;
+            padding: 10px;
+        }
+        
+        .mobile-submenu a {
+            display: block;
+            padding: 10px 15px;
+            color: var(--text-light);
+            font-size: 14px;
+            border-radius: 6px;
+            transition: var(--transition);
+        }
+        
+        .mobile-submenu a:hover {
+            background: white;
+            color: var(--primary-red);
+            padding-left: 20px;
+        }
+        
+        /* Article Content */
+        .article-container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+        }
+        
+        .article-hero {
+            position: relative;
+            height: 500px;
+            overflow: hidden;
+        }
+        
+        .article-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.3));
+            z-index: 1;
+        }
+        
+        .article-hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .article-hero-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            color: white;
+            padding: 40px;
+            z-index: 2;
+        }
+        
+        .article-category {
+            color: var(--white);
+            background: var(--primary-red);
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 13px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .article-title {
+            font-size: 42px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 15px;
+            margin-top: 20px;
+        }
+        
+        .author-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid white;
+        }
+        
+        /* Article Body */
+        .article-body {
+            padding: 50px;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+        
+        .article-body p {
+            margin-bottom: 25px;
+        }
+        
+        .article-body h2 {
+            font-size: 32px;
+            margin: 40px 0 20px;
+            color: var(--dark-gray);
+        }
+        
+        .article-body h3 {
+            font-size: 26px;
+            margin: 30px 0 15px;
+            color: var(--dark-gray);
+        }
+        
+        .article-body img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+        
+        .article-body blockquote {
+            border-left: 4px solid var(--primary-red);
+            padding-left: 25px;
+            margin: 30px 0;
+            font-style: italic;
+            font-size: 24px;
+            color: var(--dark-gray);
+            line-height: 1.5;
+        }
+        
+        /* Article Actions */
+        .article-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 50px;
+            border-top: 1px solid var(--medium-gray);
+            border-bottom: 1px solid var(--medium-gray);
+            background: var(--light-gray);
+        }
+        
+        .social-share {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .share-btn {
+            width: 45px;
+            height: 45px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark-gray);
+            transition: var(--transition);
+            border: 1px solid var(--medium-gray);
+        }
+        
+        .share-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .share-btn.facebook:hover {
+            background: #1877F2;
+            color: white;
+        }
+        
+        .share-btn.twitter:hover {
+            background: #1DA1F2;
+            color: white;
+        }
+        
+        .share-btn.linkedin:hover {
+            background: #0077B5;
+            color: white;
+        }
+        
+        .share-btn.whatsapp:hover {
+            background: #25D366;
+            color: white;
+        }
+        
+        /* Related Articles */
+        .related-articles {
+            margin: 60px 0;
+        }
+        
+        .section-title {
+            font-size: 28px;
+            color: var(--dark-gray);
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--primary-red);
+            font-weight: 700;
+        }
+        
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .related-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
+        }
+        
+        .related-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .related-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        
+        .related-content {
+            padding: 20px;
+        }
+        
+        .related-category {
+            color: var(--primary-red);
+            font-weight: 700;
+            font-size: 12px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .related-title {
+            font-size: 16px;
+            line-height: 1.4;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        /* Comments Section */
+        .comments-section {
+            margin: 60px 0;
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: var(--shadow-light);
+        }
+        
+        .comments-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .comments-count {
+            font-size: 18px;
+            color: var(--text-light);
+        }
+        
+        .comment-form {
+            margin-bottom: 40px;
+            padding: 30px;
+            background: var(--light-gray);
+            border-radius: 12px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark-gray);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 14px 15px;
+            border: 1px solid var(--medium-gray);
+            border-radius: 8px;
+            font-size: 16px;
+            transition: var(--transition);
+            background: white;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-red);
+            box-shadow: 0 0 0 3px rgba(193, 0, 0, 0.1);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+            font-family: inherit;
+        }
+        
+        .comments-list {
+            margin-top: 40px;
+        }
+        
+        .comment {
+            padding: 25px;
+            border-bottom: 1px solid var(--medium-gray);
+            margin-bottom: 20px;
+            background: var(--light-gray);
+            border-radius: 8px;
+        }
+        
+        .comment:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        
+        .comment-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .comment-avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: var(--primary-red);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            font-size: 18px;
+        }
+        
+        .comment-author {
+            font-weight: 600;
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+        
+        .comment-date {
+            font-size: 13px;
+            color: var(--text-light);
+        }
+        
+        .comment-body {
+            line-height: 1.6;
+            font-size: 15px;
+        }
+        
+        .comment-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+            font-size: 14px;
+            color: var(--text-light);
+        }
+        
+        .comment-action {
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .comment-action:hover {
+            color: var(--primary-red);
+        }
+        
+        /* Footer - EXACTLY as homepage */
+        .site-footer {
+            background: linear-gradient(135deg, #222 0%, #111 100%);
+            color: white;
+            padding: 60px 0 30px;
+            margin-top: 60px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            color: white;
+            font-size: 18px;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--primary-red);
+            font-weight: 700;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #aaa;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+        }
+        
+        .footer-links a i {
+            font-size: 12px;
+            opacity: 0.7;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            padding-left: 8px;
+        }
+        
+        .footer-links a:hover i {
+            opacity: 1;
+        }
+        
+        .newsletter-form {
+            margin-top: 20px;
+        }
+        
+        .newsletter-input {
+            width: 100%;
+            padding: 14px 15px;
+            border: none;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            font-size: 14px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .newsletter-input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .social-icon:hover {
+            background: var(--primary-red);
+            transform: translateY(-5px);
+            border-color: var(--primary-red);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 14px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .related-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .mega-menu {
+                width: 700px;
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .nav-desktop {
+                display: none;
+            }
+            
+            .mobile-menu-toggle {
+                display: flex;
+            }
+            
+            .header-wrapper {
+                padding: 15px 0;
+            }
+            
+            .logo {
+                height: 40px;
+            }
+            
+            .live-datetime {
+                margin-left: 15px;
+            }
+            
+            .current-date {
+                font-size: 13px;
+            }
+            
+            .current-time {
+                font-size: 15px;
+            }
+            
+            .subscribe-btn {
+                display: none;
+            }
+            
+            .mega-menu {
+                width: 600px;
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .article-hero {
+                height: 400px;
+            }
+            
+            .article-title {
+                font-size: 36px;
+            }
+            
+            .article-body {
+                padding: 30px;
+                font-size: 17px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-nav-content {
+                width: 100%;
+            }
+            
+            .live-datetime {
+                display: none;
+            }
+            
+            .article-hero {
+                height: 350px;
+            }
+            
+            .article-title {
+                font-size: 28px;
+            }
+            
+            .article-hero-content {
+                padding: 25px;
+            }
+            
+            .article-body {
+                padding: 25px;
+                font-size: 16px;
+            }
+            
+            .article-body h2 {
+                font-size: 26px;
+            }
+            
+            .article-body h3 {
+                font-size: 22px;
+            }
+            
+            .article-body blockquote {
+                font-size: 20px;
+            }
+            
+            .article-actions {
+                padding: 20px 25px;
+                flex-direction: column;
+                gap: 20px;
+                align-items: flex-start;
+            }
+            
+            .related-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .comments-section {
+                padding: 25px;
+            }
+            
+            .comment-form {
+                padding: 20px;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .mega-menu {
+                width: 100%;
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .article-hero {
+                height: 300px;
+            }
+            
+            .article-title {
+                font-size: 24px;
+            }
+            
+            .article-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .article-body {
+                padding: 20px;
+            }
+            
+            .article-body h2 {
+                font-size: 22px;
+            }
+            
+            .article-body h3 {
+                font-size: 20px;
+            }
+            
+            .article-body blockquote {
+                font-size: 18px;
+                padding-left: 15px;
+            }
+            
+            .social-share {
+                flex-wrap: wrap;
+            }
+            
+            .comments-section {
+                padding: 20px;
+            }
+            
+            .comment {
+                padding: 20px;
+            }
+        }
+        
+        @media (min-width: 993px) {
+            .nav-mobile {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header - EXACTLY as homepage -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-wrapper">
+                <!-- Logo (Always left positioned) -->
+                <div class="logo-container">
+                    <a href="index.html">
+                        <img src="assets/img/logo/logo.png" alt="Aframira Chronicles" class="logo">
+                    </a>
+                    <div class="live-datetime">
+                        <div class="current-date" id="currentDate">Tuesday, October 28, 2025</div>
+                        <div class="current-time" id="currentTime">10:30 AM</div>
+                    </div>
+                </div>
+                
+                <!-- Desktop Navigation - EXACTLY as homepage -->
+                <nav class="ap-main-nav nav-desktop">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link"><i class="ri-home-4-line"></i> Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="category.html" class="nav-link">Africa <i class="ri-arrow-down-s-line"></i></a>
+                            <div class="mega-menu">
+                                <div class="mega-column">
+                                    <h4><i class="ri-map-2-line"></i> Regions</h4>
+                                    <a href="#"><i class="ri-arrow-right-s-line"></i> West Africa</a>
+                                    <a href="#"><i class="ri-arrow-right-s-line"></i> East Africa</a>
+                                    <a href="#"><i class="ri-arrow-right-s-line"></i> Southern Africa</a>
+                                    <a href="#"><i class="ri-arrow-right-s-line"></i> North Africa</a>
+                                    <a href="#"><i class="ri-arrow-right-s-line"></i> Central Africa</a>
+                                </div>
+                                <div class="mega-column">
+                                    <h4><i class="ri-government-line"></i> Politics</h4>
+                                    <a href="#"><i class="ri-arrow-right-s-line"></i> Elections</a>
+                                    <a href="#"><i class="ri-arrow-right-s-line"></i> Governance</a>
+                                    <a href="#"><i class="ri-arrow-right-s-line"></i> Diplomacy</a>
+                                    <a href="#"><i class="ri-arrow-right-s-line"></i> Policy & Reform</a>
+                                </div>
+                                <div class="mega-column">
+                                    <h4><i class="ri-line-chart-line"></i> Economy</h4>
+                                    <a href="#"><i class="ri-arrow-right-s-line"></i> Markets</a>
+                                    <a href="#"><i class="ri-arrow-right-s-line"></i> Trade</a>
+                                    <a href="#"><i class="ri-arrow-right-s-line"></i> Development</a>
+                                    <a href="#"><i class="ri-arrow-right-s-line"></i> Infrastructure</a>
+                                </div>
+                                <div class="mega-column">
+                                    <h4><i class="ri-star-line"></i> Special Coverage</h4>
+                                    <a href="#"><i class="ri-arrow-right-s-line"></i> AfCFTA Updates</a>
+                                    <a href="#"><i class="ri-arrow-right-s-line"></i> Climate Change</a>
+                                    <a href="#"><i class="ri-arrow-right-s-line"></i> Tech Innovation</a>
+                                    <a href="#"><i class="ri-arrow-right-s-line"></i> Youth & Education</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">World</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Politics</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Business</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Technology <i class="ri-arrow-down-s-line"></i></a>
+                            <div class="mega-menu">
+                                <div class="mega-column">
+                                    <h4><i class="ri-cpu-line"></i> Tech Categories</h4>
+                                    <a href="#"><i class="ri-arrow-right-s-line"></i> Startups</a>
+                                    <a href="#"><i class="ri-arrow-right-s-line"></i> Innovation</a>
+                                    <a href="#"><i class="ri-arrow-right-s-line"></i> Digital Economy</a>
+                                    <a href="#"><i class="ri-arrow-right-s-line"></i> Cybersecurity</a>
+                                </div>
+                                <div class="mega-column">
+                                    <h4><i class="ri-smartphone-line"></i> Mobile Tech</h4>
+                                    <a href="#"><i class="ri-arrow-right-s-line"></i> 5G Rollout</a>
+                                    <a href="#"><i class="ri-arrow-right-s-line"></i> Fintech</a>
+                                    <a href="#"><i class="ri-arrow-right-s-line"></i> Mobile Apps</a>
+                                    <a href="#"><i class="ri-arrow-right-s-line"></i> E-commerce</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Health</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Entertainment</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Sports</a>
+                        </li>
+                    </ul>
+                </nav>
+                
+                <!-- Header Actions -->
+                <div class="header-actions">
+                    <button class="subscribe-btn">Subscribe</button>
+                    <button class="search-btn"><i class="ri-search-line"></i></button>
+                    <!-- Mobile Menu Toggle -->
+                    <button class="mobile-menu-toggle">
+                        <i class="ri-menu-line"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Menu - EXACTLY as homepage -->
+    <div class="nav-mobile">
+        <div class="mobile-nav-content">
+            <div class="mobile-nav-header">
+                <h3>Aframira Chronicles</h3>
+                <button class="mobile-close-btn">
+                    <i class="ri-close-line"></i>
+                </button>
+            </div>
+            
+            <ul class="mobile-nav-list">
+                <li class="mobile-nav-item">
+                    <a href="index.html" class="mobile-nav-link">
+                        <span><i class="ri-home-4-line"></i> Home</span>
+                    </a>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="category.html" class="mobile-nav-link">
+                        <span>Africa</span>
+                        <i class="ri-arrow-down-s-line"></i>
+                    </a>
+                    <div class="mobile-submenu" id="africa-submenu">
+                        <a href="#"><i class="ri-arrow-right-s-line"></i> West Africa</a>
+                        <a href="#"><i class="ri-arrow-right-s-line"></i> East Africa</a>
+                        <a href="#"><i class="ri-arrow-right-s-line"></i> Southern Africa</a>
+                        <a href="#"><i class="ri-arrow-right-s-line"></i> North Africa</a>
+                        <a href="#"><i class="ri-arrow-right-s-line"></i> Central Africa</a>
+                        <a href="#"><i class="ri-arrow-right-s-line"></i> Elections</a>
+                        <a href="#"><i class="ri-arrow-right-s-line"></i> Governance</a>
+                        <a href="#"><i class="ri-arrow-right-s-line"></i> Economy</a>
+                    </div>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="#" class="mobile-nav-link">
+                        <span>World</span>
+                    </a>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="#" class="mobile-nav-link">
+                        <span>Politics</span>
+                    </a>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="#" class="mobile-nav-link">
+                        <span>Business</span>
+                    </a>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="#" class="mobile-nav-link" onclick="toggleSubmenu(event, this, 'tech-submenu')">
+                        <span>Technology</span>
+                        <i class="ri-arrow-down-s-line"></i>
+                    </a>
+                    <div class="mobile-submenu" id="tech-submenu">
+                        <a href="#"><i class="ri-arrow-right-s-line"></i> Startups</a>
+                        <a href="#"><i class="ri-arrow-right-s-line"></i> Innovation</a>
+                        <a href="#"><i class="ri-arrow-right-s-line"></i> Digital Economy</a>
+                        <a href="#"><i class="ri-arrow-right-s-line"></i> Cybersecurity</a>
+                        <a href="#"><i class="ri-arrow-right-s-line"></i> 5G Rollout</a>
+                        <a href="#"><i class="ri-arrow-right-s-line"></i> Fintech</a>
+                    </div>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="#" class="mobile-nav-link">
+                        <span>Health</span>
+                    </a>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="#" class="mobile-nav-link">
+                        <span>Entertainment</span>
+                    </a>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="#" class="mobile-nav-link">
+                        <span>Sports</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Article Content -->
+    <div class="container">
+        <div class="article-container" id="articleContent">
+            <!-- Article will be loaded dynamically via JavaScript -->
+        </div>
+
+        <!-- Related Articles -->
+        <div class="related-articles">
+            <h2 class="section-title">Related Articles</h2>
+            <div class="related-grid" id="relatedArticles">
+                <!-- Related articles will be loaded dynamically -->
+            </div>
+        </div>
+
+        <!-- Comments Section -->
+        <div class="comments-section">
+            <div class="comments-header">
+                <h2 class="section-title" style="margin-bottom: 0;">Comments</h2>
+                <div class="comments-count" id="commentsCount">0 Comments</div>
+            </div>
+            
+            <!-- Comment Form -->
+            <div class="comment-form">
+                <h3 style="margin-bottom: 20px; color: var(--dark-gray);">Leave a Comment</h3>
+                <div class="form-group">
+                    <label for="commentName">Name *</label>
+                    <input type="text" id="commentName" class="form-control" placeholder="Your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="commentEmail">Email *</label>
+                    <input type="email" id="commentEmail" class="form-control" placeholder="Your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="commentMessage">Comment *</label>
+                    <textarea id="commentMessage" class="form-control" placeholder="Join the discussion..." required></textarea>
+                </div>
+                <button class="subscribe-btn" id="submitComment">Post Comment</button>
+            </div>
+            
+            <!-- Comments List -->
+            <div class="comments-list" id="commentsList">
+                <!-- Comments will be loaded dynamically -->
+                <div class="no-comments" id="noComments" style="text-align: center; padding: 40px; color: var(--text-light);">
+                    <i class="ri-chat-3-line" style="font-size: 48px; margin-bottom: 20px; opacity: 0.5;"></i>
+                    <h3 style="margin-bottom: 10px;">No Comments Yet</h3>
+                    <p>Be the first to share your thoughts!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer - EXACTLY as homepage -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Aframira Chronicles</h3>
+                    <p style="color: #aaa; font-size: 14px; margin-bottom: 20px; line-height: 1.6;">
+                        Africa's leading independent news organization, delivering trusted journalism from across the continent and around the world since 2010.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon"><i class="ri-facebook-fill"></i></a>
+                        <a href="#" class="social-icon"><i class="ri-twitter-fill"></i></a>
+                        <a href="#" class="social-icon"><i class="ri-instagram-fill"></i></a>
+                        <a href="#" class="social-icon"><i class="ri-youtube-fill"></i></a>
+                        <a href="#" class="social-icon"><i class="ri-linkedin-fill"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Categories</h3>
+                    <ul class="footer-links">
+                        <li><a href="category.html?cat=politics"><i class="ri-arrow-right-s-line"></i> Politics</a></li>
+                        <li><a href="category.html?cat=business"><i class="ri-arrow-right-s-line"></i> Business & Economy</a></li>
+                        <li><a href="category.html?cat=technology"><i class="ri-arrow-right-s-line"></i> Technology</a></li>
+                        <li><a href="category.html?cat=health"><i class="ri-arrow-right-s-line"></i> Health & Science</a></li>
+                        <li><a href="category.html?cat=sports"><i class="ri-arrow-right-s-line"></i> Sports</a></li>
+                        <li><a href="category.html?cat=entertainment"><i class="ri-arrow-right-s-line"></i> Entertainment</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="ri-arrow-right-s-line"></i> About Us</a></li>
+                        <li><a href="#"><i class="ri-arrow-right-s-line"></i> Careers</a></li>
+                        <li><a href="#"><i class="ri-arrow-right-s-line"></i> Contact</a></li>
+                        <li><a href="#"><i class="ri-arrow-right-s-line"></i> Ethics Policy</a></li>
+                        <li><a href="#"><i class="ri-arrow-right-s-line"></i> Privacy Policy</a></li>
+                        <li><a href="#"><i class="ri-arrow-right-s-line"></i> Terms of Service</a></li>
+                        <li><a href="#"><i class="ri-arrow-right-s-line"></i> Cookie Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Stay Informed</h3>
+                    <p style="color: #aaa; font-size: 14px; margin-bottom: 20px;">
+                        Subscribe to our daily newsletter for the top African stories.
+                    </p>
+                    <div class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Enter your email">
+                        <button class="subscribe-btn" style="width: 100%; margin-top: 10px;">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024 Aframira Chronicles. All rights reserved.</p>
+                <p>Headquarters: Lagos, Nigeria</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Real-time Date and Time (same as homepage)
+        function updateDateTime() {
+            const now = new Date();
+            
+            const dateOptions = { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            };
+            const dateString = now.toLocaleDateString('en-US', dateOptions);
+            
+            const timeOptions = { 
+                hour: '2-digit', 
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: true 
+            };
+            const timeString = now.toLocaleTimeString('en-US', timeOptions);
+            
+            document.getElementById('currentDate').textContent = dateString;
+            document.getElementById('currentTime').textContent = timeString;
+        }
+        
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+        
+        // Mobile Navigation Functions (same as homepage)
+        function toggleMobileMenu() {
+            const navMobile = document.querySelector('.nav-mobile');
+            const body = document.body;
+            
+            if (navMobile.classList.contains('active')) {
+                navMobile.classList.remove('active');
+                body.style.overflow = '';
+            } else {
+                navMobile.classList.add('active');
+                body.style.overflow = 'hidden';
+            }
+        }
+        
+        function toggleSubmenu(event, element, submenuId) {
+            event.preventDefault();
+            event.stopPropagation();
+            
+            element.classList.toggle('active');
+            const submenu = document.getElementById(submenuId);
+            
+            if (submenu.classList.contains('active')) {
+                submenu.classList.remove('active');
+                submenu.style.maxHeight = '0';
+            } else {
+                document.querySelectorAll('.mobile-submenu.active').forEach(menu => {
+                    if (menu.id !== submenuId) {
+                        menu.classList.remove('active');
+                        menu.style.maxHeight = '0';
+                        const parentLink = menu.previousElementSibling;
+                        if (parentLink && parentLink.classList.contains('mobile-nav-link')) {
+                            parentLink.classList.remove('active');
+                        }
+                    }
+                });
+                
+                submenu.classList.add('active');
+                submenu.style.maxHeight = submenu.scrollHeight + 'px';
+            }
+        }
+        
+        // Article Data (same as category.html)
+        const articlesData = [
+            {
+                id: "article-1",
+                category: "politics",
+                title: "Historic AU Summit Concludes with Major Security and Economic Agreements",
+                excerpt: "African leaders have concluded a landmark summit in Addis Ababa with agreements on continental security cooperation and economic integration.",
+                image: "https://oaflad.org/wp-content/uploads/2024/07/img_9484-1.jpg",
+                author: "Godfred Dabo",
+                authorAvatar: "https://randomuser.me/api/portraits/men/32.jpg",
+                time: "2 hours ago",
+                date: "October 28, 2025",
+                readTime: "5 min read",
+                views: "12,845",
+                content: `
+                    <p>African leaders have concluded a landmark summit in Addis Ababa with groundbreaking agreements on continental security cooperation and economic integration that could reshape the future of the continent.</p>
+                    
+                    <p>The three-day African Union Summit, attended by heads of state from 54 member countries, resulted in the adoption of the "Addis Ababa Declaration" which outlines a comprehensive framework for collective security and economic development.</p>
+                    
+                    <h2>Security Cooperation Framework</h2>
+                    
+                    <p>Key agreements include the establishment of a Continental Security Rapid Response Force, designed to address conflicts and humanitarian crises within 72 hours of authorization. The force will comprise 5,000 troops contributed by member states and will operate under the African Union's Peace and Security Council.</p>
+                    
+                    <img src="https://cdn.pixabay.com/photo/2020/06/11/03/08/africa-5284264_1280.jpg" alt="AU Meeting">
+                    
+                    <p>"This represents a significant step forward in our collective security architecture," said AU Chairperson Moussa Faki Mahamat. "For the first time, we have a standing force ready to respond rapidly to crises across the continent."</p>
+                    
+                    <blockquote>
+                        "This summit marks a turning point in African unity and collective action. We have moved beyond rhetoric to concrete commitments that will benefit all African citizens."
+                    </blockquote>
+                    
+                    <h2>Economic Integration Advances</h2>
+                    
+                    <p>On the economic front, leaders agreed to accelerate implementation of the African Continental Free Trade Area (AfCFTA), with new measures to remove non-tariff barriers and harmonize customs procedures. The summit also established a $10 billion African Infrastructure Development Fund to finance transcontinental projects in energy, transport, and digital connectivity.</p>
+                    
+                    <p>South African President Cyril Ramaphosa, who championed the infrastructure fund, stated: "This fund will catalyze investment in projects that connect our markets, lower business costs, and create jobs for our growing youth population."</p>
+                    
+                    <h2>Environmental Commitments</h2>
+                    
+                    <p>Environmental commitments featured prominently, with a unanimous decision to establish the Great Green Wall Accelerator, aiming to complete the ambitious anti-desertification project by 2030 rather than the original 2050 timeline.</p>
+                    
+                    <p>The summit also saw the launch of the African Climate Resilience Initiative, backed by $3 billion in commitments from member states and international partners.</p>
+                    
+                    <p>Despite the progress, some analysts expressed cautious optimism. "The commitments are impressive on paper," said political analyst Amina Jalloh. "The real test will be in implementation and ensuring member states follow through on their pledges."</p>
+                    
+                    <p>The next AU summit is scheduled for June 2026 in Abuja, Nigeria, where leaders are expected to review progress on the agreements reached in Addis Ababa.</p>
+                `
+            },
+            {
+                id: "article-2",
+                category: "technology",
+                title: "Kenyan AI Startup Secures $50M Funding to Expand Across Africa",
+                excerpt: "Nairobi-based artificial intelligence company AICorp has raised a record funding round led by international investors to expand operations.",
+                image: "https://morgantechnicaltraining.co.ke/wp-content/uploads/2025/07/14.jpg",
+                author: "Joseph Obinkyere",
+                authorAvatar: "https://randomuser.me/api/portraits/men/67.jpg",
+                time: "45 minutes ago",
+                date: "October 28, 2025",
+                readTime: "4 min read",
+                views: "8,921",
+                content: `
+                    <p>Nairobi-based artificial intelligence company AICorp has secured a record $50 million Series B funding round, signaling growing international investor confidence in Africa's tech ecosystem.</p>
+                    
+                    <p>The funding round was led by Silicon Valley venture capital firm TechGrowth Partners, with participation from existing investors including the International Finance Corporation and several African-focused funds.</p>
+                    
+                    <h2>Company Background</h2>
+                    
+                    <p>AICorp, founded in 2022 by Kenyan computer scientists David Mwangi and Grace Otieno, develops AI solutions tailored for African businesses, with a focus on natural language processing for African languages and computer vision for agricultural applications.</p>
+                    
+                    <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="AI Technology">
+                    
+                    <p>"This investment validates our belief that African-led innovation can solve African problems at scale," said CEO David Mwangi. "We're building AI that understands the context and nuances of our continent."</p>
+                    
+                    <blockquote>
+                        "Africa's AI market is poised for exponential growth. AICorp's focus on local language processing gives them a unique competitive advantage in serving African markets."
+                    </blockquote>
+                    
+                    <h2>Expansion Plans</h2>
+                    
+                    <p>The company plans to use the funding to expand operations to 15 additional African countries over the next 18 months, with a particular focus on West and Southern Africa. AICorp also announced plans to establish research centers in Lagos, Accra, and Cape Town.</p>
+                    
+                    <p>"Our immediate focus is on scaling our agricultural AI solutions," said CTO Grace Otieno. "We're helping farmers increase yields by 30-40% through AI-powered crop monitoring and disease detection."</p>
+                    
+                    <h2>Market Impact</h2>
+                    
+                    <p>Industry analysts note that this funding round represents the largest single investment in an African AI startup to date, surpassing the previous record of $32 million raised by a South African fintech company in 2024.</p>
+                    
+                    <p>The investment comes amid growing global interest in Africa's tech sector, with venture funding to African startups reaching $8.2 billion in 2024, a 35% increase from the previous year.</p>
+                    
+                    <p>"This is a watershed moment for African tech," said TechGrowth Partners managing partner Sarah Chen. "AICorp demonstrates that African startups can compete globally in cutting-edge technologies like AI."</p>
+                    
+                    <p>The company currently serves over 500 enterprise clients across Kenya, Uganda, Tanzania, and Rwanda, with plans to onboard 2,000 additional clients by the end of 2026.</p>
+                `
+            },
+
+            {
+                id: "article-3",
+                category: "sports",
+                title: "AFCON 2025: Host Nation Morocco Prepares for Continental Tournament",
+                excerpt: "With six months to go, preparations are in full swing for Africa's biggest football tournament in Morocco.",
+                image: "https://www.atalayar.com/asset/thumbnail,1920,1080,center,center/media/atalayar/images/2025/06/04/2025060413344668577.jpg",
+                author: "Kwame Osei",
+                authorAvatar: "https://randomuser.me/api/portraits/men/22.jpg",
+                time: "3 hours ago",
+                date: "October 28, 2025",
+                readTime: "4 min read",
+                views: "15,234",
+                content: `
+                    <p>With just six months remaining until kickoff, Morocco is accelerating preparations for the 2025 Africa Cup of Nations (AFCON), promising to deliver one of the most technologically advanced and sustainable tournaments in African football history.</p>
+                    
+                    <h2>Infrastructure Upgrades</h2>
+                    
+                    <p>Major renovations are underway at six stadiums across five host cities: Casablanca, Rabat, Marrakech, Tangier, and Agadir. The iconic Stade Mohammed V in Casablanca is receiving a $45 million upgrade, including a new retractable roof and enhanced seating capacity of 65,000.</p>
+                    
+                    <img src="https://images.unsplash.com/photo-1575361204480-aadea25e6e68?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Football Stadium">
+                    
+                    <p>"We're not just preparing for a tournament; we're building a legacy for Moroccan and African football," said tournament director Hassan Amrani. "These facilities will serve our communities for decades to come."</p>
+                    
+                    <blockquote>
+                        "This AFCON will showcase Africa's organizational capabilities on the world stage. We're setting new standards for sporting events on the continent."
+                    </blockquote>
+                    
+                    <h2>Green Initiatives</h2>
+                    
+                    <p>The Moroccan organizing committee has announced ambitious sustainability goals, including carbon-neutral stadiums powered by solar energy and comprehensive waste management systems. All venues will feature water recycling systems and electric vehicle charging stations.</p>
+                    
+                    <p>Transportation infrastructure is receiving a $200 million boost, with new high-speed rail connections linking host cities and expanded metro systems in urban centers. The government expects the tournament to attract over 500,000 international visitors.</p>
+                    
+                    <h2>Team Preparations</h2>
+                    
+                    <p>Defending champions Senegal have already begun their training camp in Dakar, while hosts Morocco are scheduling friendly matches against European and South American teams. Nigeria's Super Eagles have announced a pre-tournament training camp in Spain.</p>
+                    
+                    <p>CAF President Patrice Motsepe expressed confidence in Morocco's capabilities: "Morocco has proven its ability to host major events. Their preparations are on track, and we expect an exceptional tournament that will elevate African football."</p>
+                    
+                    <p>The tournament will feature 24 teams playing 52 matches from January 10 to February 8, 2026. Ticket sales are expected to begin next month, with early indications showing strong demand from across the continent.</p>
+                `
+            },
+            {
+                id: "article-4",
+                category: "business",
+                title: "Nigeria's Economy Grows 4.2% in Q3 2025, Exceeding Projections",
+                excerpt: "Strong performance in agriculture and technology sectors drives growth despite global economic challenges and inflation concerns.",
+                image: "https://volitioncap.com/wp-content/uploads/2025/01/top-sectors-of-nigerias-economy-volition-cap-1.jpg",
+                author: "Chika Nwosu",
+                authorAvatar: "https://randomuser.me/api/portraits/women/65.jpg",
+                time: "15 minutes ago",
+                date: "October 28, 2025",
+                readTime: "6 min read",
+                views: "9,432",
+                content: `
+                    <p>Nigeria's economy expanded by 4.2% in the third quarter of 2025, surpassing both government projections and analyst expectations, according to data released by the National Bureau of Statistics.</p>
+                    
+                    <h2>Sector Performance</h2>
+                    
+                    <p>The agriculture sector led the growth with a 5.8% increase, driven by improved yields from the latest planting season and government intervention programs. The technology sector followed closely with 5.2% growth, fueled by increased fintech adoption and digital service expansion.</p>
+                    
+                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Nigeria Economy">
+                    
+                    <p>"These results demonstrate the resilience of our economy and the effectiveness of our diversification efforts," said Finance Minister Zainab Ahmed. "We're seeing sustainable growth across multiple sectors, not just oil."</p>
+                    
+                    <blockquote>
+                        "The 4.2% growth is particularly impressive given the global economic headwinds. Nigeria's non-oil sectors are becoming genuine engines of economic expansion."
+                    </blockquote>
+                    
+                    <h2>Manufacturing Recovery</h2>
+                    
+                    <p>Manufacturing recorded 3.1% growth, marking the first positive quarter after six consecutive quarters of contraction. Analysts attribute this to improved access to foreign exchange for raw material imports and government incentives for local production.</p>
+                    
+                    <p>The services sector grew by 4.5%, with telecommunications and financial services showing particular strength. However, the oil and gas sector contracted by 1.2% due to maintenance shutdowns at several major facilities.</p>
+                    
+                    <h2>Challenges Remain</h2>
+                    
+                    <p>Despite the positive growth figures, inflation remains elevated at 22.4%, though down from the 24.6% peak earlier in the year. Unemployment stands at 14.2%, with youth unemployment at 28.7%.</p>
+                    
+                    <p>International Monetary Fund (IMF) resident representative Jesmin Rahman commented: "While the growth figures are encouraging, structural reforms must continue to ensure this growth translates into job creation and poverty reduction."</p>
+                    
+                    <p>The Nigerian Stock Exchange All-Share Index rose 2.3% following the announcement, with banking and consumer goods stocks leading gains. The naira stabilized at ₦780 to the dollar in the parallel market.</p>
+                `
+            },
+            {
+                id: "article-5",
+                category: "health",
+                title: "New Malaria Vaccine Shows 85% Efficacy in Final Trial Phase",
+                excerpt: "Scientists at the Africa CDC announce breakthrough results for a new malaria vaccine that could prevent millions of cases annually.",
+                image: "https://www.gavi.org/sites/default/files/vaccineswork/2021/Thumb/shutterstock_1744369802_h2.jpg",
+                author: "Dr. Fatoumata Diallo",
+                authorAvatar: "https://randomuser.me/api/portraits/women/44.jpg",
+                time: "5 hours ago",
+                date: "October 28, 2025",
+                readTime: "5 min read",
+                views: "11,567",
+                content: `
+                    <p>Researchers at the Africa Centres for Disease Control and Prevention (Africa CDC) have announced groundbreaking results from the final phase of clinical trials for a new malaria vaccine, showing 85% efficacy in preventing the disease in children.</p>
+                    
+                    <h2>Trial Results</h2>
+                    
+                    <p>The vaccine, named "MalariaVax-25," was tested on 12,000 children aged 6 months to 5 years across six African countries over three years. The results show 85% efficacy in preventing malaria infection and 92% efficacy in preventing severe malaria requiring hospitalization.</p>
+                    
+                    <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Malaria Vaccine">
+                    
+                    <p>"This is a monumental breakthrough in our fight against malaria," said Dr. John Nkengasong, Director of Africa CDC. "For the first time, we have a vaccine that offers high-level protection to our most vulnerable population."</p>
+                    
+                    <blockquote>
+                        "MalariaVax-25 could prevent an estimated 3.2 million cases and save 65,000 lives annually in Africa alone. This represents a paradigm shift in malaria control."
+                    </blockquote>
+                    
+                    <h2>Production and Distribution</h2>
+                    
+                    <p>The vaccine will be produced by a consortium of African pharmaceutical companies in Kenya, South Africa, and Senegal, with initial annual capacity of 100 million doses. The World Health Organization has granted emergency use listing, enabling rapid deployment.</p>
+                    
+                    <p>Funding for the initial rollout has been secured through the Global Fund to Fight AIDS, Tuberculosis and Malaria, with additional support from the African Union's African Medicines Agency. The first doses are expected to reach clinics by mid-2026.</p>
+                    
+                    <h2>Public Health Impact</h2>
+                    
+                    <p>Malaria remains one of Africa's deadliest diseases, causing an estimated 600,000 deaths annually, mostly among children under five. The new vaccine, when combined with existing prevention methods like bed nets and antimalarial drugs, could reduce malaria incidence by up to 75%.</p>
+                    
+                    <p>"This isn't just about health; it's about development," said Dr. Matshidiso Moeti, WHO Regional Director for Africa. "Reducing malaria burden will improve school attendance, increase productivity, and accelerate economic growth."</p>
+                    
+                    <p>The research team is now studying the vaccine's efficacy in pregnant women and exploring combination strategies with other malaria interventions for maximum impact.</p>
+                `
+            },
+            {
+                id: "article-6",
+                category: "environment",
+                title: "Record Rainfall Floods Coastal Cities Across West Africa",
+                excerpt: "Unprecedented rainfall has caused severe flooding in Lagos, Accra, and Abidjan, displacing thousands and causing extensive damage.",
+                image: "https://www.wfp.org/sites/default/files/styles/max_width_800/public/images/news/Azimi%20Abubakar%2C%2050%2C%20a%20resident%20of%20Gasamu%2C%20wades%20through%20the%20floodwater%20in%20Jakusko%20LGA%20of%20Yobe%20State%2C%20Nigeria%2C%20on%2001%20October%202022.%20%C2%A9WFP.webp?itok=ipLwn87C",
+                author: "Kofi Mensah",
+                authorAvatar: "https://randomuser.me/api/portraits/men/55.jpg",
+                time: "1 hour ago",
+                date: "October 28, 2025",
+                readTime: "4 min read",
+                views: "7,890",
+                content: `
+                    <p>Unprecedented rainfall over the past 72 hours has triggered severe flooding in major West African coastal cities, with Lagos, Accra, and Abidjan experiencing their worst floods in decades.</p>
+                    
+                    <h2>Impact Assessment</h2>
+                    
+                    <p>In Lagos, Nigeria's commercial capital, floodwaters have submerged entire neighborhoods, displaced over 50,000 residents, and caused an estimated $300 million in damage. Major highways including the Lagos-Ibadan Expressway have been closed, paralyzing transportation.</p>
+                    
+                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Flooding">
+                    
+                    <p>"This is the worst flooding I've seen in my 40 years in Lagos," said emergency responder Adebayo Ogunlesi. "Entire communities are underwater, and rescue operations are hampered by continued rainfall."</p>
+                    
+                    <blockquote>
+                        "Climate change is no longer a distant threat. These extreme weather events are happening now, and our cities must adapt rapidly to protect our populations."
+                    </blockquote>
+                    
+                    <h2>Regional Response</h2>
+                    
+                    <p>The Economic Community of West African States (ECOWAS) has activated its regional disaster response mechanism, deploying emergency teams and coordinating cross-border assistance. The African Union has pledged $50 million in immediate relief funds.</p>
+                    
+                    <p>In Accra, Ghana, the government has declared a state of emergency in five districts. The city's drainage systems, overwhelmed by the volume of water, have backed up, flooding markets, schools, and hospitals. At least 15 fatalities have been confirmed across the region.</p>
+                    
+                    <h2>Climate Connection</h2>
+                    
+                    <p>Meteorologists link the extreme rainfall to warmer ocean temperatures in the Gulf of Guinea, which have increased moisture in the atmosphere. The region has received 300% of its typical October rainfall in just three days.</p>
+                    
+                    <p>"This is consistent with climate change projections for West Africa," said climate scientist Dr. Amina Bello. "We're seeing more frequent and intense rainfall events, and our urban infrastructure was not designed for these conditions."</p>
+                    
+                    <p>Urban planners are calling for immediate investment in resilient infrastructure, including improved drainage systems, flood barriers, and climate-informed urban design. The World Bank estimates that West African cities need $15 billion in climate adaptation investments over the next decade.</p>
+                `
+            },
+            {
+                id: "article-7",
+                category: "technology",
+                title: "Pan-African Digital Currency Launch Faces Regulatory Hurdles",
+                excerpt: "The proposed AfriCoin digital currency, intended to facilitate cross-border trade, faces regulatory challenges from central banks.",
+                image: "https://media.licdn.com/dms/image/v2/D4D12AQF8zlvl4wfpng/article-cover_image-shrink_720_1280/B4DZacXYmlHwAI-/0/1746380101414?e=2147483647&v=beta&t=su0VClXHfYN4QbsBx-9hzY0Spe4iGHZ4_i8xUV42-sc",
+                author: "Naledi Modise",
+                authorAvatar: "https://randomuser.me/api/portraits/women/33.jpg",
+                time: "3 hours ago",
+                date: "October 28, 2025",
+                readTime: "5 min read",
+                views: "10,123",
+                content: `
+                    <p>The launch of AfriCoin, a proposed pan-African digital currency designed to facilitate cross-border trade and remittances, has hit regulatory roadblocks as several central banks express concerns about monetary sovereignty and financial stability.</p>
+                    
+                    <h2>Regulatory Pushback</h2>
+                    
+                    <p>The Central Bank of Nigeria has issued a statement warning against the use of "unauthorized digital currencies," while the South African Reserve Bank has raised concerns about capital flight and exchange control evasion. Only Kenya and Rwanda have expressed conditional support for the initiative.</p>
+                    
+                    <img src="https://images.unsplash.com/photo-1633158829558-8e42d36db7e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Digital Currency">
+                    
+                    <p>"We cannot compromise monetary policy effectiveness for technological convenience," said Nigerian Central Bank Governor Godwin Emefiele. "Any digital currency must operate within existing regulatory frameworks."</p>
+                    
+                    <blockquote>
+                        "AfriCoin represents the future of African finance, but we must build regulatory consensus. This requires balancing innovation with financial stability concerns."
+                    </blockquote>
+                    
+                    <h2>Technical Infrastructure</h2>
+                    
+                    <p>Developed by a consortium of African fintech companies, AfriCoin uses blockchain technology to enable instant, low-cost cross-border transactions. The currency would be pegged to a basket of African currencies and backed by a reserve of foreign exchange and commodities.</p>
+                    
+                    <p>Technical tests conducted in pilot countries show transaction costs reduced by 85% compared to traditional banking channels, with settlement times dropping from days to seconds. The system is designed to handle up to 10,000 transactions per second.</p>
+                    
+                    <h2>Economic Potential</h2>
+                    
+                    <p>Proponents argue that AfriCoin could boost intra-African trade, which currently stands at just 15% of total African trade. The African Continental Free Trade Area (AfCFTA) Secretariat has expressed interest in the technology as a potential trade facilitation tool.</p>
+                    
+                    <p>"Digital currencies can dramatically reduce the cost and complexity of cross-border payments in Africa," said AfriCoin project lead Dr. Tendai Moyo. "We're working closely with regulators to address their concerns while preserving the innovation's benefits."</p>
+                    
+                    <p>The project team has scheduled meetings with the African Union's Financial Institutions Directorate and the Committee of Central Bank Governors to develop a harmonized regulatory approach. A revised launch timeline is expected by year-end.</p>
+                `
+            },
+            {
+                id: "article-8",
+                category: "business",
+                title: "African Stock Markets Show Mixed Results in Early Trading",
+                excerpt: "Major African stock exchanges show varied performance amid global economic uncertainty and regional policy changes.",
+                image: "https://nairametrics.com/wp-content/uploads/2023/06/stock-market-forex-trading-graph-graphic-concept_73426-106.jpeg",
+                author: "Financial Desk",
+                authorAvatar: "https://randomuser.me/api/portraits/men/45.jpg",
+                time: "30 minutes ago",
+                date: "October 28, 2025",
+                readTime: "3 min read",
+                views: "5,678",
+                content: `
+                    <p>African stock markets displayed divergent performance in Tuesday's early trading sessions, reflecting mixed reactions to global economic indicators and domestic policy developments across the continent.</p>
+                    
+                    <h2>Market Performance</h2>
+                    
+                    <p>The Johannesburg Stock Exchange (JSE) led gains with a 1.2% increase, driven by strong performances in mining and financial stocks. The Nigerian Stock Exchange (NGX) rose 0.8%, buoyed by banking sector optimism following positive economic growth data.</p>
+                    
+                    <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Stock Market">
+                    
+                    <p>"African markets are showing resilience despite global headwinds," said investment analyst Sarah Chen. "Selective buying is focusing on sectors with strong domestic fundamentals."</p>
+                    
+                    <blockquote>
+                        "The divergence in African market performance reflects varying economic conditions and policy environments. Investors are increasingly discriminating between markets based on structural factors."
+                    </blockquote>
+                    
+                    <h2>Sector Analysis</h2>
+                    
+                    <p>Banking stocks gained across most markets following the release of generally positive third-quarter earnings. Technology stocks showed mixed performance, with some profit-taking after recent rallies. Commodity stocks were flat despite stable global prices.</p>
+                    
+                    <p>In contrast, the Nairobi Securities Exchange (NSE) declined 0.5%, weighed down by profit-taking in large-cap stocks. The Egyptian Exchange (EGX) fell 0.3% amid currency volatility concerns. The Ghana Stock Exchange (GSE) was little changed.</p>
+                    
+                    <h2>Global Context</h2>
+                    
+                    <p>Global markets showed caution ahead of key economic data releases, particularly US inflation figures and European Central Bank policy decisions. Oil prices stabilized around $85 per barrel, providing some support to commodity-exporting African economies.</p>
+                    
+                    <p>"African markets are increasingly decoupling from global trends," noted economist Dr. James Okafor. "Domestic factors like policy reforms, election outcomes, and economic diversification efforts are becoming more significant drivers of market performance."</p>
+                    
+                    <p>Trading volumes were generally below average, indicating investor caution. Foreign portfolio flows into African markets have declined 15% year-to-date, though domestic institutional investment has increased by 22% over the same period.</p>
+                `
+            },
+            {
+                id: "article-9",
+                category: "infrastructure",
+                title: "Pan-African Rail Network: Progress and Construction Delays",
+                excerpt: "Ambitious continental rail project faces implementation challenges but makes significant progress in key corridors.",
+                image: "https://images.unsplash.com/photo-1764021714060-bc6f748f721f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                author: "Transport Desk",
+                authorAvatar: "https://randomuser.me/api/portraits/men/60.jpg",
+                time: "1 day ago",
+                date: "October 27, 2025",
+                readTime: "7 min read",
+                views: "102,845",
+                content: `
+                    <p>The ambitious Trans-African Railway Network, designed to connect the continent's major economic hubs, is experiencing both significant progress and notable delays as construction advances across different regional corridors.</p>
+                    
+                    <h2>Progress Report</h2>
+                    
+                    <p>The East African Corridor, linking Mombasa to Kigali via Nairobi and Kampala, is 75% complete and expected to be operational by late 2026. The line has already reduced travel time between Nairobi and Mombasa from 12 hours by road to just 4.5 hours by rail.</p>
+                    
+                    <img src="https://plus.unsplash.com/premium_photo-1680298707176-66cd5be64613?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Rail Network">
+                    
+                    <p>"This is transformative infrastructure that will reshape regional economies," said African Union Infrastructure Commissioner Amani Abou-Zeid. "The benefits in trade facilitation and regional integration are already becoming apparent."</p>
+                    
+                    <blockquote>
+                        "The Trans-African Railway represents the physical manifestation of African integration. Despite challenges, we're building the arteries that will pump economic lifeblood across our continent."
+                    </blockquote>
+                    
+                    <h2>Challenges and Delays</h2>
+                    
+                    <p>The Central Corridor, connecting Dar es Salaam to the Democratic Republic of Congo, faces significant delays due to financing gaps and complex terrain. Environmental impact assessments in ecologically sensitive areas have also slowed progress.</p>
+                    
+                    <p>The North-South Corridor, intended to link Cairo to Cape Town, has made uneven progress. The Egyptian section is largely complete, while the southern African portions face funding challenges and coordination issues between multiple countries.</p>
+                    
+                    <h2>Economic Impact</h2>
+                    
+                    <p>Completed sections have already shown economic benefits. The Ethiopia-Djibouti line has increased Ethiopia's export capacity by 35% and reduced transport costs by 40%. The Nigeria-Niger rail link, though incomplete, has stimulated cross-border trade in the region.</p>
+                    
+                    <p>"Rail infrastructure is critical for lowering the cost of doing business in Africa," said World Bank transport specialist Maria Gonzalez. "Every 10% reduction in transport costs can increase trade by 25% in landlocked African countries."</p>
+                    
+                    <p>The African Development Bank has approved an additional $3.2 billion in funding to address the most critical gaps. Private sector partnerships are being explored for the remaining sections, with several Chinese and European consortia expressing interest.</p>
+                `
+            },
+            {
+                id: "article-10",
+                category: "environment",
+                title: "Congo Basin Deforestation Rate Slows for First Time",
+                excerpt: "Conservation efforts show positive results as deforestation in the Congo Basin declines by 15% compared to last year.",
+                image: "https://images.unsplash.com/photo-1627041025700-63dce5cb092b?q=80&w=1196&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                author: "Environmental Desk",
+                authorAvatar: "https://rando",
+                time: "2 days ago",
+                date: "October 26, 2025",
+                readTime: "6 min read",
+                views: "76,543",
+                content: `
+                    <p>Deforestation in the Congo Basin, the world's second-largest tropical rainforest, has decreased by 15% in the past year, marking the first significant reversal in forest loss trends in the region, according to new satellite data.</p>
+                    
+                    <h2>Conservation Success</h2>
+                    
+                    <p>The reduction, equivalent to preserving 300,000 hectares of forest, is attributed to a combination of government policies, community conservation initiatives, and international funding. The Democratic Republic of Congo, which contains 60% of the Congo Basin forest, saw the largest improvement.</p>
+                    
+                    <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Congo Basin Forest">
+                    
+                    <p>"This is a significant milestone in our conservation efforts," said DRC Environment Minister Ève Bazaiba. "It shows that with the right policies and community engagement, we can protect our forests while developing our economy."</p>
+                    
+                    <blockquote>
+                        "The Congo Basin is a global treasure and a critical carbon sink. This reduction in deforestation represents hope not just for Africa, but for global climate stability."
+                    </blockquote>
+                    
+                    <h2>Key Initiatives</h2>
+                    
+                    <p>The Central African Forest Initiative (CAFI), a partnership between six Congo Basin countries and international donors, has played a crucial role. The initiative provides performance-based payments for verified emission reductions from deforestation.</p>
+                    
+                    <p>Community forestry programs, which grant local communities legal rights to manage forests, have expanded to cover 8 million hectares. These programs have reduced illegal logging by 40% in participating areas while providing sustainable livelihoods.</p>
+                    
+                    <h2>Remaining Challenges</h2>
+                    
+                    <p>Despite the progress, significant challenges remain. Agricultural expansion, particularly for palm oil and cocoa, continues to drive deforestation in some areas. Illegal logging and mining persist in remote regions with limited law enforcement capacity.</p>
+                    
+                    <p>"We're seeing positive trends, but we cannot become complacent," warned conservation scientist Dr. Paul Mumbanza. "The Congo Basin still loses about 500,000 hectares annually. We need to accelerate conservation efforts to reach net-zero deforestation."</p>
+                    
+                    <p>The African Union has announced a new Congo Basin Protection Fund, aiming to raise $1 billion annually from carbon credit markets and international climate finance. The fund will support sustainable development alternatives for forest-dependent communities.</p>
+                `
+            },
+            {
+                id: "article-11",
+                category: "sports",
+                title: "AFCON 2025: Team Preparations Enter Final Phase",
+                excerpt: "National teams intensify training camps as the Africa Cup of Nations approaches, with Morocco as host nation.",
+                image: "https://assets.khelnow.com/news/uploads/2024/02/AFCON-2025.jpeg",
+                author: "Sports Desk",
+                authorAvatar: "https://randomuser.me/api/portraits/men/35.jpg",
+                time: "2 hours ago",
+                date: "October 28, 2025",
+                readTime: "4 min read",
+                views: "23,456",
+                content: `
+                    <p>With less than three months until the Africa Cup of Nations kicks off in Morocco, national teams across the continent are intensifying their preparations, scheduling friendly matches, and finalizing squad selections for Africa's premier football tournament.</p>
+                    
+                    <h2>Team Camps</h2>
+                    
+                    <p>Defending champions Senegal have established a training camp in Saly, where they will prepare for their title defense. Coach Aliou Cissé has called up 35 players for initial assessments, with the final 23-man squad to be announced next month.</p>
+                    
+                    <img src="https://images.unsplash.com/photo-1575361204480-aadea25e6e68?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Football Training">
+                    
+                    <p>"Every team wants to dethrone us, and we're preparing accordingly," said Cissé. "The pressure of being defending champions is real, but we have the experience and quality to handle it."</p>
+                    
+                    <blockquote>
+                        "This AFCON features the most competitive field in history. At least 10 teams have legitimate championship aspirations, which reflects the growing quality and depth of African football."
+                    </blockquote>
+                    
+                    <h2>Key Matchups</h2>
+                    
+                    <p>Hosts Morocco, semifinalists in the last two World Cups, are considered favorites. Coach Walid Regragui has scheduled high-profile friendlies against Brazil and Germany to test his squad ahead of the tournament.</p>
+                    
+                    <p>Nigeria's Super Eagles, seeking their fourth AFCON title, will train in Spain before the tournament. Striker Victor Osimhen, recently crowned African Footballer of the Year, is expected to lead their attack.</p>
+                    
+                    <h2>Emerging Contenders</h2>
+                    
+                    <p>Several emerging teams are generating excitement. Mali's young squad, featuring several Europe-based talents, is seen as a dark horse. Tanzania, qualifying for only their third AFCON, has impressed in preparatory matches.</p>
+                    
+                    <p>"The gap between traditional powerhouses and emerging nations is narrowing," noted CAF Technical Director Raul Chipenda. "We're seeing improved coaching, better player development, and more competitive matches across the continent."</p>
+                    
+                    <p>The tournament draw, scheduled for December 5 in Casablanca, will determine group stage matchups. A record 24 teams will compete, with the top two from each of the six groups advancing to the knockout stages.</p>
+                `
+            },
+            {
+                id: "article-12",
+                category: "sports",
+                title: "NBA Africa Game Returns to Johannesburg in 2026",
+                excerpt: "The NBA announces return of the Africa Game to Johannesburg, featuring top players of African descent.",
+                image: "https://www.newtimes.co.rw/thenewtimes/uploads/images/2023/07/06/thumbs/1200x700/22970.jpg",
+                author: "Sports Desk",
+                authorAvatar: "https://randomuser.me/api/portraits/men/40.jpg",
+                time: "5 hours ago",
+                date: "October 28, 2025",
+                readTime: "3 min read",
+                views: "18,901",
+                content: `
+                    <p>The National Basketball Association (NBA) has announced the return of the NBA Africa Game to Johannesburg in August 2026, featuring top players of African descent and marking the league's continued investment in basketball development across the continent.</p>
+                    
+                    <h2>Event Details</h2>
+                    
+                    <p>The exhibition game will be held at the 18,000-seat SunBet Arena in Pretoria, with proceeds supporting NBA Africa's social responsibility initiatives, including youth development programs and infrastructure projects across the continent.</p>
+                    
+                    <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Basketball Game">
+                    
+                    <p>"Basketball's growth in Africa has been phenomenal," said NBA Commissioner Adam Silver. "The Africa Game is a celebration of this progress and our commitment to the continent's basketball ecosystem."</p>
+                    
+                    <blockquote>
+                        "Africa produces some of the world's most exciting basketball talent. This game showcases that talent while inspiring the next generation of African players."
+                    </blockquote>
+                    
+                    <h2>Player Participation</h2>
+                    
+                    <p>While the full roster will be announced closer to the event, several star players have already confirmed their participation. Milwaukee Bucks forward Giannis Antetokounmpo (Nigeria/Greece), Denver Nuggets center Joel Embiid (Cameroon), and Minnesota Timberwolves guard Anthony Edwards (African American heritage) are expected to feature.</p>
+                    
+                    <p>The game will follow the format of previous editions, with Team Africa (players born in Africa or with African heritage) facing Team World (other international stars). Previous games have included legends like Hakeem Olajuwon, Dikembe Mutombo, and current stars.</p>
+                    
+                    <h2>Development Impact</h2>
+                    
+                    <p>Beyond the exhibition game, the event will include basketball development camps, coaching clinics, and community outreach programs. The NBA Academy Africa in Senegal will host special training sessions for top prospects from across the continent.</p>
+                    
+                    <p>"This is about more than one game," said NBA Africa CEO Victor Williams. "It's about building infrastructure, developing talent, and creating opportunities for African youth through basketball."</p>
+                    
+                    <p>The announcement follows the success of Basketball Africa League (BAL), which has expanded to 12 teams from across the continent. Television viewership for NBA games in Africa has grown by 300% over the past five years, with particular strength in Nigeria, South Africa, and Kenya.</p>
+                `
+            },
+            {
+                id: "trending-1",
+                category: "infrastructure",
+                title: "Pan-African Rail Network: Progress and Construction Delays",
+                excerpt: "Ambitious continental rail project faces implementation challenges but makes significant progress in key corridors.",
+                image: "https://images.unsplash.com/photo-1764021714060-bc6f748f721f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                author: "Transport Desk",
+                authorAvatar: "",
+                time: "1 day ago",
+                date: "October 27, 2025",
+                readTime: "7 min read",
+                views: "102,845",
+                content: `
+                    <p>The ambitious Trans-African Railway Network, designed to connect the continent's major economic hubs, is experiencing both significant progress and notable delays as construction advances across different regional corridors.</p>
+                    
+                    <h2>Progress Report</h2>
+                    
+                    <p>The East African Corridor, linking Mombasa to Kigali via Nairobi and Kampala, is 75% complete and expected to be operational by late 2026. The line has already reduced travel time between Nairobi and Mombasa from 12 hours by road to just 4.5 hours by rail.</p>
+                    
+                    <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Rail Network">
+                    
+                    <p>"This is transformative infrastructure that will reshape regional economies," said African Union Infrastructure Commissioner Amani Abou-Zeid. "The benefits in trade facilitation and regional integration are already becoming apparent."</p>
+                    
+                    <blockquote>
+                        "The Trans-African Railway represents the physical manifestation of African integration. Despite challenges, we're building the arteries that will pump economic lifeblood across our continent."
+                    </blockquote>
+                    
+                    <h2>Challenges and Delays</h2>
+                    
+                    <p>The Central Corridor, connecting Dar es Salaam to the Democratic Republic of Congo, faces significant delays due to financing gaps and complex terrain. Environmental impact assessments in ecologically sensitive areas have also slowed progress.</p>
+                    
+                    <p>The North-South Corridor, intended to link Cairo to Cape Town, has made uneven progress. The Egyptian section is largely complete, while the southern African portions face funding challenges and coordination issues between multiple countries.</p>
+                    
+                    <h2>Economic Impact</h2>
+                    
+                    <p>Completed sections have already shown economic benefits. The Ethiopia-Djibouti line has increased Ethiopia's export capacity by 35% and reduced transport costs by 40%. The Nigeria-Niger rail link, though incomplete, has stimulated cross-border trade in the region.</p>
+                    
+                    <p>"Rail infrastructure is critical for lowering the cost of doing business in Africa," said World Bank transport specialist Maria Gonzalez. "Every 10% reduction in transport costs can increase trade by 25% in landlocked African countries."</p>
+                    
+                    <p>The African Development Bank has approved an additional $3.2 billion in funding to address the most critical gaps. Private sector partnerships are being explored for the remaining sections, with several Chinese and European consortia expressing interest.</p>
+                `
+            },
+            {
+                id: "trending-2",
+                category: "entertainment",
+                title: "African Cinema Breaks Global Box Office Records",
+                excerpt: "Nollywood and other African film industries achieve unprecedented international success with record-breaking releases.",
+                image: "https://images.unsplash.com/photo-1710116307402-31eae9bbfb62?q=80&w=1236&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                author: "Entertainment Desk",
+                authorAvatar: "https://randomuse",
+                time: "3 days ago",
+                date: "October 25, 2025",
+                readTime: "5 min read",
+                views: "87,654",
+                content: `
+                    <p>African cinema is experiencing a historic breakthrough on the global stage, with Nigerian, South African, and Kenyan productions achieving record box office numbers and critical acclaim in international markets.</p>
+                    
+                    <h2>Box Office Success</h2>
+                    
+                    <p>The Nigerian film "The Last King of Lagos" has grossed over $50 million worldwide, becoming the highest-grossing African film of all time. The epic drama, which explores Nigeria's colonial history, has performed strongly in North America, Europe, and across Africa.</p>
+                    
+                    <img src="https://images.unsplash.com/photo-1529257608761-0ef888111001?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Film Production">
+                    
+                    <p>"This is a watershed moment for African storytelling," said director Kunle Afolayan. "The world is finally ready for our stories, told our way, with our voices."</p>
+                    
+                    <blockquote>
+                        "African cinema is no longer a niche category. These films are competing successfully with Hollywood blockbusters, proving that authentic African stories have universal appeal."
+                    </blockquote>
+                    
+                    <h2>International Recognition</h2>
+                    
+                    <p>South Africa's sci-fi thriller "Echoes of the Karoo" won the Audience Award at the Cannes Film Festival and has secured distribution in 65 countries. The film's success has attracted major streaming platform interest, with Netflix and Amazon competing for African content.</p>
+                    
+                    <p>Kenyan coming-of-age drama "Nairobi Nights" has been nominated for three international awards and has sparked conversations about urban African youth culture. The film's soundtrack, featuring emerging East African artists, has topped streaming charts.</p>
+                    
+                    <h2>Industry Growth</h2>
+                    
+                    <p>The success is fueling investment in African film infrastructure. New production studios are opening in Ghana, Tanzania, and Ethiopia. Film festivals across the continent are experiencing record attendance, with the Africa International Film Festival reporting a 40% increase in submissions.</p>
+                    
+                    <p>"We're seeing a virtuous cycle," said film economist Dr. Zanele Mthembu. "Success attracts investment, which improves production quality, which leads to more success. The African film industry could create 500,000 jobs in the next five years."</p>
+                    
+                    <p>The African Union has launched the Pan-African Film Fund, a $100 million initiative to support co-productions and distribution across the continent. The fund aims to strengthen intra-African cultural exchange while expanding global reach.</p>
+                `
+            }
+            // More articles would follow the same pattern...
+        ];
+
+        // Comments storage (using localStorage for demo)
+        let comments = JSON.parse(localStorage.getItem('articleComments')) || {};
+
+        // Function to load article based on URL parameter
+        function loadArticle() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const articleId = urlParams.get('id') || 'article-1';
+            
+            const article = articlesData.find(a => a.id === articleId) || articlesData[0];
+            
+            // Update page title
+            document.title = `${article.title} | Aframira Chronicles`;
+            
+            // Update social meta tags
+            document.querySelector('meta[property="og:title"]').setAttribute('content', article.title);
+            document.querySelector('meta[property="og:description"]').setAttribute('content', article.excerpt);
+            document.querySelector('meta[property="og:image"]').setAttribute('content', article.image);
+            
+            document.querySelector('meta[name="twitter:title"]').setAttribute('content', article.title);
+            document.querySelector('meta[name="twitter:description"]').setAttribute('content', article.excerpt);
+            document.querySelector('meta[name="twitter:image"]').setAttribute('content', article.image);
+            
+            // Render article
+            const articleContent = document.getElementById('articleContent');
+            articleContent.innerHTML = `
+                <div class="article-hero">
+                    <img src="${article.image}" alt="${article.title}" class="article-hero-image">
+                    <div class="article-hero-content">
+                        <span class="article-category">${article.category.charAt(0).toUpperCase() + article.category.slice(1)}</span>
+                        <h1 class="article-title">${article.title}</h1>
+                        <div class="article-meta">
+                            <div class="author-info">
+                                <img src="${article.authorAvatar}" alt="${article.author}" class="author-avatar">
+                                <div>
+                                    <div><strong>${article.author}</strong></div>
+                                    <div>${article.date} • ${article.readTime}</div>
+                                </div>
+                            </div>
+                            <div>
+                                <i class="ri-eye-line"></i> ${article.views} views
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="article-actions">
+                    <div>
+                        <strong>Share this article:</strong>
+                    </div>
+                    <div class="social-share">
+                        <a href="#" class="share-btn facebook" onclick="shareArticle('facebook')">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="#" class="share-btn twitter" onclick="shareArticle('twitter')">
+                            <i class="ri-twitter-fill"></i>
+                        </a>
+                        <a href="#" class="share-btn linkedin" onclick="shareArticle('linkedin')">
+                            <i class="ri-linkedin-fill"></i>
+                        </a>
+                        <a href="#" class="share-btn whatsapp" onclick="shareArticle('whatsapp')">
+                            <i class="ri-whatsapp-fill"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="article-body">
+                    ${article.content}
+                </div>
+            `;
+            
+            // Load related articles
+            loadRelatedArticles(article.category, article.id);
+            
+            // Load comments
+            loadComments(articleId);
+        }
+        
+        // Function to load related articles
+        function loadRelatedArticles(category, currentArticleId) {
+            const relatedGrid = document.getElementById('relatedArticles');
+            const relatedArticles = articlesData
+                .filter(article => article.category === category && article.id !== currentArticleId)
+                .slice(0, 3);
+            
+            if (relatedArticles.length === 0) {
+                // If no related articles in same category, show any articles
+                const otherArticles = articlesData
+                    .filter(article => article.id !== currentArticleId)
+                    .slice(0, 3);
+                relatedArticles.push(...otherArticles);
+            }
+            
+            relatedGrid.innerHTML = relatedArticles.map(article => `
+                <article class="related-card">
+                    <a href="article.html?id=${article.id}">
+                        <img src="${article.image}" alt="${article.title}" class="related-image">
+                        <div class="related-content">
+                            <span class="related-category">${article.category.charAt(0).toUpperCase() + article.category.slice(1)}</span>
+                            <h3 class="related-title">${article.title}</h3>
+                            <div class="article-meta">
+                                <span>${article.time}</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+            `).join('');
+        }
+        
+        // Function to load comments
+        function loadComments(articleId) {
+            const commentsList = document.getElementById('commentsList');
+            const noComments = document.getElementById('noComments');
+            const commentsCount = document.getElementById('commentsCount');
+            
+            const articleComments = comments[articleId] || [];
+            
+            if (articleComments.length === 0) {
+                noComments.style.display = 'block';
+                commentsList.innerHTML = '<div class="no-comments" id="noComments" style="text-align: center; padding: 40px; color: var(--text-light);"><i class="ri-chat-3-line" style="font-size: 48px; margin-bottom: 20px; opacity: 0.5;"></i><h3 style="margin-bottom: 10px;">No Comments Yet</h3><p>Be the first to share your thoughts!</p></div>';
+                commentsCount.textContent = '0 Comments';
+                return;
+            }
+            
+            noComments.style.display = 'none';
+            commentsCount.textContent = `${articleComments.length} Comment${articleComments.length !== 1 ? 's' : ''}`;
+            
+            commentsList.innerHTML = articleComments.map((comment, index) => `
+                <div class="comment">
+                    <div class="comment-header">
+                        <div class="comment-avatar">${comment.name.charAt(0).toUpperCase()}</div>
+                        <div>
+                            <div class="comment-author">${comment.name}</div>
+                            <div class="comment-date">${comment.date}</div>
+                        </div>
+                    </div>
+                    <div class="comment-body">
+                        ${comment.message}
+                    </div>
+                    <div class="comment-actions">
+                        <span class="comment-action" onclick="likeComment('${articleId}', ${index})">
+                            <i class="ri-thumb-up-line"></i> Like (${comment.likes || 0})
+                        </span>
+                        <span class="comment-action" onclick="replyToComment('${articleId}', ${index})">
+                            <i class="ri-reply-line"></i> Reply
+                        </span>
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        // Function to submit comment
+        function submitComment() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const articleId = urlParams.get('id') || 'article-1';
+            
+            const name = document.getElementById('commentName').value.trim();
+            const email = document.getElementById('commentEmail').value.trim();
+            const message = document.getElementById('commentMessage').value.trim();
+            
+            if (!name || !email || !message) {
+                alert('Please fill in all fields.');
+                return;
+            }
+            
+            if (!isValidEmail(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+            
+            const newComment = {
+                name,
+                email,
+                message,
+                date: new Date().toLocaleDateString('en-US', { 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                }),
+                likes: 0
+            };
+            
+            // Initialize comments object if needed
+            if (!comments[articleId]) {
+                comments[articleId] = [];
+            }
+            
+            // Add new comment
+            comments[articleId].unshift(newComment);
+            
+            // Save to localStorage
+            localStorage.setItem('articleComments', JSON.stringify(comments));
+            
+            // Clear form
+            document.getElementById('commentName').value = '';
+            document.getElementById('commentEmail').value = '';
+            document.getElementById('commentMessage').value = '';
+            
+            // Reload comments
+            loadComments(articleId);
+            
+            // Show success message
+            alert('Thank you for your comment! It has been posted.');
+        }
+        
+        // Helper function to validate email
+        function isValidEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+        
+        // Function to share article
+        function shareArticle(platform) {
+            const url = window.location.href;
+            const title = document.title;
+            const text = "Check out this article on Aframira Chronicles";
+            
+            let shareUrl = '';
+            
+            switch(platform) {
+                case 'facebook':
+                    shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+                    break;
+                case 'twitter':
+                    shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`;
+                    break;
+                case 'linkedin':
+                    shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}`;
+                    break;
+                case 'whatsapp':
+                    shareUrl = `https://wa.me/?text=${encodeURIComponent(text + ': ' + url)}`;
+                    break;
+            }
+            
+            if (shareUrl) {
+                window.open(shareUrl, '_blank', 'width=600,height=400');
+            }
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize AOS
+            AOS.init({
+                duration: 1000,
+                once: true,
+                offset: 100,
+                easing: 'ease-out-cubic'
+            });
+            
+            // Load article
+            loadArticle();
+            
+            // Mobile menu toggle events
+            document.querySelector('.mobile-menu-toggle').addEventListener('click', toggleMobileMenu);
+            document.querySelector('.mobile-close-btn').addEventListener('click', toggleMobileMenu);
+            
+            // Close mobile menu when clicking outside
+            document.querySelector('.nav-mobile').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    toggleMobileMenu();
+                }
+            });
+            
+            // Close mobile menu when clicking a link (except submenu toggles)
+            document.querySelectorAll('.mobile-nav-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const hasSubmenu = this.nextElementSibling && this.nextElementSibling.classList.contains('mobile-submenu');
+                    
+                    if (!hasSubmenu) {
+                        toggleMobileMenu();
+                    }
+                });
+            });
+            
+            // Comment submission
+            document.getElementById('submitComment').addEventListener('click', submitComment);
+            
+            // Allow Enter key in comment form
+            document.getElementById('commentMessage').addEventListener('keydown', function(e) {
+                if (e.ctrlKey && e.key === 'Enter') {
+                    submitComment();
+                }
+            });
+            
+            // Search functionality
+            document.querySelector('.search-btn').addEventListener('click', function() {
+                alert('Search functionality would open a search modal in production.');
+            });
+            
+            // Newsletter subscription
+            document.querySelectorAll('.newsletter-form .subscribe-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const input = this.previousElementSibling;
+                    if (input && input.value && input.value.includes('@')) {
+                        alert('Thank you for subscribing to our newsletter!');
+                        input.value = '';
+                    } else {
+                        alert('Please enter a valid email address.');
+                    }
+                });
+            });
+            
+            // Mega menu hover effects for desktop
+            const navItems = document.querySelectorAll('.nav-item');
+            
+            navItems.forEach(item => {
+                const megaMenu = item.querySelector('.mega-menu');
+                if (megaMenu) {
+                    item.addEventListener('mouseenter', function() {
+                        if (window.innerWidth > 992) {
+                            megaMenu.style.display = 'grid';
+                            setTimeout(() => {
+                                megaMenu.style.opacity = '1';
+                                megaMenu.style.transform = 'translateY(0)';
+                            }, 10);
+                        }
+                    });
+                    
+                    item.addEventListener('mouseleave', function() {
+                        if (window.innerWidth > 992) {
+                            megaMenu.style.opacity = '0';
+                            megaMenu.style.transform = 'translateY(10px)';
+                            setTimeout(() => {
+                                megaMenu.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                }
+            });
+        });
+        
+        // Export functions to global scope for onclick handlers
+        window.shareArticle = shareArticle;
+    </script>
+</body>
+</html>

@@ -3,42 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aframira Chronicles</title>
-    <!-- Social Media Meta Tags - Aframira Chronicles -->
-    <meta property="og:title" content="Aframira Chronicles | Africa's Leading Independent News Organization" />
-    <meta property="og:description" content="Delivering trusted journalism from across the African continent since 2010. Breaking news, investigative reports, and multimedia coverage on politics, business, technology, health, and culture from our pan-African news network." />
+    <title>News Categories | Aframira Chronicles</title>
+    
+    <!-- Social Media Meta Tags -->
+    <meta property="og:title" content="News Categories | Aframira Chronicles" />
+    <meta property="og:description" content="Browse news by category: Politics, Business, Technology, Health, Sports, and more from Africa's leading news organization." />
     <meta property="og:image" content="assets/img/logo/linkimage.png" />
-    <meta property="og:url" content="https://www.aframirachronicles.com" />
+    <meta property="og:url" content="https://www.aframirachronicles.com/categories" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Aframira Chronicles" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Aframira Chronicles | Africa's Leading Independent News Organization" />
-    <meta name="twitter:description" content="Independent reporting from across Africa. Real-time updates, in-depth analysis, and compelling multimedia stories covering the continent's most important developments in politics, economy, innovation, and society." />
+    <meta name="twitter:title" content="News Categories | Aframira Chronicles" />
+    <meta name="twitter:description" content="Explore African news organized by categories for easy browsing and discovery." />
     <meta name="twitter:image" content="assets/img/logo/linkimage.png" />
     <meta name="twitter:site" content="@AframiraNews" />
-    <!-- Favicon -->
+    
+    <!-- Favicon and Icons -->
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
-
-    <!-- Apple Touch Icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-180x180.png" />
     <link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-152x152.png" />
     <link rel="apple-touch-icon" sizes="144x144" href="apple-touch-icon-144x144.png" />
-
-    <!-- Android Chrome -->
     <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png" />
     <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png" />
-
-    <!-- Microsoft Tiles -->
     <meta name="msapplication-TileColor" content="#7ed321" />
     <meta name="msapplication-TileImage" content="mstile-144x144.png" />
-
-    <!-- Theme colors -->
     <meta name="theme-color" content="#7ed321" />
-
-    <!-- Web App Manifest -->
     <link rel="manifest" href="site.webmanifest" />
     
     <!-- Libraries -->
@@ -101,7 +93,7 @@
             padding: 0 15px;
         }
         
-        /* Header - Completely Redesigned */
+        /* Header - EXACTLY as homepage */
         .site-header {
             background: white;
             position: sticky;
@@ -221,7 +213,7 @@
             color: var(--primary-red);
         }
         
-        /* Navigation - Redesigned */
+        /* Navigation - EXACTLY as homepage */
         .ap-main-nav {
             position: relative;
         }
@@ -275,7 +267,7 @@
             background: linear-gradient(to top, rgba(193, 0, 0, 0.1), transparent);
         }
         
-        /* Desktop Mega Menu */
+        /* Desktop Mega Menu - EXACTLY as homepage */
         .mega-menu {
             position: absolute;
             left: 0;
@@ -350,7 +342,7 @@
             transform: translateX(5px);
         }
         
-        /* Mobile Navigation */
+        /* Mobile Navigation - EXACTLY as homepage */
         .nav-mobile {
             position: fixed;
             top: 0;
@@ -480,7 +472,7 @@
             padding-left: 20px;
         }
         
-        /* Breaking News Ticker - Enhanced */
+        /* Breaking News Ticker - Same as homepage */
         .breaking-news-ticker {
             background: linear-gradient(90deg, var(--primary-red), var(--dark-red));
             color: white;
@@ -532,169 +524,102 @@
             100% { transform: translateX(-100%); }
         }
         
-        /* Featured Carousel - Enhanced */
-        .featured-carousel {
-            margin-bottom: 40px;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: var(--shadow-medium);
-        }
-        
-        .carousel-item {
-            position: relative;
-            height: 500px;
-            overflow: hidden;
-        }
-        
-        .carousel-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.3));
-            z-index: 1;
-        }
-        
-        .carousel-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 8s ease;
-        }
-        
-        .carousel-item:hover .carousel-image {
-            transform: scale(1.05);
-        }
-        
-        .carousel-caption {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
+        /* Category Hero */
+        .category-hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
             color: white;
-            padding: 40px;
-            z-index: 2;
-        }
-        
-        .carousel-category {
-            color: var(--white);
-            background: var(--primary-red);
-            display: inline-block;
-            padding: 6px 18px;
-            border-radius: 20px;
-            font-weight: 700;
-            font-size: 12px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .carousel-title {
-            font-size: 36px;
-            margin-bottom: 15px;
-            line-height: 1.2;
-            font-weight: 800;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-        
-        .carousel-excerpt {
-            font-size: 17px;
-            opacity: 0.9;
-            margin-bottom: 20px;
-            max-width: 600px;
-        }
-        
-        /* Main Content Grid */
-        .content-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 30px;
-            margin: 40px 0;
-        }
-        
-        /* Top Stories Section */
-        .top-stories {
+            padding: 60px 0;
             margin-bottom: 40px;
         }
         
-        .section-header {
+        .category-hero h1 {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+        
+        .category-hero p {
+            font-size: 18px;
+            max-width: 700px;
+            opacity: 0.9;
+        }
+        
+        /* Category Navigation */
+        .category-nav {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 3px solid var(--primary-red);
-            margin-bottom: 25px;
-            padding-bottom: 15px;
+            overflow-x: auto;
+            gap: 10px;
+            padding: 20px 0;
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--light-gray);
         }
         
-        .section-title {
-            font-size: 26px;
-            color: var(--dark-gray);
-            font-weight: 700;
-            position: relative;
+        .category-nav::-webkit-scrollbar {
+            height: 4px;
         }
         
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 0;
-            width: 60px;
-            height: 3px;
+        .category-nav::-webkit-scrollbar-thumb {
             background: var(--primary-red);
+            border-radius: 4px;
         }
         
-        .view-all {
-            color: var(--primary-red);
+        .cat-nav-item {
+            padding: 12px 25px;
+            background: var(--light-gray);
+            border-radius: 30px;
+            white-space: nowrap;
             font-weight: 600;
-            font-size: 14px;
-            display: flex;
-            align-items: center;
-            gap: 5px;
             transition: var(--transition);
         }
         
-        .view-all:hover {
-            gap: 10px;
+        .cat-nav-item.active, .cat-nav-item:hover {
+            background: var(--primary-red);
+            color: white;
         }
         
-        .stories-grid {
+        /* Articles Grid */
+        .articles-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 60px;
         }
         
-        .story-card {
+        .article-card {
+            background: white;
             border-radius: 12px;
             overflow: hidden;
             box-shadow: var(--shadow-light);
             transition: var(--transition);
-            background: white;
             height: 100%;
+            display: flex;
+            flex-direction: column;
         }
         
-        .story-card:hover {
+        .article-card:hover {
             transform: translateY(-8px);
             box-shadow: var(--shadow-heavy);
         }
         
-        .story-image {
+        .article-image {
             width: 100%;
             height: 220px;
             object-fit: cover;
             transition: transform 0.5s ease;
         }
         
-        .story-card:hover .story-image {
+        .article-card:hover .article-image {
             transform: scale(1.05);
         }
         
-        .story-content {
+        .article-content {
             padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
         
-        .story-category {
+        .article-category {
             color: var(--primary-red);
             font-weight: 700;
             font-size: 12px;
@@ -704,26 +629,67 @@
             display: block;
         }
         
-        .story-title {
-            font-size: 19px;
-            margin-bottom: 12px;
+        .article-title {
+            font-size: 20px;
+            margin-bottom: 15px;
             line-height: 1.4;
             font-weight: 700;
+            flex-grow: 1;
         }
         
-        .story-excerpt {
+        .article-excerpt {
             color: var(--text-light);
-            font-size: 14px;
+            font-size: 15px;
             margin-bottom: 20px;
             line-height: 1.6;
         }
         
-        .story-meta {
+        .article-meta {
             display: flex;
             justify-content: space-between;
             color: var(--text-light);
             font-size: 13px;
             align-items: center;
+            margin-top: auto;
+        }
+        
+        .read-more {
+            color: var(--primary-red);
+            font-weight: 600;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            margin-top: 15px;
+        }
+        
+        .read-more:hover {
+            gap: 10px;
+        }
+        
+        /* Load More Button */
+        .load-more {
+            text-align: center;
+            margin: 40px 0 60px;
+        }
+        
+        .load-more-btn {
+            background: var(--white);
+            color: var(--primary-red);
+            border: 2px solid var(--primary-red);
+            padding: 14px 40px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 16px;
+        }
+        
+        .load-more-btn:hover {
+            background: var(--primary-red);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-medium);
         }
         
         /* Sidebar */
@@ -790,193 +756,15 @@
             margin-right: 12px;
         }
         
-        /* Multimedia Section */
-        .multimedia-section {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            padding: 50px 0;
+        /* Content Layout */
+        .content-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
             margin: 40px 0;
         }
         
-        .multimedia-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-        
-        .media-card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: var(--shadow-medium);
-            transition: var(--transition);
-        }
-        
-        .media-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-heavy);
-        }
-        
-        .video-thumbnail {
-            position: relative;
-            height: 220px;
-            overflow: hidden;
-        }
-        
-        .video-thumbnail img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .media-card:hover .video-thumbnail img {
-            transform: scale(1.1);
-        }
-        
-        .play-button {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 70px;
-            height: 70px;
-            background: rgba(193, 0, 0, 0.9);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 28px;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-        
-        .play-button:hover {
-            background: var(--primary-red);
-            transform: translate(-50%, -50%) scale(1.1);
-        }
-        
-        /* Category Rows */
-        .category-row {
-            margin: 50px 0;
-        }
-        
-        .category-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 25px;
-        }
-        
-        .category-title {
-            font-size: 24px;
-            color: var(--dark-gray);
-            font-weight: 700;
-        }
-        
-        .category-stories {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 25px;
-        }
-        
-        /* Opinion Section */
-        .opinion-section {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            padding: 50px 0;
-            margin: 40px 0;
-        }
-        
-        .opinion-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-        
-        .opinion-card {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: var(--shadow-medium);
-            transition: var(--transition);
-        }
-        
-        .opinion-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-heavy);
-        }
-        
-        .author-info {
-            display: flex;
-            align-items: center;
-            margin-bottom: 25px;
-        }
-        
-        .author-avatar {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-right: 20px;
-            border: 3px solid var(--primary-red);
-        }
-        
-        .author-name {
-            font-weight: 700;
-            font-size: 17px;
-            margin-bottom: 5px;
-        }
-        
-        .author-title {
-            color: var(--text-light);
-            font-size: 14px;
-        }
-        
-        /* Interactive Poll */
-        .poll-widget {
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: var(--shadow-medium);
-            margin: 30px 0;
-            border: 1px solid var(--medium-gray);
-        }
-        
-        .poll-question {
-            font-size: 18px;
-            margin-bottom: 20px;
-            color: var(--dark-gray);
-            font-weight: 600;
-        }
-        
-        .poll-options {
-            margin-bottom: 20px;
-        }
-        
-        .poll-option {
-            display: flex;
-            align-items: center;
-            padding: 15px;
-            margin-bottom: 10px;
-            background: var(--light-gray);
-            border-radius: 8px;
-            cursor: pointer;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .poll-option:hover {
-            background: var(--medium-gray);
-            transform: translateX(5px);
-        }
-        
-        .poll-option input {
-            margin-right: 15px;
-            transform: scale(1.2);
-        }
-        
-        /* Footer */
+        /* Footer - EXACTLY as homepage */
         .site-footer {
             background: linear-gradient(135deg, #222 0%, #111 100%);
             color: white;
@@ -1086,20 +874,16 @@
         
         /* Responsive Design */
         @media (max-width: 1200px) {
-            .content-grid {
+            .articles-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .content-layout {
                 grid-template-columns: 1fr;
             }
             
-            .stories-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .category-stories {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .multimedia-grid, .opinion-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .sidebar {
+                position: static;
             }
             
             .footer-grid {
@@ -1109,10 +893,6 @@
             .mega-menu {
                 width: 700px;
                 grid-template-columns: repeat(3, 1fr);
-            }
-            
-            .carousel-title {
-                font-size: 32px;
             }
         }
         
@@ -1154,12 +934,8 @@
                 grid-template-columns: repeat(2, 1fr);
             }
             
-            .carousel-item {
-                height: 400px;
-            }
-            
-            .carousel-title {
-                font-size: 28px;
+            .category-hero h1 {
+                font-size: 36px;
             }
         }
         
@@ -1172,24 +948,16 @@
                 display: none;
             }
             
-            .carousel-item {
-                height: 350px;
-            }
-            
-            .carousel-title {
-                font-size: 24px;
-            }
-            
-            .carousel-caption {
-                padding: 25px;
-            }
-            
-            .stories-grid, .category-stories {
+            .articles-grid {
                 grid-template-columns: 1fr;
             }
             
-            .multimedia-grid, .opinion-grid {
-                grid-template-columns: 1fr;
+            .category-hero {
+                padding: 40px 0;
+            }
+            
+            .category-hero h1 {
+                font-size: 28px;
             }
             
             .mega-menu {
@@ -1198,75 +966,36 @@
                 padding: 20px;
             }
             
-            .section-title {
-                font-size: 22px;
-            }
-            
-            .category-title {
-                font-size: 22px;
-            }
-            
             .footer-grid {
                 grid-template-columns: 1fr;
                 gap: 30px;
             }
             
             .logo {
-                height: 80px;
-            }
-            
-            .breaking-news-ticker {
-                font-size: 14px;
-            }
-            
-            .breaking-label {
-                font-size: 11px;
-                padding: 5px 12px;
+                height: 40px;
             }
         }
         
         @media (max-width: 576px) {
-            .carousel-item {
-                height: 300px;
+            .category-hero h1 {
+                font-size: 24px;
             }
             
-            .carousel-title {
-                font-size: 20px;
+            .category-nav {
+                padding: 15px 0;
             }
             
-            .carousel-excerpt {
-                font-size: 15px;
-                display: none;
+            .cat-nav-item {
+                padding: 10px 20px;
+                font-size: 14px;
             }
             
-            .story-title {
-                font-size: 17px;
+            .article-title {
+                font-size: 18px;
             }
             
-            .story-content {
-                padding: 20px;
-            }
-            
-            .section-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
-            }
-            
-            .view-all {
-                align-self: flex-end;
-            }
-            
-            .opinion-card {
-                padding: 20px;
-            }
-            
-            .poll-widget {
-                padding: 20px;
-            }
-            
-            .breaking-label {
-                display: none;
+            .article-excerpt {
+                font-size: 14px;
             }
         }
         
@@ -1278,7 +1007,7 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
+    <!-- Header - EXACTLY as homepage -->
     <header class="site-header">
         <div class="container">
             <div class="header-wrapper">
@@ -1293,14 +1022,14 @@
                     </div>
                 </div>
                 
-                <!-- Desktop Navigation -->
+                <!-- Desktop Navigation - EXACTLY as homepage -->
                 <nav class="ap-main-nav nav-desktop">
                     <ul class="nav-list">
                         <li class="nav-item">
-                            <a href="#" class="nav-link active"><i class="ri-home-4-line"></i> Home</a>
+                            <a href="index.html" class="nav-link"><i class="ri-home-4-line"></i> Home</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">Africa <i class="ri-arrow-down-s-line"></i></a>
+                            <a href="category.html" class="nav-link active">Africa <i class="ri-arrow-down-s-line"></i></a>
                             <div class="mega-menu">
                                 <div class="mega-column">
                                     <h4><i class="ri-map-2-line"></i> Regions</h4>
@@ -1386,7 +1115,7 @@
         </div>
     </header>
 
-    <!-- Mobile Navigation Menu -->
+    <!-- Mobile Navigation Menu - EXACTLY as homepage -->
     <div class="nav-mobile">
         <div class="mobile-nav-content">
             <div class="mobile-nav-header">
@@ -1398,12 +1127,12 @@
             
             <ul class="mobile-nav-list">
                 <li class="mobile-nav-item">
-                    <a href="#" class="mobile-nav-link active">
+                    <a href="index.html" class="mobile-nav-link">
                         <span><i class="ri-home-4-line"></i> Home</span>
                     </a>
                 </li>
                 <li class="mobile-nav-item">
-                    <a href="#" class="mobile-nav-link" onclick="toggleSubmenu(event, this, 'africa-submenu')">
+                    <a href="category.html" class="mobile-nav-link active">
                         <span>Africa</span>
                         <i class="ri-arrow-down-s-line"></i>
                     </a>
@@ -1462,26 +1191,6 @@
                         <span>Sports</span>
                     </a>
                 </li>
-                <li class="mobile-nav-item">
-                    <a href="#" class="mobile-nav-link">
-                        <span>Science</span>
-                    </a>
-                </li>
-                <li class="mobile-nav-item">
-                    <a href="#" class="mobile-nav-link">
-                        <span>Weather</span>
-                    </a>
-                </li>
-                <li class="mobile-nav-item">
-                    <a href="#" class="mobile-nav-link">
-                        <span>Photos</span>
-                    </a>
-                </li>
-                <li class="mobile-nav-item">
-                    <a href="#" class="mobile-nav-link">
-                        <span>Videos</span>
-                    </a>
-                </li>
             </ul>
             
             <div class="sidebar-widget" style="margin-top: 30px; border: none; box-shadow: none;">
@@ -1495,7 +1204,7 @@
         </div>
     </div>
 
-    <!-- Breaking News Ticker -->
+    <!-- Breaking News Ticker - Same as homepage -->
     <div class="breaking-news-ticker">
         <div class="container">
             <div class="ticker-wrapper">
@@ -1508,246 +1217,101 @@
         </div>
     </div>
 
-    <!-- Featured Carousel Section -->
-    <!-- Change the carousel items to link to articles -->
-    <div class="owl-carousel" id="mainCarousel">
-        <div class="carousel-item">
-            <a href="article.html?id=article-1">
-                <img src="https://oaflad.org/wp-content/uploads/2024/07/img_9484-1.jpg" alt="AU Summit" class="carousel-image">
-                <div class="carousel-caption">
-                    <span class="carousel-category">Politics</span>
-                    <h2 class="carousel-title">Historic AU Summit Concludes with Major Security and Economic Agreements</h2>
-                    <p class="carousel-excerpt">African leaders have concluded a landmark summit in Addis Ababa with agreements on continental security cooperation...</p>
-                    <div class="story-meta">By Godfred Dabo • 2 hours ago</div>
-                </div>
-            </a>
+    <!-- Category Hero -->
+    <section class="category-hero">
+        <div class="container">
+            <h1>All News Categories</h1>
+            <p>Browse the latest news stories from across Africa, organized by category for easy discovery.</p>
         </div>
-        
-        <div class="carousel-item">
-            <a href="article.html?id=article-2">
-                <img src="https://morgantechnicaltraining.co.ke/wp-content/uploads/2025/07/14.jpg" alt="Technology" class="carousel-image">
-                <div class="carousel-caption">
-                    <span class="carousel-category">Technology</span>
-                    <h2 class="carousel-title">Kenyan AI Startup Secures $50M Funding to Expand Across Africa</h2>
-                    <p class="carousel-excerpt">Nairobi-based artificial intelligence company AICorp has raised a record funding round led by international investors...</p>
-                    <div class="story-meta">By Joseph Obinkyere • 45 minutes ago</div>
-                </div>
-            </a>
+    </section>
+
+    <div class="container">
+        <!-- Category Navigation -->
+        <div class="category-nav">
+            <a href="#" class="cat-nav-item active" data-category="all">All Categories</a>
+            <a href="#" class="cat-nav-item" data-category="politics">Politics</a>
+            <a href="#" class="cat-nav-item" data-category="business">Business</a>
+            <a href="#" class="cat-nav-item" data-category="technology">Technology</a>
+            <a href="#" class="cat-nav-item" data-category="health">Health</a>
+            <a href="#" class="cat-nav-item" data-category="sports">Sports</a>
+            <a href="#" class="cat-nav-item" data-category="environment">Environment</a>
+            <a href="#" class="cat-nav-item" data-category="entertainment">Entertainment</a>
+            <a href="#" class="cat-nav-item" data-category="opinion">Opinion</a>
         </div>
-        
-        <div class="carousel-item">
-            <a href="article.html?id=article-3">
-                <img src="https://www.atalayar.com/asset/thumbnail,1920,1080,center,center/media/atalayar/images/2025/06/04/2025060413344668577.jpg" alt="Sports" class="carousel-image">
-                <div class="carousel-caption">
-                    <span class="carousel-category">Sports</span>
-                    <h2 class="carousel-title">AFCON 2025: Host Nation Morocco Prepares for Continental Tournament</h2>
-                    <p class="carousel-excerpt">With six months to go, preparations are in full swing for Africa's biggest football tournament...</p>
-                    <div class="story-meta">By Kwame Osei • 3 hours ago</div>
+
+        <div class="content-layout">
+            <!-- Main Content -->
+            <div class="main-content">
+                <div class="articles-grid" id="articlesGrid">
+                    <!-- Articles will be loaded dynamically via JavaScript -->
                 </div>
-            </a>
+
+                <!-- Load More Button -->
+                <div class="load-more">
+                    <button class="load-more-btn" id="loadMoreBtn">
+                        <i class="ri-refresh-line"></i> Load More Articles
+                    </button>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <!-- Trending Now -->
+                <div class="sidebar-widget">
+                    <h3 class="widget-title"><i class="ri-fire-line"></i> Trending Now</h3>
+                    <ul class="trending-list">
+                        <li class="trending-item">
+                            <a href="article.html?id=trending-1">
+                                <span class="trending-rank">1</span>
+                                Pan-African Rail Network: Progress and Construction Delays
+                            </a>
+                            <div class="story-meta">102K reads</div>
+                        </li>
+                        <li class="trending-item">
+                            <a href="article.html?id=trending-2">
+                                <span class="trending-rank">2</span>
+                                African Cinema Breaks Global Box Office Records
+                            </a>
+                            <div class="story-meta">87K reads</div>
+                        </li>
+                        <li class="trending-item">
+                            <a href="article.html?id=trending-3">
+                                <span class="trending-rank">3</span>
+                                Congo Basin Deforestation Rate Slows for First Time
+                            </a>
+                            <div class="story-meta">76K reads</div>
+                        </li>
+                        <li class="trending-item">
+                            <a href="article.html?id=trending-4">
+                                <span class="trending-rank">4</span>
+                                Egypt's New Administrative Capital Nears Completion
+                            </a>
+                            <div class="story-meta">65K reads</div>
+                        </li>
+                        <li class="trending-item">
+                            <a href="article.html?id=trending-5">
+                                <span class="trending-rank">5</span>
+                                South Africa Unveils Major Renewable Energy Plan
+                            </a>
+                            <div class="story-meta">54K reads</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter Signup -->
+                <div class="sidebar-widget">
+                    <h3 class="widget-title"><i class="ri-mail-line"></i> Newsletter</h3>
+                    <p style="margin-bottom: 20px; font-size: 14px;">Get Africa's top stories delivered to your inbox daily.</p>
+                    <div class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Your email address">
+                        <button class="subscribe-btn" style="width: 100%;">Subscribe</button>
+                    </div>
+                </div>
+            </aside>
         </div>
     </div>
 
-    <!-- Top Stories Section -->
-    <!-- Update each story card with proper article links -->
-    <div class="stories-grid">
-        <article class="story-card">
-            <a href="article.html?id=article-4">
-                <img src="https://volitioncap.com/wp-content/uploads/2025/01/top-sectors-of-nigerias-economy-volition-cap-1.jpg" alt="Nigeria Economy" class="story-image">
-                <div class="story-content">
-                    <span class="story-category">Business</span>
-                    <h3 class="story-title">Nigeria's Economy Grows 4.2% in Q3 2025, Exceeding Projections</h3>
-                    <p class="story-excerpt">Strong performance in agriculture and technology sectors drives growth despite global challenges...</p>
-                    <div class="story-meta">
-                        <span>By Chika Nwosu</span>
-                        <span>15 minutes ago</span>
-                    </div>
-                </div>
-            </a>
-        </article>
-        
-        <article class="story-card">
-            <a href="article.html?id=article-5">
-                <img src="https://www.gavi.org/sites/default/files/vaccineswork/2021/Thumb/shutterstock_1744369802_h2.jpg" alt="Health" class="story-image">
-                <div class="story-content">
-                    <span class="story-category">Health</span>
-                    <h3 class="story-title">New Malaria Vaccine Shows 85% Efficacy in Final Trial Phase</h3>
-                    <p class="story-excerpt">Scientists at the Africa CDC announce breakthrough results for a new malaria vaccine that could prevent millions...</p>
-                    <div class="story-meta">
-                        <span>By Dr. Fatoumata Diallo</span>
-                        <span>5 hours ago</span>
-                    </div>
-                </div>
-            </a>
-        </article>
-        
-        <article class="story-card">
-            <a href="article.html?id=article-6">
-                <img src="https://www.wfp.org/sites/default/files/styles/max_width_800/public/images/news/Azimi%20Abubakar%2C%2050%2C%20a%20resident%20of%20Gasamu%2C%20wades%20through%20the%20floodwater%20in%20Jakusko%20LGA%20of%20Yobe%20State%2C%20Nigeria%2C%20on%2001%20October%202022.%20%C2%A9WFP.webp?itok=ipLwn87C" alt="Environment" class="story-image">
-                <div class="story-content">
-                    <span class="story-category">Environment</span>
-                    <h3 class="story-title">Record Rainfall Floods Coastal Cities Across West Africa</h3>
-                    <p class="story-excerpt">Unprecedented rainfall has caused severe flooding in Lagos, Accra, and Abidjan, displacing thousands...</p>
-                    <div class="story-meta">
-                        <span>By Kofi Mensah</span>
-                        <span>1 hour ago</span>
-                    </div>
-                </div>
-            </a>
-        </article>
-        
-        <article class="story-card">
-            <a href="article.html?id=article-7">
-                <img src="https://media.licdn.com/dms/image/v2/D4D12AQF8zlvl4wfpng/article-cover_image-shrink_720_1280/B4DZacXYmlHwAI-/0/1746380101414?e=2147483647&v=beta&t=su0VClXHfYN4QbsBx-9hzY0Spe4iGHZ4_i8xUV42-sc" alt="Technology" class="story-image">
-                <div class="story-content">
-                    <span class="story-category">Technology</span>
-                    <h3 class="story-title">Pan-African Digital Currency Launch Faces Regulatory Hurdles</h3>
-                    <p class="story-excerpt">The proposed AfriCoin digital currency, intended to facilitate cross-border trade, faces regulatory challenges...</p>
-                    <div class="story-meta">
-                        <span>By Naledi Modise</span>
-                        <span>3 hours ago</span>
-                    </div>
-                </div>
-            </a>
-        </article>
-    </div>
-
-    <!-- Business & Markets Row -->
-    <div class="category-stories">
-        <article class="story-card">
-            <a href="article.html?id=article-8">
-                <img src="https://nairametrics.com/wp-content/uploads/2023/06/stock-market-forex-trading-graph-graphic-concept_73426-106.jpeg" alt="Stock Market" class="story-image">
-                <div class="story-content">
-                    <span class="story-category">Markets</span>
-                    <h3 class="story-title">African Stock Markets Show Mixed Results in Early Trading</h3>
-                    <div class="story-meta">30 minutes ago</div>
-                </div>
-            </a>
-        </article>
-        
-        <!-- Note: The following articles don't have IDs in article.html, so I'll keep them as placeholder links -->
-        <article class="story-card">
-            <a href="#">
-                <img src="https://plus.unsplash.com/premium_photo-1666976506270-29610b4af0e1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Agriculture" class="story-image">
-                <div class="story-content">
-                    <span class="story-category">Agriculture</span>
-                    <h3 class="story-title">New Farming Techniques Boost Yields in Sahel Region</h3>
-                    <div class="story-meta">2 hours ago</div>
-                </div>
-            </a>
-        </article>
-        
-        <article class="story-card">
-            <a href="#">
-                <img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Energy" class="story-image">
-                <div class="story-content">
-                    <span class="story-category">Energy</span>
-                    <h3 class="story-title">Renewable Energy Investments Surge Across East Africa</h3>
-                    <div class="story-meta">4 hours ago</div>
-                </div>
-            </a>
-        </article>
-        
-        <article class="story-card">
-            <a href="#">
-                <img src="https://www.naijapreneur.com/wp-content/uploads/2025/03/Unlocking-Africas-Potential-Why-Intra-African-Trade-is-the-Key-to-Economic-Growth.webp" alt="Trade" class="story-image">
-                <div class="story-content">
-                    <span class="story-category">Trade</span>
-                    <h3 class="story-title">Intra-African Trade Grows 15% Following AfCFTA Implementation</h3>
-                    <div class="story-meta">6 hours ago</div>
-                </div>
-            </a>
-        </article>
-    </div>
-
-    <!-- Trending Now Sidebar -->
-    <ul class="trending-list">
-        <li class="trending-item">
-            <a href="article.html?id=article-9">
-                <span class="trending-rank">1</span>
-                Pan-African Rail Network: Progress and Construction Delays
-            </a>
-            <div class="story-meta">102K reads</div>
-        </li>
-        <li class="trending-item">
-            <a href="article.html?id=trending-2">
-                <span class="trending-rank">2</span>
-                African Cinema Breaks Global Box Office Records
-            </a>
-            <div class="story-meta">87K reads</div>
-        </li>
-        <li class="trending-item">
-            <a href="article.html?id=article-10">
-                <span class="trending-rank">3</span>
-                Congo Basin Deforestation Rate Slows for First Time
-            </a>
-            <div class="story-meta">76K reads</div>
-        </li>
-        <li class="trending-item">
-            <a href="#">
-                <span class="trending-rank">4</span>
-                Egypt's New Administrative Capital Nears Completion
-            </a>
-            <div class="story-meta">65K reads</div>
-        </li>
-        <li class="trending-item">
-            <a href="#">
-                <span class="trending-rank">5</span>
-                South Africa Unveils Major Renewable Energy Plan
-            </a>
-            <div class="story-meta">54K reads</div>
-        </li>
-    </ul>
-
-    <!-- Sports Section -->
-    <div class="category-stories">
-        <article class="story-card">
-            <a href="article.html?id=article-11">
-                <img src="https://assets.khelnow.com/news/uploads/2024/02/AFCON-2025.jpeg" alt="Football" class="story-image">
-                <div class="story-content">
-                    <span class="story-category">Football</span>
-                    <h3 class="story-title">AFCON 2025: Team Preparations Enter Final Phase</h3>
-                    <div class="story-meta">2 hours ago</div>
-                </div>
-            </a>
-        </article>
-        
-        <article class="story-card">
-            <a href="article.html?id=article-12">
-                <img src="https://www.newtimes.co.rw/thenewtimes/uploads/images/2023/07/06/thumbs/1200x700/22970.jpg" alt="Basketball" class="story-image">
-                <div class="story-content">
-                    <span class="story-category">Basketball</span>
-                    <h3 class="story-title">NBA Africa Game Returns to Johannesburg in 2026</h3>
-                    <div class="story-meta">5 hours ago</div>
-                </div>
-            </a>
-        </article>
-        
-        <!-- Note: The following sports articles don't have IDs in article.html -->
-        <article class="story-card">
-            <a href="#">
-                <img src="https://npr.brightspotcdn.com/dims4/default/10ec38a/2147483647/strip/true/crop/4029x3022+0+0/resize/1760x1320!/format/webp/quality/90/?url=https%3A%2F%2Fmedia.npr.org%2Fassets%2Fimg%2F2022%2F09%2F25%2Fap22268343272557-aec232ef23dcb8f92117dd1a7bb7fed18bd7bca3.jpg" alt="Athletics" class="story-image">
-                <div class="story-content">
-                    <span class="story-category">Athletics</span>
-                    <h3 class="story-title">Kenyan Runners Dominate Berlin Marathon</h3>
-                    <div class="story-meta">8 hours ago</div>
-                </div>
-            </a>
-        </article>
-        
-        <article class="story-card">
-            <a href="#">
-                <img src="https://www.springboks.rugby/media/2ouj3p5b/190826-springbok-rwc-squad.jpg?anchor=center&mode=crop&width=945&height=472&rnd=132380782119170000" alt="Rugby" class="story-image">
-                <div class="story-content">
-                    <span class="story-category">Rugby</span>
-                    <h3 class="story-title">Springboks Announce Squad for European Tour</h3>
-                    <div class="story-meta">12 hours ago</div>
-                </div>
-            </a>
-        </article>
-    </div>
-
-    <!-- Footer -->
+    <!-- Footer - EXACTLY as homepage -->
     <footer class="site-footer">
         <div class="container">
             <div class="footer-grid">
@@ -1768,14 +1332,12 @@
                 <div class="footer-column">
                     <h3>Categories</h3>
                     <ul class="footer-links">
-                        <li><a href="#"><i class="ri-arrow-right-s-line"></i> Africa News</a></li>
-                        <li><a href="#"><i class="ri-arrow-right-s-line"></i> World News</a></li>
-                        <li><a href="#"><i class="ri-arrow-right-s-line"></i> Politics</a></li>
-                        <li><a href="#"><i class="ri-arrow-right-s-line"></i> Business & Economy</a></li>
-                        <li><a href="#"><i class="ri-arrow-right-s-line"></i> Technology</a></li>
-                        <li><a href="#"><i class="ri-arrow-right-s-line"></i> Health & Science</a></li>
-                        <li><a href="#"><i class="ri-arrow-right-s-line"></i> Entertainment</a></li>
-                        <li><a href="#"><i class="ri-arrow-right-s-line"></i> Sports</a></li>
+                        <li><a href="category.html?cat=politics"><i class="ri-arrow-right-s-line"></i> Politics</a></li>
+                        <li><a href="category.html?cat=business"><i class="ri-arrow-right-s-line"></i> Business & Economy</a></li>
+                        <li><a href="category.html?cat=technology"><i class="ri-arrow-right-s-line"></i> Technology</a></li>
+                        <li><a href="category.html?cat=health"><i class="ri-arrow-right-s-line"></i> Health & Science</a></li>
+                        <li><a href="category.html?cat=sports"><i class="ri-arrow-right-s-line"></i> Sports</a></li>
+                        <li><a href="category.html?cat=entertainment"><i class="ri-arrow-right-s-line"></i> Entertainment</a></li>
                     </ul>
                 </div>
                 
@@ -1812,11 +1374,10 @@
     </footer>
 
     <script>
-        // Real-time Date and Time
+        // Real-time Date and Time (same as homepage)
         function updateDateTime() {
             const now = new Date();
             
-            // Format date
             const dateOptions = { 
                 weekday: 'long', 
                 year: 'numeric', 
@@ -1825,7 +1386,6 @@
             };
             const dateString = now.toLocaleDateString('en-US', dateOptions);
             
-            // Format time
             const timeOptions = { 
                 hour: '2-digit', 
                 minute: '2-digit',
@@ -1834,46 +1394,38 @@
             };
             const timeString = now.toLocaleTimeString('en-US', timeOptions);
             
-            // Update DOM
             document.getElementById('currentDate').textContent = dateString;
             document.getElementById('currentTime').textContent = timeString;
         }
         
-        // Update time immediately and every second
         updateDateTime();
         setInterval(updateDateTime, 1000);
         
-        // Mobile Navigation Functions
+        // Mobile Navigation Functions (same as homepage)
         function toggleMobileMenu() {
             const navMobile = document.querySelector('.nav-mobile');
             const body = document.body;
             
             if (navMobile.classList.contains('active')) {
-                // Close menu
                 navMobile.classList.remove('active');
                 body.style.overflow = '';
             } else {
-                // Open menu
                 navMobile.classList.add('active');
                 body.style.overflow = 'hidden';
             }
         }
+        
         function toggleSubmenu(event, element, submenuId) {
             event.preventDefault();
             event.stopPropagation();
             
-            // Toggle active class on clicked item
             element.classList.toggle('active');
-            
-            // Get the submenu
             const submenu = document.getElementById(submenuId);
             
-            // Toggle submenu
             if (submenu.classList.contains('active')) {
                 submenu.classList.remove('active');
                 submenu.style.maxHeight = '0';
             } else {
-                // Close other open submenus
                 document.querySelectorAll('.mobile-submenu.active').forEach(menu => {
                     if (menu.id !== submenuId) {
                         menu.classList.remove('active');
@@ -1890,22 +1442,237 @@
             }
         }
         
-        // Initialize Owl Carousel
-        $(document).ready(function(){
-            $("#mainCarousel").owlCarousel({
-                items: 1,
-                loop: true,
-                autoplay: true,
-                autoplayTimeout: 6000,
-                autoplayHoverPause: true,
-                nav: true,
-                navText: ['<i class="ri-arrow-left-s-line"></i>', '<i class="ri-arrow-right-s-line"></i>'],
-                dots: true,
-                animateOut: 'fadeOut',
-                animateIn: 'fadeIn'
+        // Article Data - All articles from homepage
+        const articlesData = [
+            {
+                id: "article-1",
+                category: "politics",
+                title: "Historic AU Summit Concludes with Major Security and Economic Agreements",
+                excerpt: "African leaders have concluded a landmark summit in Addis Ababa with agreements on continental security cooperation and economic integration.",
+                image: "https://oaflad.org/wp-content/uploads/2024/07/img_9484-1.jpg",
+                author: "Godfred Dabo",
+                time: "2 hours ago",
+                date: "Oct 28, 2025",
+                readTime: "5 min read",
+                views: "12,845"
+            },
+            {
+                id: "article-2",
+                category: "technology",
+                title: "Kenyan AI Startup Secures $50M Funding to Expand Across Africa",
+                excerpt: "Nairobi-based artificial intelligence company AICorp has raised a record funding round led by international investors to expand operations.",
+                image: "https://morgantechnicaltraining.co.ke/wp-content/uploads/2025/07/14.jpg",
+                author: "Joseph Obinkyere",
+                time: "45 minutes ago",
+                date: "Oct 28, 2025",
+                readTime: "4 min read",
+                views: "8,921"
+            },
+            {
+                id: "article-3",
+                category: "sports",
+                title: "AFCON 2025: Host Nation Morocco Prepares for Continental Tournament",
+                excerpt: "With six months to go, preparations are in full swing for Africa's biggest football tournament in Morocco.",
+                image: "https://www.atalayar.com/asset/thumbnail,1920,1080,center,center/media/atalayar/images/2025/06/04/2025060413344668577.jpg",
+                author: "Kwame Osei",
+                time: "3 hours ago",
+                date: "Oct 28, 2025",
+                readTime: "3 min read",
+                views: "15,234"
+            },
+            {
+                id: "article-4",
+                category: "business",
+                title: "Nigeria's Economy Grows 4.2% in Q3 2025, Exceeding Projections",
+                excerpt: "Strong performance in agriculture and technology sectors drives growth despite global economic challenges and inflation concerns.",
+                image: "https://volitioncap.com/wp-content/uploads/2025/01/top-sectors-of-nigerias-economy-volition-cap-1.jpg",
+                author: "Chika Nwosu",
+                time: "15 minutes ago",
+                date: "Oct 28, 2025",
+                readTime: "6 min read",
+                views: "9,432"
+            },
+            {
+                id: "article-5",
+                category: "health",
+                title: "New Malaria Vaccine Shows 85% Efficacy in Final Trial Phase",
+                excerpt: "Scientists at the Africa CDC announce breakthrough results for a new malaria vaccine that could prevent millions of cases annually.",
+                image: "https://www.gavi.org/sites/default/files/vaccineswork/2021/Thumb/shutterstock_1744369802_h2.jpg",
+                author: "Dr. Fatoumata Diallo",
+                time: "5 hours ago",
+                date: "Oct 28, 2025",
+                readTime: "5 min read",
+                views: "11,567"
+            },
+            {
+                id: "article-6",
+                category: "environment",
+                title: "Record Rainfall Floods Coastal Cities Across West Africa",
+                excerpt: "Unprecedented rainfall has caused severe flooding in Lagos, Accra, and Abidjan, displacing thousands and causing extensive damage.",
+                image: "https://www.wfp.org/sites/default/files/styles/max_width_800/public/images/news/Azimi%20Abubakar%2C%2050%2C%20a%20resident%20of%20Gasamu%2C%20wades%20through%20the%20floodwater%20in%20Jakusko%20LGA%20of%20Yobe%20State%2C%20Nigeria%2C%20on%2001%20October%202022.%20%C2%A9WFP.webp?itok=ipLwn87C",
+                author: "Kofi Mensah",
+                time: "1 hour ago",
+                date: "Oct 28, 2025",
+                readTime: "4 min read",
+                views: "7,890"
+            },
+            {
+                id: "article-7",
+                category: "technology",
+                title: "Pan-African Digital Currency Launch Faces Regulatory Hurdles",
+                excerpt: "The proposed AfriCoin digital currency, intended to facilitate cross-border trade, faces regulatory challenges from central banks.",
+                image: "https://media.licdn.com/dms/image/v2/D4D12AQF8zlvl4wfpng/article-cover_image-shrink_720_1280/B4DZacXYmlHwAI-/0/1746380101414?e=2147483647&v=beta&t=su0VClXHfYN4QbsBx-9hzY0Spe4iGHZ4_i8xUV42-sc",
+                author: "Naledi Modise",
+                time: "3 hours ago",
+                date: "Oct 28, 2025",
+                readTime: "5 min read",
+                views: "10,123"
+            },
+            {
+                id: "article-8",
+                category: "business",
+                title: "African Stock Markets Show Mixed Results in Early Trading",
+                excerpt: "Major African stock exchanges show varied performance amid global economic uncertainty and regional policy changes.",
+                image: "https://nairametrics.com/wp-content/uploads/2023/06/stock-market-forex-trading-graph-graphic-concept_73426-106.jpeg",
+                author: "Financial Desk",
+                time: "30 minutes ago",
+                date: "Oct 28, 2025",
+                readTime: "3 min read",
+                views: "5,678"
+            },
+            {
+                id: "article-9",
+                category: "business",
+                title: "Pan-African Rail Network: Progress and Construction Delays",
+                excerpt: "Ambitious continental rail project faces implementation challenges but makes significant progress in key corridors.",
+                image: "https://www.railway-technology.com/wp-content/uploads/sites/24/2023/05/shutterstock_2262483231.jpg",
+                author: "Transport Desk",
+                time: "1 day ago",
+                date: "Oct 27, 2025",
+                readTime: "7 min read",
+                views: "102,845"
+            },
+            {
+                id: "article-10",
+                category: "environment",
+                title: "Congo Basin Deforestation Rate Slows for First Time",
+                excerpt: "Conservation efforts show positive results as deforestation in the Congo Basin declines by 15% compared to last year.",
+                image: "https://www.worldwildlife.org/assets/gallery-images/Original_WW249885.jpg",
+                author: "Environmental Desk",
+                time: "2 days ago",
+                date: "Oct 26, 2025",
+                readTime: "6 min read",
+                views: "76,543"
+            },
+            {
+                id: "article-11",
+                category: "sports",
+                title: "AFCON 2025: Team Preparations Enter Final Phase",
+                excerpt: "National teams intensify training camps as the Africa Cup of Nations approaches, with Morocco as host nation.",
+                image: "https://assets.khelnow.com/news/uploads/2024/02/AFCON-2025.jpeg",
+                author: "Sports Desk",
+                time: "2 hours ago",
+                date: "Oct 28, 2025",
+                readTime: "4 min read",
+                views: "23,456"
+            },
+            {
+                id: "article-12",
+                category: "sports",
+                title: "NBA Africa Game Returns to Johannesburg in 2026",
+                excerpt: "The NBA announces return of the Africa Game to Johannesburg, featuring top players of African descent.",
+                image: "https://www.newtimes.co.rw/thenewtimes/uploads/images/2023/07/06/thumbs/1200x700/22970.jpg",
+                author: "Sports Desk",
+                time: "5 hours ago",
+                date: "Oct 28, 2025",
+                readTime: "3 min read",
+                views: "18,901"
+            }
+        ];
+
+        // Function to render articles
+        function renderArticles(filter = 'all', start = 0, limit = 6) {
+            const grid = document.getElementById('articlesGrid');
+            const filteredArticles = filter === 'all' 
+                ? articlesData 
+                : articlesData.filter(article => article.category === filter);
+            
+            const articlesToShow = filteredArticles.slice(start, start + limit);
+            
+            if (start === 0) {
+                grid.innerHTML = '';
+            }
+            
+            articlesToShow.forEach(article => {
+                const articleCard = document.createElement('article');
+                articleCard.className = 'article-card';
+                articleCard.setAttribute('data-category', article.category);
+                
+                articleCard.innerHTML = `
+                    <img src="${article.image}" alt="${article.title}" class="article-image">
+                    <div class="article-content">
+                        <span class="article-category">${article.category.charAt(0).toUpperCase() + article.category.slice(1)}</span>
+                        <h3 class="article-title">${article.title}</h3>
+                        <p class="article-excerpt">${article.excerpt}</p>
+                        <div class="article-meta">
+                            <span>By ${article.author}</span>
+                            <span>${article.time}</span>
+                        </div>
+                        <a href="article.html?id=${article.id}" class="read-more">Read Full Article <i class="ri-arrow-right-line"></i></a>
+                    </div>
+                `;
+                
+                grid.appendChild(articleCard);
             });
             
-            // Initialize AOS (Animate on Scroll)
+            // Update load more button visibility
+            const loadMoreBtn = document.getElementById('loadMoreBtn');
+            const totalDisplayed = start + limit;
+            
+            if (totalDisplayed >= filteredArticles.length) {
+                loadMoreBtn.style.display = 'none';
+            } else {
+                loadMoreBtn.style.display = 'block';
+            }
+            
+            // Initialize AOS for new elements
+            AOS.refresh();
+        }
+
+        // Category filtering
+        let currentCategory = 'all';
+        let currentStart = 0;
+        const articlesPerLoad = 6;
+
+        document.querySelectorAll('.cat-nav-item').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Update active category
+                document.querySelectorAll('.cat-nav-item').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                this.classList.add('active');
+                
+                // Get category
+                const category = this.getAttribute('data-category');
+                currentCategory = category;
+                currentStart = 0;
+                
+                // Render articles
+                renderArticles(category, 0, articlesPerLoad);
+            });
+        });
+
+        // Load more functionality
+        document.getElementById('loadMoreBtn').addEventListener('click', function() {
+            currentStart += articlesPerLoad;
+            renderArticles(currentCategory, currentStart, articlesPerLoad);
+        });
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize AOS
             AOS.init({
                 duration: 1000,
                 once: true,
@@ -1913,100 +1680,65 @@
                 easing: 'ease-out-cubic'
             });
             
-            // Mobile menu toggle event
+            // Check URL for category parameter
+            const urlParams = new URLSearchParams(window.location.search);
+            const categoryParam = urlParams.get('cat');
+            
+            if (categoryParam && categoryParam !== 'all') {
+                // Set active category
+                document.querySelectorAll('.cat-nav-item').forEach(btn => {
+                    if (btn.getAttribute('data-category') === categoryParam) {
+                        btn.classList.add('active');
+                        document.querySelector('.cat-nav-item[data-category="all"]').classList.remove('active');
+                        currentCategory = categoryParam;
+                    }
+                });
+            }
+            
+            // Render initial articles
+            renderArticles(currentCategory, 0, articlesPerLoad);
+            
+            // Mobile menu toggle events
             document.querySelector('.mobile-menu-toggle').addEventListener('click', toggleMobileMenu);
             document.querySelector('.mobile-close-btn').addEventListener('click', toggleMobileMenu);
-
-            // Close mobile menu when clicking outside the content
+            
+            // Close mobile menu when clicking outside
             document.querySelector('.nav-mobile').addEventListener('click', function(e) {
                 if (e.target === this) {
                     toggleMobileMenu();
                 }
             });
-
+            
             // Close mobile menu when clicking a link (except submenu toggles)
             document.querySelectorAll('.mobile-nav-link').forEach(link => {
                 link.addEventListener('click', function(e) {
-                    // Check if this link has a submenu
                     const hasSubmenu = this.nextElementSibling && this.nextElementSibling.classList.contains('mobile-submenu');
                     
                     if (!hasSubmenu) {
                         toggleMobileMenu();
                     }
                 });
-            });            
-            // Story click tracking - only for elements without valid links
-            $('.story-card').on('click', function(e) {
-                // Check if this card has an anchor tag with a real link
-                const $anchor = $(this).find('a');
-                const href = $anchor.attr('href');
-                
-                // If no anchor tag, or anchor has no href, or href is just '#', show the alert
-                if ($anchor.length === 0 || !href || href === '#' || href === '') {
-                    e.preventDefault();
-                    const storyTitle = $(this).find('.story-title').text();
-                    console.log('Story clicked:', storyTitle);
-                    
-                    // Simulate navigation after tracking
-                    setTimeout(() => {
-                        alert('In production, this would navigate to: ' + storyTitle);
-                    }, 300);
-                }
-                // Otherwise, let the anchor tag handle the navigation normally
-            });
-
-            
-            // Poll submission
-            $('.poll-widget button').on('click', function() {
-                const selectedOption = $('input[name="poll"]:checked').val();
-                if (selectedOption) {
-                    alert('Thank you for voting! You selected: ' + selectedOption);
-                    $(this).html('<i class="ri-check-line"></i> Voted').prop('disabled', true);
-                } else {
-                    alert('Please select an option before voting.');
-                }
             });
             
-            // Newsletter form submission
-            $('.newsletter-form button').on('click', function() {
-                const email = $(this).siblings('.newsletter-input').val();
-                if (email && email.includes('@')) {
-                    alert('Thank you for subscribing with: ' + email);
-                    $(this).siblings('.newsletter-input').val('');
-                    $(this).html('<i class="ri-check-line"></i> Subscribed').prop('disabled', true);
-                } else {
-                    alert('Please enter a valid email address.');
-                }
+            // Search functionality
+            document.querySelector('.search-btn').addEventListener('click', function() {
+                alert('Search functionality would open a search modal in production.');
             });
             
-            // Smooth scrolling for anchor links
-            $('a[href^="#"]').on('click', function(e) {
-                if ($(this).attr('href') !== '#') {
-                    e.preventDefault();
-                    const target = $(this.hash);
-                    if (target.length) {
-                        $('html, body').animate({
-                            scrollTop: target.offset().top - 80
-                        }, 800);
+            // Newsletter subscription
+            document.querySelectorAll('.newsletter-form .subscribe-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const input = this.previousElementSibling;
+                    if (input && input.value && input.value.includes('@')) {
+                        alert('Thank you for subscribing to our newsletter!');
+                        input.value = '';
+                    } else {
+                        alert('Please enter a valid email address.');
                     }
-                }
+                });
             });
-        });
-        
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('.site-header');
-            if (window.scrollY > 50) {
-                header.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
-                header.style.padding = '0';
-            } else {
-                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.05)';
-                header.style.padding = '0';
-            }
-        });
-        
-        // Add smooth hover effects for desktop mega menus
-        document.addEventListener('DOMContentLoaded', function() {
+            
+            // Mega menu hover effects for desktop
             const navItems = document.querySelectorAll('.nav-item');
             
             navItems.forEach(item => {
@@ -2031,36 +1763,6 @@
                             }, 300);
                         }
                     });
-                }
-            });
-        });
-        
-        // Lazy load images as they enter viewport
-        const imageObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    if (img.dataset.src) {
-                        img.src = img.dataset.src;
-                        img.classList.add('loaded');
-                        observer.unobserve(img);
-                    }
-                }
-            });
-        }, {
-            rootMargin: '50px'
-        });
-        
-        // Observe all images with data-src attribute
-        document.addEventListener('DOMContentLoaded', function() {
-            document.querySelectorAll('img[data-src]').forEach(img => {
-                imageObserver.observe(img);
-            });
-            
-            // Add loading="lazy" to all images for better performance
-            document.querySelectorAll('img').forEach(img => {
-                if (!img.loading) {
-                    img.loading = 'lazy';
                 }
             });
         });

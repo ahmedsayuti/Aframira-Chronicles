@@ -1553,12 +1553,12 @@
                 <section class="top-stories">
                     <div class="section-header">
                         <h2 class="section-title">Top Stories</h2>
-                        <a href="#" class="view-all">View All <i class="ri-arrow-right-line"></i></a>
+                        <a href="category.html" class="view-all">View All <i class="ri-arrow-right-line"></i></a>
                     </div>
                     
                     <div class="stories-grid">
                         <article class="story-card">
-                            <a href="#">
+                            <a href="article.html?id=article-4">
                                 <img src="https://volitioncap.com/wp-content/uploads/2025/01/top-sectors-of-nigerias-economy-volition-cap-1.jpg" alt="Nigeria Economy" class="story-image">
                                 <div class="story-content">
                                     <span class="story-category">Business</span>
@@ -1573,7 +1573,7 @@
                         </article>
                         
                         <article class="story-card">
-                            <a href="#">
+                            <a href="article.html?id=article-5">
                                 <img src="https://www.gavi.org/sites/default/files/vaccineswork/2021/Thumb/shutterstock_1744369802_h2.jpg" alt="Health" class="story-image">
                                 <div class="story-content">
                                     <span class="story-category">Health</span>
@@ -1588,7 +1588,7 @@
                         </article>
                         
                         <article class="story-card">
-                            <a href="#">
+                            <a href="article.html?id=article-6">
                                 <img src="https://www.wfp.org/sites/default/files/styles/max_width_800/public/images/news/Azimi%20Abubakar%2C%2050%2C%20a%20resident%20of%20Gasamu%2C%20wades%20through%20the%20floodwater%20in%20Jakusko%20LGA%20of%20Yobe%20State%2C%20Nigeria%2C%20on%2001%20October%202022.%20%C2%A9WFP.webp?itok=ipLwn87C" alt="Environment" class="story-image">
                                 <div class="story-content">
                                     <span class="story-category">Environment</span>
@@ -1603,7 +1603,7 @@
                         </article>
                         
                         <article class="story-card">
-                            <a href="#">
+                            <a href="article.html?id=article-7">
                                 <img src="https://media.licdn.com/dms/image/v2/D4D12AQF8zlvl4wfpng/article-cover_image-shrink_720_1280/B4DZacXYmlHwAI-/0/1746380101414?e=2147483647&v=beta&t=su0VClXHfYN4QbsBx-9hzY0Spe4iGHZ4_i8xUV42-sc" alt="Technology" class="story-image">
                                 <div class="story-content">
                                     <span class="story-category">Technology</span>
@@ -1648,7 +1648,7 @@
                     </div>
                     <div class="category-stories">
                         <article class="story-card">
-                            <a href="#">
+                            <a href="article.html?id=article-8">
                                 <img src="https://nairametrics.com/wp-content/uploads/2023/06/stock-market-forex-trading-graph-graphic-concept_73426-106.jpeg" alt="Stock Market" class="story-image">
                                 <div class="story-content">
                                     <span class="story-category">Markets</span>
@@ -1701,21 +1701,21 @@
                     <h3 class="widget-title"><i class="ri-fire-line"></i> Trending Now</h3>
                     <ul class="trending-list">
                         <li class="trending-item">
-                            <a href="#">
+                            <a href="article.html?id=article-9">
                                 <span class="trending-rank">1</span>
                                 Pan-African Rail Network: Progress and Construction Delays
                             </a>
                             <div class="story-meta">102K reads</div>
                         </li>
                         <li class="trending-item">
-                            <a href="#">
+                            <a href="article.html?id=trending-2">
                                 <span class="trending-rank">2</span>
                                 African Cinema Breaks Global Box Office Records
                             </a>
                             <div class="story-meta">87K reads</div>
                         </li>
                         <li class="trending-item">
-                            <a href="#">
+                            <a href="article.html?id=article-10">
                                 <span class="trending-rank">3</span>
                                 Congo Basin Deforestation Rate Slows for First Time
                             </a>
@@ -1843,7 +1843,7 @@
                 <div class="opinion-grid">
                     <div class="opinion-card">
                         <div class="author-info">
-                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Author" class="author-avatar">
+                            <img src="" alt="Author" class="author-avatar">
                             <div>
                                 <div class="author-name">Hubert Nkrumah</div>
                                 <div class="author-title">Economic Analyst</div>
@@ -1856,7 +1856,7 @@
                     
                     <div class="opinion-card">
                         <div class="author-info">
-                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Author" class="author-avatar">
+                            <img src="" alt="Author" class="author-avatar">
                             <div>
                                 <div class="author-name">Danjumma Dialoppe</div>
                                 <div class="author-title">Political Commentator</div>
@@ -1869,7 +1869,7 @@
                     
                     <div class="opinion-card">
                         <div class="author-info">
-                            <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Author" class="author-avatar">
+                            <img src="" alt="Author" class="author-avatar">
                             <div>
                                 <div class="author-name">Prof. Adebayo</div>
                                 <div class="author-title">Climate Scientist</div>
@@ -2125,16 +2125,24 @@
                     }
                 });
             });            
-            // Story click tracking
-            $('.story-card, .story-link').on('click', function(e) {
-                e.preventDefault();
-                const storyTitle = $(this).find('.story-title').text();
-                console.log('Story clicked:', storyTitle);
+            // Story click tracking - only for elements without valid links
+            $('.story-card').on('click', function(e) {
+                // Check if this card has an anchor tag with a real link
+                const $anchor = $(this).find('a');
+                const href = $anchor.attr('href');
                 
-                // Simulate navigation after tracking
-                setTimeout(() => {
-                    alert('In production, this would navigate to: ' + storyTitle);
-                }, 300);
+                // If no anchor tag, or anchor has no href, or href is just '#', show the alert
+                if ($anchor.length === 0 || !href || href === '#' || href === '') {
+                    e.preventDefault();
+                    const storyTitle = $(this).find('.story-title').text();
+                    console.log('Story clicked:', storyTitle);
+                    
+                    // Simulate navigation after tracking
+                    setTimeout(() => {
+                        alert('In production, this would navigate to: ' + storyTitle);
+                    }, 300);
+                }
+                // Otherwise, let the anchor tag handle the navigation normally
             });
             
             // Poll submission
