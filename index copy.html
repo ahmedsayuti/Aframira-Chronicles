@@ -340,7 +340,6 @@
         
         /* Mobile Navigation */
         .nav-mobile {
-            display: none;
             position: fixed;
             top: 0;
             left: 0;
@@ -351,10 +350,14 @@
             overflow-y: auto;
             transform: translateX(-100%);
             transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            visibility: hidden;
+            opacity: 0;
         }
         
         .nav-mobile.active {
             transform: translateX(0);
+            visibility: visible;
+            opacity: 1;
         }
         
         .mobile-nav-content {
@@ -363,8 +366,14 @@
             background: white;
             padding: 80px 20px 30px;
             position: relative;
+            transform: translateX(-100%);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
+
+        .nav-mobile.active .mobile-nav-content {
+            transform: translateX(0);
+        }
+
         .mobile-nav-header {
             position: absolute;
             top: 0;
@@ -376,6 +385,7 @@
             padding: 20px;
             background: var(--primary-red);
             color: white;
+            z-index: 1003;
         }
         
         .mobile-nav-header h3 {
@@ -2013,10 +2023,19 @@
         
         // Mobile Navigation Functions
         function toggleMobileMenu() {
-            document.querySelector('.nav-mobile').classList.toggle('active');
-            document.body.style.overflow = document.querySelector('.nav-mobile').classList.contains('active') ? 'hidden' : '';
+            const navMobile = document.querySelector('.nav-mobile');
+            const body = document.body;
+            
+            if (navMobile.classList.contains('active')) {
+                // Close menu
+                navMobile.classList.remove('active');
+                body.style.overflow = '';
+            } else {
+                // Open menu
+                navMobile.classList.add('active');
+                body.style.overflow = 'hidden';
+            }
         }
-        
         function toggleSubmenu(event, element, submenuId) {
             event.preventDefault();
             event.stopPropagation();
@@ -2037,7 +2056,10 @@
                     if (menu.id !== submenuId) {
                         menu.classList.remove('active');
                         menu.style.maxHeight = '0';
-                        menu.previousElementSibling.classList.remove('active');
+                        const parentLink = menu.previousElementSibling;
+                        if (parentLink && parentLink.classList.contains('mobile-nav-link')) {
+                            parentLink.classList.remove('active');
+                        }
                     }
                 });
                 
@@ -2070,23 +2092,27 @@
             });
             
             // Mobile menu toggle event
-            $('.mobile-menu-toggle').on('click', toggleMobileMenu);
-            $('.mobile-close-btn').on('click', toggleMobileMenu);
-            
-            // Close mobile menu when clicking outside
-            $('.nav-mobile').on('click', function(e) {
+            document.querySelector('.mobile-menu-toggle').addEventListener('click', toggleMobileMenu);
+            document.querySelector('.mobile-close-btn').addEventListener('click', toggleMobileMenu);
+
+            // Close mobile menu when clicking outside the content
+            document.querySelector('.nav-mobile').addEventListener('click', function(e) {
                 if (e.target === this) {
                     toggleMobileMenu();
                 }
             });
-            
-            // Close mobile menu when clicking a link
-            $('.mobile-nav-list a').on('click', function(e) {
-                if (!$(this).hasClass('mobile-nav-link') || !$(this).find('i').length) {
-                    toggleMobileMenu();
-                }
-            });
-            
+
+            // Close mobile menu when clicking a link (except submenu toggles)
+            document.querySelectorAll('.mobile-nav-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    // Check if this link has a submenu
+                    const hasSubmenu = this.nextElementSibling && this.nextElementSibling.classList.contains('mobile-submenu');
+                    
+                    if (!hasSubmenu) {
+                        toggleMobileMenu();
+                    }
+                });
+            });            
             // Story click tracking
             $('.story-card, .story-link').on('click', function(e) {
                 e.preventDefault();
