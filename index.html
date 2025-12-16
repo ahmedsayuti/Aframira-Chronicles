@@ -1,0 +1,1565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aframira Chronicles - Africa's Leading News Source</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+
+    <!-- Apple Touch Icons -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="apple-touch-icon-180x180.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="apple-touch-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="apple-touch-icon-144x144.png"
+    />
+
+    <!-- Android Chrome -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="android-chrome-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="android-chrome-512x512.png"
+    />
+
+    <!-- Microsoft Tiles -->
+    <meta name="msapplication-TileColor" content="#7ed321" />
+    <meta name="msapplication-TileImage" content="mstile-144x144.png" />
+
+    <!-- Theme colors -->
+    <meta name="theme-color" content="#7ed321" />
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="site.webmanifest" />
+    
+    <!-- Libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    
+    <style>
+        :root {
+            --primary-red: #C10000;
+            --dark-red: #8B0000;
+            --ap-blue: #1847A0;
+            --light-gray: #F5F5F5;
+            --medium-gray: #E0E0E0;
+            --dark-gray: #333333;
+            --text-light: #666666;
+            --white: #FFFFFF;
+            --black: #000000;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background: var(--white);
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+        
+        a:hover {
+            color: var(--primary-red);
+        }
+        
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header */
+        .site-header {
+            border-bottom: 1px solid var(--medium-gray);
+            position: sticky;
+            top: 0;
+            background: white;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo {
+            height: 120px;
+            width: auto;
+            margin-right: 20px;
+        }
+        
+        /* Placeholder for your logo - replace with <img src="your-logo.png" alt="Aframira Chronicles" class="logo"> */
+        .logo-placeholder {
+            height: 45px;
+            width: 220px;
+            background: var(--primary-red);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
+            border-radius: 4px;
+        }
+        
+        .live-datetime {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+        
+        .current-date {
+            font-size: 20px;
+            color: var(--text-light);
+        }
+        
+        .current-time {
+            font-size: 20px;
+            font-weight: bold;
+            color: var(--dark-gray);
+        }
+        
+        .header-actions {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .subscribe-btn {
+            background: var(--primary-red);
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .subscribe-btn:hover {
+            background: var(--dark-red);
+            transform: translateY(-2px);
+        }
+        
+        .search-btn {
+            background: none;
+            border: none;
+            font-size: 18px;
+            color: var(--dark-gray);
+            cursor: pointer;
+        }
+        
+        /* AP News Navigation */
+        .ap-main-nav {
+            display: flex;
+            border-top: 1px solid var(--medium-gray);
+            border-bottom: 1px solid var(--medium-gray);
+            position: relative;
+        }
+        
+        .nav-list {
+            display: flex;
+            width: 100%;
+            overflow-x: auto;
+        }
+        
+        .nav-item {
+            position: relative;
+        }
+        
+        .nav-link {
+            display: block;
+            padding: 15px 20px;
+            font-weight: bold;
+            font-size: 14px;
+            color: var(--dark-gray);
+            white-space: nowrap;
+            border-right: 1px solid var(--medium-gray);
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-red);
+            background: var(--light-gray);
+        }
+        
+        .nav-link.active {
+            color: var(--primary-red);
+            background: var(--light-gray);
+        }
+        
+        /* Mega Menu */
+        .mega-menu {
+            position: absolute;
+            left: 0;
+            top: 100%;
+            width: 100%;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 30px;
+            display: none;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            z-index: 1001;
+            border-top: 3px solid var(--primary-red);
+        }
+        
+        .nav-item:hover .mega-menu {
+            display: grid;
+        }
+        
+        .mega-column h4 {
+            color: var(--primary-red);
+            margin-bottom: 15px;
+            font-size: 16px;
+            border-bottom: 1px solid var(--medium-gray);
+            padding-bottom: 8px;
+        }
+        
+        .mega-column a {
+            display: block;
+            padding: 8px 0;
+            color: var(--text-light);
+            font-size: 14px;
+        }
+        
+        .mega-column a:hover {
+            color: var(--primary-red);
+            padding-left: 5px;
+        }
+        
+        /* Breaking News Ticker */
+        .breaking-news-ticker {
+            background: var(--primary-red);
+            color: white;
+            padding: 10px 0;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        
+        .ticker-container {
+            display: flex;
+            align-items: center;
+            animation: ticker 30s linear infinite;
+        }
+        
+        .breaking-label {
+            background: var(--black);
+            color: white;
+            padding: 4px 15px;
+            font-weight: bold;
+            font-size: 12px;
+            margin-right: 20px;
+            border-radius: 3px;
+            white-space: nowrap;
+        }
+        
+        .ticker-item {
+            margin-right: 40px;
+            white-space: nowrap;
+        }
+        
+        @keyframes ticker {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        
+        /* Featured Carousel */
+        .featured-carousel {
+            margin-bottom: 40px;
+        }
+        
+        .carousel-item {
+            position: relative;
+            height: 500px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .carousel-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .carousel-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            padding: 30px;
+        }
+        
+        .carousel-category {
+            color: var(--white);
+            background: var(--primary-red);
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 12px;
+            margin-bottom: 15px;
+        }
+        
+        .carousel-title {
+            font-size: 32px;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+        
+        .carousel-excerpt {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+        
+        /* Main Content Grid */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        /* Top Stories Section */
+        .top-stories {
+            margin-bottom: 40px;
+        }
+        
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--primary-red);
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+        }
+        
+        .section-title {
+            font-size: 24px;
+            color: var(--dark-gray);
+        }
+        
+        .view-all {
+            color: var(--primary-red);
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+        
+        .story-card {
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            transition: var(--transition);
+        }
+        
+        .story-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .story-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .story-content {
+            padding: 20px;
+        }
+        
+        .story-category {
+            color: var(--primary-red);
+            font-weight: bold;
+            font-size: 12px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .story-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+        
+        .story-excerpt {
+            color: var(--text-light);
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .story-meta {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-light);
+            font-size: 12px;
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+        
+        .sidebar-widget {
+            background: var(--light-gray);
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        
+        .widget-title {
+            font-size: 18px;
+            color: var(--dark-gray);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-red);
+        }
+        
+        .trending-list {
+            list-style: none;
+        }
+        
+        .trending-item {
+            padding: 15px 0;
+            border-bottom: 1px solid var(--medium-gray);
+        }
+        
+        .trending-item:last-child {
+            border-bottom: none;
+        }
+        
+        .trending-rank {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background: var(--primary-red);
+            color: white;
+            text-align: center;
+            line-height: 24px;
+            border-radius: 50%;
+            font-size: 12px;
+            margin-right: 10px;
+        }
+        
+        /* Multimedia Section */
+        .multimedia-section {
+            background: var(--light-gray);
+            padding: 40px 0;
+            margin: 40px 0;
+        }
+        
+        .multimedia-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .media-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+        }
+        
+        .video-thumbnail {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .video-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: rgba(193, 0, 0, 0.8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* Category Rows */
+        .category-row {
+            margin: 50px 0;
+        }
+        
+        .category-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        
+        .category-title {
+            font-size: 22px;
+            color: var(--dark-gray);
+        }
+        
+        .category-stories {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+        
+        /* Opinion Section */
+        .opinion-section {
+            background: var(--light-gray);
+            padding: 40px 0;
+            margin: 40px 0;
+        }
+        
+        .opinion-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .opinion-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+        }
+        
+        .author-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+        
+        .author-name {
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+        
+        .author-title {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+        
+        /* Interactive Poll */
+        .poll-widget {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            margin: 30px 0;
+        }
+        
+        .poll-question {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: var(--dark-gray);
+        }
+        
+        .poll-options {
+            margin-bottom: 20px;
+        }
+        
+        .poll-option {
+            display: block;
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            background: var(--light-gray);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .poll-option:hover {
+            background: var(--medium-gray);
+        }
+        
+        .poll-option input {
+            margin-right: 10px;
+        }
+        
+        /* Footer */
+        .site-footer {
+            background: var(--dark-gray);
+            color: white;
+            padding: 60px 0 30px;
+            margin-top: 60px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            color: white;
+            font-size: 18px;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-red);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #aaa;
+            font-size: 14px;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .newsletter-form {
+            margin-top: 20px;
+        }
+        
+        .newsletter-input {
+            width: 100%;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: #444;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: var(--transition);
+        }
+        
+        .social-icon:hover {
+            background: var(--primary-red);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #444;
+            color: #aaa;
+            font-size: 14px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stories-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .category-stories {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .multimedia-grid, .opinion-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .mega-menu {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-top {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .live-datetime {
+                align-items: center;
+            }
+            
+            .nav-list {
+                flex-wrap: wrap;
+            }
+            
+            .nav-link {
+                padding: 10px 15px;
+                font-size: 13px;
+            }
+            
+            .carousel-item {
+                height: 350px;
+            }
+            
+            .carousel-title {
+                font-size: 24px;
+            }
+            
+            .stories-grid, .category-stories {
+                grid-template-columns: 1fr;
+            }
+            
+            .multimedia-grid, .opinion-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .mega-menu {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .carousel-item {
+                height: 300px;
+            }
+            
+            .carousel-title {
+                font-size: 20px;
+            }
+            
+            .section-title {
+                font-size: 20px;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-top">
+                <div class="logo-container">
+                    <!-- Replace this with your actual PNG logo -->
+                     <a href="index.html"><img src="assets/img/logo/logo.png" alt="Aframira Chronicles" class="logo"></a>
+                    <div class="live-datetime">
+                        <div class="current-date" id="currentDate">Tuesday, October 28, 2025</div>
+                        <div class="current-time" id="currentTime">10:30 AM</div>
+                    </div>
+                </div>
+                
+                <div class="header-actions">
+                    <button class="subscribe-btn">Subscribe</button>
+                    <button class="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+            
+            <!-- Navigation -->
+            <nav class="ap-main-nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link active">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Africa</a>
+                        <div class="mega-menu">
+                            <div class="mega-column">
+                                <h4>Regions</h4>
+                                <a href="#">West Africa</a>
+                                <a href="#">East Africa</a>
+                                <a href="#">Southern Africa</a>
+                                <a href="#">North Africa</a>
+                                <a href="#">Central Africa</a>
+                            </div>
+                            <div class="mega-column">
+                                <h4>Politics</h4>
+                                <a href="#">Elections</a>
+                                <a href="#">Governance</a>
+                                <a href="#">Diplomacy</a>
+                                <a href="#">Policy & Reform</a>
+                            </div>
+                            <div class="mega-column">
+                                <h4>Economy</h4>
+                                <a href="#">Markets</a>
+                                <a href="#">Trade</a>
+                                <a href="#">Development</a>
+                                <a href="#">Infrastructure</a>
+                            </div>
+                            <div class="mega-column">
+                                <h4>Special Coverage</h4>
+                                <a href="#">AfCFTA Updates</a>
+                                <a href="#">Climate Change</a>
+                                <a href="#">Tech Innovation</a>
+                                <a href="#">Youth & Education</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">World</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Politics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Business</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Technology</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Health</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Entertainment</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Sports</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Science</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Weather</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Photos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Videos</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breaking News Ticker -->
+    <div class="breaking-news-ticker">
+        <div class="container">
+            <div class="ticker-container">
+                <span class="breaking-label">BREAKING</span>
+                <span class="ticker-item">African Union announces historic free trade agreement implementation across 45 member states •</span>
+                <span class="ticker-item">Major breakthrough in Ethiopia-Eritrea peace process as border crossings reopen •</span>
+                <span class="ticker-item">Kenyan scientists develop drought-resistant crop variant •</span>
+                <span class="ticker-item">Pan-African digital payment system goes live, connecting 30 countries •</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Featured Carousel -->
+        <section class="featured-carousel">
+            <div class="owl-carousel" id="mainCarousel">
+                <div class="carousel-item">
+                    <img src="https://oaflad.org/wp-content/uploads/2024/07/img_9484-1.jpg" alt="AU Summit" class="carousel-image">
+                    <div class="carousel-caption">
+                        <span class="carousel-category">Politics</span>
+                        <h2 class="carousel-title">Historic AU Summit Concludes with Major Security and Economic Agreements</h2>
+                        <p class="carousel-excerpt">African leaders have concluded a landmark summit in Addis Ababa with agreements on continental security cooperation...</p>
+                        <div class="story-meta">By Godfred Dabo • 2 hours ago</div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item">
+                    <img src="https://morgantechnicaltraining.co.ke/wp-content/uploads/2025/07/14.jpg" alt="Technology" class="carousel-image">
+                    <div class="carousel-caption">
+                        <span class="carousel-category">Technology</span>
+                        <h2 class="carousel-title">Kenyan AI Startup Secures $50M Funding to Expand Across Africa</h2>
+                        <p class="carousel-excerpt">Nairobi-based artificial intelligence company AICorp has raised a record funding round led by international investors...</p>
+                        <div class="story-meta">By Joseph Obinkyere • 45 minutes ago</div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item">
+                    <img src="https://www.atalayar.com/asset/thumbnail,1920,1080,center,center/media/atalayar/images/2025/06/04/2025060413344668577.jpg" alt="Sports" class="carousel-image">
+                    <div class="carousel-caption">
+                        <span class="carousel-category">Sports</span>
+                        <h2 class="carousel-title">AFCON 2025: Host Nation Morocco Prepares for Continental Tournament</h2>
+                        <p class="carousel-excerpt">With six months to go, preparations are in full swing for Africa's biggest football tournament...</p>
+                        <div class="story-meta">By Kwame Osei • 3 hours ago</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content Grid -->
+        <div class="content-grid">
+            <!-- Left Column -->
+            <div class="left-column">
+                <!-- Top Stories -->
+                <section class="top-stories">
+                    <div class="section-header">
+                        <h2 class="section-title">Top Stories</h2>
+                        <a href="#" class="view-all">View All →</a>
+                    </div>
+                    
+                    <div class="stories-grid">
+                        <article class="story-card">
+                            <a href="#">
+                                <img src="https://volitioncap.com/wp-content/uploads/2025/01/top-sectors-of-nigerias-economy-volition-cap-1.jpg" alt="Nigeria Economy" class="story-image">
+                                <div class="story-content">
+                                    <span class="story-category">Business</span>
+                                    <h3 class="story-title">Nigeria's Economy Grows 4.2% in Q3 2025, Exceeding Projections</h3>
+                                    <p class="story-excerpt">Strong performance in agriculture and technology sectors drives growth despite global challenges...</p>
+                                    <div class="story-meta">
+                                        <span>By Chika Nwosu</span>
+                                        <span>15 minutes ago</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+                        
+                        <article class="story-card">
+                            <a href="#">
+                                <img src="https://www.gavi.org/sites/default/files/vaccineswork/2021/Thumb/shutterstock_1744369802_h2.jpg" alt="Health" class="story-image">
+                                <div class="story-content">
+                                    <span class="story-category">Health</span>
+                                    <h3 class="story-title">New Malaria Vaccine Shows 85% Efficacy in Final Trial Phase</h3>
+                                    <p class="story-excerpt">Scientists at the Africa CDC announce breakthrough results for a new malaria vaccine that could prevent millions...</p>
+                                    <div class="story-meta">
+                                        <span>By Dr. Fatoumata Diallo</span>
+                                        <span>5 hours ago</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+                        
+                        <article class="story-card">
+                            <a href="#">
+                                <img src="https://www.wfp.org/sites/default/files/styles/max_width_800/public/images/news/Azimi%20Abubakar%2C%2050%2C%20a%20resident%20of%20Gasamu%2C%20wades%20through%20the%20floodwater%20in%20Jakusko%20LGA%20of%20Yobe%20State%2C%20Nigeria%2C%20on%2001%20October%202022.%20%C2%A9WFP.webp?itok=ipLwn87C" alt="Environment" class="story-image">
+                                <div class="story-content">
+                                    <span class="story-category">Environment</span>
+                                    <h3 class="story-title">Record Rainfall Floods Coastal Cities Across West Africa</h3>
+                                    <p class="story-excerpt">Unprecedented rainfall has caused severe flooding in Lagos, Accra, and Abidjan, displacing thousands...</p>
+                                    <div class="story-meta">
+                                        <span>By Kofi Mensah</span>
+                                        <span>1 hour ago</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+                        
+                        <article class="story-card">
+                            <a href="#">
+                                <img src="https://media.licdn.com/dms/image/v2/D4D12AQF8zlvl4wfpng/article-cover_image-shrink_720_1280/B4DZacXYmlHwAI-/0/1746380101414?e=2147483647&v=beta&t=su0VClXHfYN4QbsBx-9hzY0Spe4iGHZ4_i8xUV42-sc" alt="Technology" class="story-image">
+                                <div class="story-content">
+                                    <span class="story-category">Technology</span>
+                                    <h3 class="story-title">Pan-African Digital Currency Launch Faces Regulatory Hurdles</h3>
+                                    <p class="story-excerpt">The proposed AfriCoin digital currency, intended to facilitate cross-border trade, faces regulatory challenges...</p>
+                                    <div class="story-meta">
+                                        <span>By Naledi Modise</span>
+                                        <span>3 hours ago</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Latest News Ticker -->
+                <div class="latest-news-ticker">
+                    <div class="section-header">
+                        <h2 class="section-title">Latest Updates</h2>
+                    </div>
+                    <div class="ticker-updates">
+                        <div class="update-item">
+                            <span class="update-time">12:45 PM</span>
+                            <span class="update-text">ECOWAS announces emergency summit on regional security - Live updates</span>
+                        </div>
+                        <div class="update-item">
+                            <span class="update-time">12:30 PM</span>
+                            <span class="update-text">South African rand strengthens against major currencies following policy announcement</span>
+                        </div>
+                        <div class="update-item">
+                            <span class="update-time">12:15 PM</span>
+                            <span class="update-text">Egypt announces major archaeological discovery in Luxor</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Business & Markets Row -->
+                <section class="category-row">
+                    <div class="category-header">
+                        <h2 class="category-title">Business & Markets</h2>
+                        <a href="#" class="view-all">More Business →</a>
+                    </div>
+                    <div class="category-stories">
+                        <article class="story-card">
+                            <a href="#">
+                                <img src="https://nairametrics.com/wp-content/uploads/2023/06/stock-market-forex-trading-graph-graphic-concept_73426-106.jpeg" alt="Stock Market" class="story-image">
+                                <div class="story-content">
+                                    <span class="story-category">Markets</span>
+                                    <h3 class="story-title">African Stock Markets Show Mixed Results in Early Trading</h3>
+                                    <div class="story-meta">30 minutes ago</div>
+                                </div>
+                            </a>
+                        </article>
+                        
+                        <article class="story-card">
+                            <a href="#">
+                                <img src="https://plus.unsplash.com/premium_photo-1666976506270-29610b4af0e1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Agriculture" class="story-image">
+                                <div class="story-content">
+                                    <span class="story-category">Agriculture</span>
+                                    <h3 class="story-title">New Farming Techniques Boost Yields in Sahel Region</h3>
+                                    <div class="story-meta">2 hours ago</div>
+                                </div>
+                            </a>
+                        </article>
+                        
+                        <article class="story-card">
+                            <a href="#">
+                                <img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Energy" class="story-image">
+                                <div class="story-content">
+                                    <span class="story-category">Energy</span>
+                                    <h3 class="story-title">Renewable Energy Investments Surge Across East Africa</h3>
+                                    <div class="story-meta">4 hours ago</div>
+                                </div>
+                            </a>
+                        </article>
+                        
+                        <article class="story-card">
+                            <a href="#">
+                                <img src="https://www.naijapreneur.com/wp-content/uploads/2025/03/Unlocking-Africas-Potential-Why-Intra-African-Trade-is-the-Key-to-Economic-Growth.webp" alt="Trade" class="story-image">
+                                <div class="story-content">
+                                    <span class="story-category">Trade</span>
+                                    <h3 class="story-title">Intra-African Trade Grows 15% Following AfCFTA Implementation</h3>
+                                    <div class="story-meta">6 hours ago</div>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right Column - Sidebar -->
+            <aside class="sidebar">
+                <!-- Trending Now -->
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">Trending Now</h3>
+                    <ul class="trending-list">
+                        <li class="trending-item">
+                            <a href="#">
+                                <span class="trending-rank">1</span>
+                                Pan-African Rail Network: Progress and Construction Delays
+                            </a>
+                            <div class="story-meta">102K reads</div>
+                        </li>
+                        <li class="trending-item">
+                            <a href="#">
+                                <span class="trending-rank">2</span>
+                                African Cinema Breaks Global Box Office Records
+                            </a>
+                            <div class="story-meta">87K reads</div>
+                        </li>
+                        <li class="trending-item">
+                            <a href="#">
+                                <span class="trending-rank">3</span>
+                                Congo Basin Deforestation Rate Slows for First Time
+                            </a>
+                            <div class="story-meta">76K reads</div>
+                        </li>
+                        <li class="trending-item">
+                            <a href="#">
+                                <span class="trending-rank">4</span>
+                                Egypt's New Administrative Capital Nears Completion
+                            </a>
+                            <div class="story-meta">65K reads</div>
+                        </li>
+                        <li class="trending-item">
+                            <a href="#">
+                                <span class="trending-rank">5</span>
+                                South Africa Unveils Major Renewable Energy Plan
+                            </a>
+                            <div class="story-meta">54K reads</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Interactive Poll -->
+                <div class="poll-widget">
+                    <h3 class="widget-title">Daily Poll</h3>
+                    <p class="poll-question">What is the biggest challenge facing African economies in 2025?</p>
+                    <div class="poll-options">
+                        <label class="poll-option">
+                            <input type="radio" name="poll" value="infrastructure">
+                            Infrastructure Development
+                        </label>
+                        <label class="poll-option">
+                            <input type="radio" name="poll" value="education">
+                            Education & Skills Gap
+                        </label>
+                        <label class="poll-option">
+                            <input type="radio" name="poll" value="governance">
+                            Governance & Corruption
+                        </label>
+                        <label class="poll-option">
+                            <input type="radio" name="poll" value="climate">
+                            Climate Change Adaptation
+                        </label>
+                    </div>
+                    <button class="subscribe-btn" style="width: 100%;">Vote Now</button>
+                    <div class="poll-results" style="margin-top: 15px; font-size: 12px; color: var(--text-light);">
+                        2,548 votes so far
+                    </div>
+                </div>
+
+                <!-- Newsletter Signup -->
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">Newsletter</h3>
+                    <p style="margin-bottom: 20px; font-size: 14px;">Get Africa's top stories delivered to your inbox daily.</p>
+                    <div class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Your email address">
+                        <button class="subscribe-btn" style="width: 100%;">Subscribe</button>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <!-- Multimedia Hub -->
+        <section class="multimedia-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Multimedia Hub</h2>
+                    <a href="#" class="view-all">View All Media →</a>
+                </div>
+                
+                <div class="multimedia-grid">
+                    <div class="media-card">
+                        <div class="video-thumbnail">
+                            <img src="https://images.squarespace-cdn.com/content/v1/5c27c93f1aef1d60b29781f9/1603812838639-EOWJXUAZBG06RM85EKGQ/africa+1.jpg" alt="Tech Documentary">
+                            <div class="play-button">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="story-content">
+                            <span class="story-category">Documentary</span>
+                            <h3 class="story-title">Inside Africa's Tech Revolution: Startups Changing the Continent</h3>
+                            <div class="story-meta">45 min • 12K views</div>
+                        </div>
+                    </div>
+                    
+                    <div class="media-card">
+                        <div class="video-thumbnail">
+                            <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Podcast">
+                            <div class="play-button">
+                                <i class="fas fa-headphones"></i>
+                            </div>
+                        </div>
+                        <div class="story-content">
+                            <span class="story-category">Podcast</span>
+                            <h3 class="story-title">The Interview: Africa's Youngest Tech Billionaire</h3>
+                            <div class="story-meta">32 min • 8.5K listens</div>
+                        </div>
+                    </div>
+                    
+                    <div class="media-card">
+                        <div class="video-thumbnail">
+                            <img src="https://i.natgeofe.com/n/8322bcaf-d02f-4fed-890e-6e7f44b7e1c2/_45A9746.jpg?w=2560&h=1706" alt="Photo Essay">
+                            <div class="play-button">
+                                <i class="fas fa-camera"></i>
+                            </div>
+                        </div>
+                        <div class="story-content">
+                            <span class="story-category">Photo Essay</span>
+                            <h3 class="story-title">Daily Life in Lagos' Evolving Tech Hub</h3>
+                            <div class="story-meta">24 photos • 15K views</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Opinion & Analysis -->
+        <section class="opinion-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Opinion & Analysis</h2>
+                    <a href="#" class="view-all">All Columns →</a>
+                </div>
+                
+                <div class="opinion-grid">
+                    <div class="opinion-card">
+                        <div class="author-info">
+                            <img src="https://randomuse" alt="Author" class="author-avatar">
+                            <div>
+                                <div class="author-name">Hubert Nkrumah</div>
+                                <div class="author-title">Economic Analyst</div>
+                            </div>
+                        </div>
+                        <h3 class="story-title">The AfCFTA Promise: Reality Check After Two Years</h3>
+                        <p class="story-excerpt">While progress has been made, significant barriers remain to realizing the full potential of Africa's free trade area...</p>
+                        <div class="story-meta">15 hours ago</div>
+                    </div>
+                    
+                    <div class="opinion-card">
+                        <div class="author-info">
+                            <img src="https://randomuser.m" alt="Author" class="author-avatar">
+                            <div>
+                                <div class="author-name">Danjumma Dialoppe</div>
+                                <div class="author-title">Political Commentator</div>
+                            </div>
+                        </div>
+                        <h3 class="story-title">Youth Movements Reshaping African Politics</h3>
+                        <p class="story-excerpt">From Senegal to Kenya, young activists are demanding accountability and driving political change across the continent...</p>
+                        <div class="story-meta">22 hours ago</div>
+                    </div>
+                    
+                    <div class="opinion-card">
+                        <div class="author-info">
+                            <img src="https://randomuser." alt="Author" class="author-avatar">
+                            <div>
+                                <div class="author-name">Prof. Adebayo</div>
+                                <div class="author-title">Climate Scientist</div>
+                            </div>
+                        </div>
+                        <h3 class="story-title">Climate Finance: Africa's Unfulfilled Promise</h3>
+                        <p class="story-excerpt">Despite pledges from developed nations, Africa continues to receive only a fraction of promised climate adaptation funds...</p>
+                        <div class="story-meta">1 day ago</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sports Section -->
+        <section class="category-row">
+            <div class="category-header">
+                <h2 class="category-title">Sports</h2>
+                <a href="#" class="view-all">More Sports →</a>
+            </div>
+            <div class="category-stories">
+                <article class="story-card">
+                    <a href="#">
+                        <img src="https://assets.khelnow.com/news/uploads/2024/02/AFCON-2025.jpeg" alt="Football" class="story-image">
+                        <div class="story-content">
+                            <span class="story-category">Football</span>
+                            <h3 class="story-title">AFCON 2025: Team Preparations Enter Final Phase</h3>
+                            <div class="story-meta">2 hours ago</div>
+                        </div>
+                    </a>
+                </article>
+                
+                <article class="story-card">
+                    <a href="#">
+                        <img src="https://www.newtimes.co.rw/thenewtimes/uploads/images/2023/07/06/thumbs/1200x700/22970.jpg" alt="Basketball" class="story-image">
+                        <div class="story-content">
+                            <span class="story-category">Basketball</span>
+                            <h3 class="story-title">NBA Africa Game Returns to Johannesburg in 2026</h3>
+                            <div class="story-meta">5 hours ago</div>
+                        </div>
+                    </a>
+                </article>
+                
+                <article class="story-card">
+                    <a href="#">
+                        <img src="https://npr.brightspotcdn.com/dims4/default/10ec38a/2147483647/strip/true/crop/4029x3022+0+0/resize/1760x1320!/format/webp/quality/90/?url=https%3A%2F%2Fmedia.npr.org%2Fassets%2Fimg%2F2022%2F09%2F25%2Fap22268343272557-aec232ef23dcb8f92117dd1a7bb7fed18bd7bca3.jpg" alt="Athletics" class="story-image">
+                        <div class="story-content">
+                            <span class="story-category">Athletics</span>
+                            <h3 class="story-title">Kenyan Runners Dominate Berlin Marathon</h3>
+                            <div class="story-meta">8 hours ago</div>
+                        </div>
+                    </a>
+                </article>
+                
+                <article class="story-card">
+                    <a href="#">
+                        <img src="https://www.springboks.rugby/media/2ouj3p5b/190826-springbok-rwc-squad.jpg?anchor=center&mode=crop&width=945&height=472&rnd=132380782119170000" alt="Rugby" class="story-image">
+                        <div class="story-content">
+                            <span class="story-category">Rugby</span>
+                            <h3 class="story-title">Springboks Announce Squad for European Tour</h3>
+                            <div class="story-meta">12 hours ago</div>
+                        </div>
+                    </a>
+                </article>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Aframira Chronicles</h3>
+                    <p style="color: #aaa; font-size: 14px; margin-bottom: 20px; line-height: 1.6;">
+                        Africa's leading independent news organization, delivering trusted journalism from across the continent and around the world since 2010.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Categories</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Africa News</a></li>
+                        <li><a href="#">World News</a></li>
+                        <li><a href="#">Politics</a></li>
+                        <li><a href="#">Business & Economy</a></li>
+                        <li><a href="#">Technology</a></li>
+                        <li><a href="#">Health & Science</a></li>
+                        <li><a href="#">Entertainment</a></li>
+                        <li><a href="#">Sports</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Ethics Policy</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Stay Informed</h3>
+                    <p style="color: #aaa; font-size: 14px; margin-bottom: 20px;">
+                        Subscribe to our daily newsletter for the top African stories.
+                    </p>
+                    <div class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Enter your email">
+                        <button class="subscribe-btn" style="width: 100%; margin-top: 10px;">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024 Aframira Chronicles. All rights reserved.</p>
+                <p>Headquarters: Lagos, Nigeria</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Real-time Date and Time
+        function updateDateTime() {
+            const now = new Date();
+            
+            // Format date
+            const dateOptions = { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            };
+            const dateString = now.toLocaleDateString('en-US', dateOptions);
+            
+            // Format time
+            const timeOptions = { 
+                hour: '2-digit', 
+                minute: '2-digit',
+                hour12: true 
+            };
+            const timeString = now.toLocaleTimeString('en-US', timeOptions);
+            
+            // Update DOM
+            document.getElementById('currentDate').textContent = dateString;
+            document.getElementById('currentTime').textContent = timeString;
+        }
+        
+        // Update time immediately and every minute
+        updateDateTime();
+        setInterval(updateDateTime, 60000);
+        
+        // Initialize Owl Carousel
+        $(document).ready(function(){
+            $("#mainCarousel").owlCarousel({
+                items: 1,
+                loop: true,
+                autoplay: true,
+                autoplayTimeout: 6000,
+                autoplayHoverPause: true,
+                nav: true,
+                navText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>'],
+                dots: true
+            });
+            
+            // Initialize AOS (Animate on Scroll)
+            AOS.init({
+                duration: 1000,
+                once: true,
+                offset: 100
+            });
+            
+            // Story click tracking
+            $('.story-card, .story-link').on('click', function(e) {
+                e.preventDefault();
+                const storyTitle = $(this).find('.story-title').text();
+                console.log('Story clicked:', storyTitle);
+                
+                // In production: Send analytics event
+                // analytics.track('story_click', { title: storyTitle });
+                
+                // Simulate navigation after tracking
+                setTimeout(() => {
+                    // window.location.href = $(this).attr('href');
+                    alert('In production, this would navigate to: ' + storyTitle);
+                }, 300);
+            });
+            
+            // Poll submission
+            $('.poll-widget button').on('click', function() {
+                const selectedOption = $('input[name="poll"]:checked').val();
+                if (selectedOption) {
+                    alert('Thank you for voting! You selected: ' + selectedOption);
+                    $(this).text('Voted ✓').prop('disabled', true);
+                } else {
+                    alert('Please select an option before voting.');
+                }
+            });
+            
+            // Newsletter form submission
+            $('.newsletter-form button').on('click', function() {
+                const email = $(this).siblings('.newsletter-input').val();
+                if (email && email.includes('@')) {
+                    alert('Thank you for subscribing with: ' + email);
+                    $(this).siblings('.newsletter-input').val('');
+                } else {
+                    alert('Please enter a valid email address.');
+                }
+            });
+            
+            // Mobile menu toggle (for smaller screens)
+            $('.mobile-menu-toggle').on('click', function() {
+                $('.ap-main-nav').toggleClass('mobile-open');
+            });
+            
+            // Smooth scrolling for anchor links
+            $('a[href^="#"]').on('click', function(e) {
+                if ($(this).attr('href') !== '#') {
+                    e.preventDefault();
+                    const target = $(this.hash);
+                    if (target.length) {
+                        $('html, body').animate({
+                            scrollTop: target.offset().top - 80
+                        }, 800);
+                    }
+                }
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.site-header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
+                header.style.padding = '5px 0';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.05)';
+                header.style.padding = '0';
+            }
+        });
+        
+        // Lazy load images as they enter viewport
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.classList.add('loaded');
+                    observer.unobserve(img);
+                }
+            });
+        });
+        
+        // Observe all images with data-src attribute
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        });
+    </script>
+</body>
+</html>
