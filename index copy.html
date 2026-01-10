@@ -1776,38 +1776,7 @@
         </div>
     </footer>
 
-    <script>
-        // Real-time Date and Time
-        function updateDateTime() {
-            const now = new Date();
-            
-            // Format date
-            const dateOptions = { 
-                weekday: 'long', 
-                year: 'numeric', 
-                month: 'long', 
-                day: 'numeric' 
-            };
-            const dateString = now.toLocaleDateString('en-US', dateOptions);
-            
-            // Format time
-            const timeOptions = { 
-                hour: '2-digit', 
-                minute: '2-digit',
-                second: '2-digit',
-                hour12: true 
-            };
-            const timeString = now.toLocaleTimeString('en-US', timeOptions);
-            
-            // Update DOM
-            document.getElementById('currentDate').textContent = dateString;
-            document.getElementById('currentTime').textContent = timeString;
-        }
-        
-        // Update time immediately and every second
-        updateDateTime();
-        setInterval(updateDateTime, 1000);
-        
+    <script>        
         // Mobile Navigation Functions
         function toggleMobileMenu() {
             const navMobile = document.querySelector('.nav-mobile');
