@@ -1,0 +1,1437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nigeria’s Renewable Energy Data Revolution: A Blueprint for West Africa’s Energy Security | Aframira Chronicles</title>
+    
+    <!-- Social Media Meta Tags (updated for Renewable Energy article) -->
+    <meta property="og:title" content="Nigeria’s Renewable Energy Data Revolution: A Blueprint for West Africa’s Energy Security" />
+    <meta property="og:description" content="Nigeria launches first-of-its-kind Renewable Energy Data & Carbon Accounting Dashboard, setting a new standard for transparency and climate action in West Africa." />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1508514177221-1881f9b6f8a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" />
+    <meta property="og:url" content="https://www.aframirachronicles.com/nigeria-renewable-energy-data-revolution" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Aframira Chronicles" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Nigeria’s Renewable Energy Data Revolution: A Blueprint for West Africa’s Energy Security" />
+    <meta name="twitter:description" content="NBET’s pioneering dashboard could reshape regional energy planning and carbon accountability." />
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1508514177221-1881f9b6f8a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" />
+    <meta name="twitter:site" content="@AframiraNews" />
+    
+    <!-- Favicon and Icons -->
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png" />
+
+    <!-- Libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    
+    <!-- Modern CSS Libraries -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+    
+    <style>
+        :root {
+            --primary-red: #C10000;
+            --dark-red: #8B0000;
+            --ap-blue: #1847A0;
+            --light-gray: #F5F5F5;
+            --medium-gray: #E0E0E0;
+            --dark-gray: #333333;
+            --text-light: #666666;
+            --white: #FFFFFF;
+            --black: #000000;
+            --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --shadow-light: 0 5px 15px rgba(0, 0, 0, 0.05);
+            --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.12);
+            --shadow-heavy: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background: var(--white);
+            overflow-x: hidden;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+        
+        a:hover {
+            color: var(--primary-red);
+        }
+        
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header - EXACTLY as homepage */
+        .site-header {
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .header-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 0;
+            position: relative;
+        }
+        
+        /* Logo - Always positioned left */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            z-index: 1002;
+            flex-shrink: 0;
+        }
+        
+        .logo {
+            height: 70px;
+            width: auto;
+            transition: var(--transition);
+        }
+                
+        /* Header Actions */
+        .header-actions {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .subscribe-btn {
+            background: var(--primary-red);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 14px;
+            white-space: nowrap;
+        }
+        
+        .subscribe-btn:hover {
+            background: var(--dark-red);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .search-btn {
+            background: none;
+            border: none;
+            font-size: 18px;
+            color: var(--dark-gray);
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+        
+        .search-btn:hover {
+            background: var(--light-gray);
+            color: var(--primary-red);
+        }
+        
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--dark-gray);
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: var(--transition);
+            z-index: 1002;
+        }
+        
+        .mobile-menu-toggle:hover {
+            background: var(--light-gray);
+            color: var(--primary-red);
+        }
+        
+        /* Navigation - EXACTLY as homepage */
+        .ap-main-nav {
+            position: relative;
+        }
+        
+        /* Desktop Navigation */
+        .nav-desktop {
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-list {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav-item {
+            position: relative;
+        }
+        
+        .nav-link {
+            display: flex;
+            align-items: center;
+            padding: 15px 14px;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--dark-gray);
+            white-space: nowrap;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .nav-link i {
+            margin-left: 5px;
+            font-size: 12px;
+            transition: var(--transition);
+        }
+        
+        .nav-item:hover .nav-link {
+            color: var(--primary-red);
+            background: var(--light-gray);
+        }
+        
+        .nav-item:hover .nav-link i {
+            transform: rotate(180deg);
+        }
+        
+        .nav-link.active {
+            color: var(--primary-red);
+            background: linear-gradient(to top, rgba(193, 0, 0, 0.1), transparent);
+        }
+        
+        /* Desktop Mega Menu - EXACTLY as homepage */
+        .mega-menu {
+            position: absolute;
+            left: 0;
+            top: 100%;
+            width: 800px;
+            background: white;
+            box-shadow: var(--shadow-heavy);
+            padding: 30px;
+            display: none;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            z-index: 1001;
+            border-top: 3px solid var(--primary-red);
+            border-radius: 0 0 12px 12px;
+            animation: fadeInDown 0.3s ease;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .nav-item:hover .mega-menu {
+            display: grid;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .mega-column h4 {
+            color: var(--primary-red);
+            margin-bottom: 15px;
+            font-size: 15px;
+            font-weight: 700;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light-gray);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .mega-column a {
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            color: var(--text-light);
+            font-size: 14px;
+            transition: var(--transition);
+        }
+        
+        .mega-column a i {
+            margin-right: 10px;
+            font-size: 14px;
+            opacity: 0.7;
+            transition: var(--transition);
+        }
+        
+        .mega-column a:hover {
+            color: var(--primary-red);
+            padding-left: 10px;
+        }
+        
+        .mega-column a:hover i {
+            opacity: 1;
+            transform: translateX(5px);
+        }
+        
+        /* Mobile Navigation - EXACTLY as homepage */
+        .nav-mobile {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1001;
+            overflow-y: auto;
+            transform: translateX(-100%);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            visibility: hidden;
+            opacity: 0;
+        }
+        
+        .nav-mobile.active {
+            transform: translateX(0);
+            visibility: visible;
+            opacity: 1;
+        }
+        
+        .mobile-nav-content {
+            width: 320px;
+            height: 100%;
+            background: white;
+            padding: 80px 20px 30px;
+            position: relative;
+            transform: translateX(-100%);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-mobile.active .mobile-nav-content {
+            transform: translateX(0);
+        }
+
+        .mobile-nav-header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            background: var(--primary-red);
+            color: white;
+            z-index: 1003;
+        }
+        
+        .mobile-nav-header h3 {
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        .mobile-close-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+        
+        .mobile-close-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .mobile-nav-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+        
+        .mobile-nav-item {
+            border-bottom: 1px solid var(--medium-gray);
+        }
+        
+        .mobile-nav-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 0;
+            font-weight: 600;
+            color: var(--dark-gray);
+            font-size: 16px;
+        }
+        
+        .mobile-nav-link i {
+            transition: var(--transition);
+        }
+        
+        .mobile-nav-link.active i {
+            transform: rotate(180deg);
+        }
+        
+        .mobile-submenu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: var(--light-gray);
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+        
+        .mobile-submenu.active {
+            max-height: 500px;
+            padding: 10px;
+        }
+        
+        .mobile-submenu a {
+            display: block;
+            padding: 10px 15px;
+            color: var(--text-light);
+            font-size: 14px;
+            border-radius: 6px;
+            transition: var(--transition);
+        }
+        
+        .mobile-submenu a:hover {
+            background: white;
+            color: var(--primary-red);
+            padding-left: 20px;
+        }
+        
+        /* Main Content Layout */
+        .main-content {
+            display: flex;
+            gap: 40px;
+            margin: 40px auto;
+        }
+        
+        .article-main {
+            flex: 3;
+        }
+        
+        .sidebar {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        /* Article Content */
+        .article-container {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+        }
+        
+        .article-hero {
+            position: relative;
+            height: 500px;
+            overflow: hidden;
+        }
+        
+        .article-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.3));
+            z-index: 1;
+        }
+        
+        .article-hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .article-hero-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            color: white;
+            padding: 40px;
+            z-index: 2;
+        }
+        
+        .article-category {
+            color: var(--white);
+            background: var(--primary-red);
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 13px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .article-title {
+            font-size: 42px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 15px;
+            margin-top: 20px;
+        }
+        
+        .author-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid white;
+        }
+        
+        /* Article Body */
+        .article-body {
+            padding: 50px;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+        
+        .article-body p {
+            margin-bottom: 25px;
+            text-align: justify;
+        }
+        
+        .article-body h2 {
+            font-size: 32px;
+            margin: 40px 0 20px;
+            color: var(--dark-gray);
+        }
+        
+        .article-body h3 {
+            font-size: 26px;
+            margin: 30px 0 15px;
+            color: var(--dark-gray);
+        }
+        
+        .article-body img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+        
+        .article-body blockquote {
+            border-left: 4px solid var(--primary-red);
+            padding-left: 25px;
+            margin: 30px 0;
+            font-style: italic;
+            font-size: 24px;
+            color: var(--dark-gray);
+            line-height: 1.5;
+        }
+        
+        /* Article Actions */
+        .article-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 50px;
+            border-top: 1px solid var(--medium-gray);
+            border-bottom: 1px solid var(--medium-gray);
+            background: var(--light-gray);
+        }
+        
+        .social-share {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .share-btn {
+            width: 45px;
+            height: 45px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark-gray);
+            transition: var(--transition);
+            border: 1px solid var(--medium-gray);
+        }
+        
+        .share-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .share-btn.facebook:hover {
+            background: #1877F2;
+            color: white;
+        }
+        
+        .share-btn.twitter:hover {
+            background: #1DA1F2;
+            color: white;
+        }
+        
+        .share-btn.linkedin:hover {
+            background: #0077B5;
+            color: white;
+        }
+        
+        .share-btn.whatsapp:hover {
+            background: #25D366;
+            color: white;
+        }
+        
+        /* Sidebar */
+        .sidebar-widget {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow-light);
+        }
+        
+        .widget-title {
+            font-size: 20px;
+            color: var(--dark-gray);
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--primary-red);
+            font-weight: 700;
+        }
+        
+        .sidebar-articles {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .sidebar-article {
+            display: flex;
+            gap: 15px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .sidebar-article:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        
+        .sidebar-article-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+        
+        .sidebar-article-content {
+            flex: 1;
+        }
+        
+        .sidebar-article-category {
+            color: var(--primary-red);
+            font-weight: 700;
+            font-size: 11px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            display: block;
+        }
+        
+        .sidebar-article-title {
+            font-size: 14px;
+            line-height: 1.4;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .sidebar-article-meta {
+            font-size: 12px;
+            color: var(--text-light);
+        }
+        
+        /* Trending Articles Widget */
+        .trending-list {
+            list-style: none;
+        }
+        
+        .trending-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .trending-item:last-child {
+            border-bottom: none;
+        }
+        
+        .trending-number {
+            background: var(--primary-red);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .trending-content h4 {
+            font-size: 14px;
+            line-height: 1.4;
+            margin-bottom: 5px;
+        }
+        
+        /* Related Articles */
+        .related-articles {
+            margin: 60px 0;
+        }
+        
+        .section-title {
+            font-size: 28px;
+            color: var(--dark-gray);
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--primary-red);
+            font-weight: 700;
+        }
+        
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .related-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
+        }
+        
+        .related-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .related-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        
+        .related-content {
+            padding: 20px;
+        }
+        
+        .related-category {
+            color: var(--primary-red);
+            font-weight: 700;
+            font-size: 12px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .related-title {
+            font-size: 16px;
+            line-height: 1.4;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        /* Comments Section */
+        .comments-section {
+            margin: 60px 0;
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: var(--shadow-light);
+        }
+        
+        .comments-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .comments-count {
+            font-size: 18px;
+            color: var(--text-light);
+        }
+        
+        .comment-form {
+            margin-bottom: 40px;
+            padding: 30px;
+            background: var(--light-gray);
+            border-radius: 12px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark-gray);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 14px 15px;
+            border: 1px solid var(--medium-gray);
+            border-radius: 8px;
+            font-size: 16px;
+            transition: var(--transition);
+            background: white;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-red);
+            box-shadow: 0 0 0 3px rgba(193, 0, 0, 0.1);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+            font-family: inherit;
+        }
+        
+        .comments-list {
+            margin-top: 40px;
+        }
+        
+        .comment {
+            padding: 25px;
+            border-bottom: 1px solid var(--medium-gray);
+            margin-bottom: 20px;
+            background: var(--light-gray);
+            border-radius: 8px;
+        }
+        
+        .comment:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        
+        .comment-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .comment-avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: var(--primary-red);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            font-size: 18px;
+        }
+        
+        .comment-author {
+            font-weight: 600;
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+        
+        .comment-date {
+            font-size: 13px;
+            color: var(--text-light);
+        }
+        
+        .comment-body {
+            line-height: 1.6;
+            font-size: 15px;
+        }
+        
+        .comment-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+            font-size: 14px;
+            color: var(--text-light);
+        }
+        
+        .comment-action {
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .comment-action:hover {
+            color: var(--primary-red);
+        }
+        
+        /* Footer - EXACTLY as homepage */
+        .site-footer {
+            background: linear-gradient(135deg, #222 0%, #111 100%);
+            color: white;
+            padding: 60px 0 30px;
+            margin-top: 60px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            color: white;
+            font-size: 18px;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--primary-red);
+            font-weight: 700;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #aaa;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+        }
+        
+        .footer-links a i {
+            font-size: 12px;
+            opacity: 0.7;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            padding-left: 8px;
+        }
+        
+        .footer-links a:hover i {
+            opacity: 1;
+        }
+        
+        .newsletter-form {
+            margin-top: 20px;
+        }
+        
+        .newsletter-input {
+            width: 100%;
+            padding: 14px 15px;
+            border: none;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            font-size: 14px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .newsletter-input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .social-icon:hover {
+            background: var(--primary-red);
+            transform: translateY(-5px);
+            border-color: var(--primary-red);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 14px;
+        }
+        
+        /* Responsive Design - same as original */
+        @media (max-width: 1200px) {
+            .related-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); }
+            .mega-menu { width: 700px; grid-template-columns: repeat(3, 1fr); }
+        }
+        @media (max-width: 992px) {
+            .nav-desktop { display: none; }
+            .mobile-menu-toggle { display: flex; }
+            .header-wrapper { padding: 15px 0; }
+            .logo { height: 70px; }
+            .subscribe-btn { display: none; }
+            .article-hero { height: 400px; }
+            .article-title { font-size: 36px; }
+            .article-body { padding: 30px; font-size: 17px; }
+            .main-content { flex-direction: column; }
+            .sidebar { width: 100%; }
+        }
+        @media (max-width: 768px) {
+            .article-hero { height: 350px; }
+            .article-title { font-size: 28px; }
+            .article-body { padding: 25px; }
+            .related-grid { grid-template-columns: 1fr; }
+            .comments-section { padding: 25px; }
+        }
+        
+        .op-ed-header { font-style: italic; color: var(--text-light); margin-bottom: 30px; padding-bottom: 20px; border-bottom: 2px solid var(--light-gray); }
+        .op-ed-author { font-weight: 600; color: var(--primary-red); margin-top: 30px; font-size: 16px; }
+        .op-ed-author-title { color: var(--text-light); font-size: 14px; margin-top: 5px; }
+        .highlight-quote { background: linear-gradient(135deg, rgba(193,0,0,0.05) 0%, rgba(139,0,0,0.05) 100%); border-left: 4px solid var(--primary-red); padding: 25px; margin: 30px 0; border-radius: 0 8px 8px 0; font-size: 20px; line-height: 1.6; }
+        .inline-img-265 { width: 265px; height: 265px; object-fit: cover; border-radius: 12px; margin: 20px 0; box-shadow: var(--shadow-light); }
+        @media (max-width: 576px) { .inline-img-265 { width: 100%; height: auto; } }
+    </style>
+</head>
+<body>
+    <!-- Header - EXACTLY as homepage (unchanged) -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-wrapper">
+                <!-- Logo (Always left positioned) -->
+                <div class="logo-container">
+                    <a href="/">
+                        <img src="../../assets/img/logo/logo.png" alt="Aframira Chronicles" class="logo">
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation - EXACTLY as homepage -->
+                <nav class="ap-main-nav nav-desktop">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="/" class="nav-link"><i class="ri-home-4-line"></i> Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../../category.html" class="nav-link">Africa <i class="ri-arrow-down-s-line"></i></a>
+                            <div class="mega-menu">
+                                <div class="mega-column">
+                                    <h4><i class="ri-map-2-line"></i> Regions</h4>
+                                    <a href="#"><i class="ri-arrow-right-s-line"></i> West Africa</a>
+                                    <a href="#"><i class="ri-arrow-right-s-line"></i> East Africa</a>
+                                    <a href="#"><i class="ri-arrow-right-s-line"></i> Southern Africa</a>
+                                    <a href="#"><i class="ri-arrow-right-s-line"></i> North Africa</a>
+                                    <a href="#"><i class="ri-arrow-right-s-line"></i> Central Africa</a>
+                                </div>
+                                <div class="mega-column">
+                                    <h4><i class="ri-government-line"></i> Politics</h4>
+                                    <a href="#"><i class="ri-arrow-right-s-line"></i> Elections</a>
+                                    <a href="#"><i class="ri-arrow-right-s-line"></i> Governance</a>
+                                    <a href="#"><i class="ri-arrow-right-s-line"></i> Diplomacy</a>
+                                    <a href="#"><i class="ri-arrow-right-s-line"></i> Policy & Reform</a>
+                                </div>
+                                <div class="mega-column">
+                                    <h4><i class="ri-line-chart-line"></i> Economy</h4>
+                                    <a href="#"><i class="ri-arrow-right-s-line"></i> Markets</a>
+                                    <a href="#"><i class="ri-arrow-right-s-line"></i> Trade</a>
+                                    <a href="#"><i class="ri-arrow-right-s-line"></i> Development</a>
+                                    <a href="#"><i class="ri-arrow-right-s-line"></i> Infrastructure</a>
+                                </div>
+                                <div class="mega-column">
+                                    <h4><i class="ri-star-line"></i> Special Coverage</h4>
+                                    <a href="#"><i class="ri-arrow-right-s-line"></i> AfCFTA Updates</a>
+                                    <a href="#"><i class="ri-arrow-right-s-line"></i> Climate Change</a>
+                                    <a href="#"><i class="ri-arrow-right-s-line"></i> Tech Innovation</a>
+                                    <a href="#"><i class="ri-arrow-right-s-line"></i> Youth & Education</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">World</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Politics</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Business</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Technology <i class="ri-arrow-down-s-line"></i></a>
+                            <div class="mega-menu">
+                                <div class="mega-column">
+                                    <h4><i class="ri-cpu-line"></i> Tech Categories</h4>
+                                    <a href="#"><i class="ri-arrow-right-s-line"></i> Startups</a>
+                                    <a href="#"><i class="ri-arrow-right-s-line"></i> Innovation</a>
+                                    <a href="#"><i class="ri-arrow-right-s-line"></i> Digital Economy</a>
+                                    <a href="#"><i class="ri-arrow-right-s-line"></i> Cybersecurity</a>
+                                </div>
+                                <div class="mega-column">
+                                    <h4><i class="ri-smartphone-line"></i> Mobile Tech</h4>
+                                    <a href="#"><i class="ri-arrow-right-s-line"></i> 5G Rollout</a>
+                                    <a href="#"><i class="ri-arrow-right-s-line"></i> Fintech</a>
+                                    <a href="#"><i class="ri-arrow-right-s-line"></i> Mobile Apps</a>
+                                    <a href="#"><i class="ri-arrow-right-s-line"></i> E-commerce</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Health</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Entertainment</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Sports</a>
+                        </li>
+                    </ul>
+                </nav>
+                
+                <!-- Header Actions -->
+                <div class="header-actions">
+                    <button class="subscribe-btn">Subscribe</button>
+                    <button class="search-btn"><i class="ri-search-line"></i></button>
+                    <!-- Mobile Menu Toggle -->
+                    <button class="mobile-menu-toggle">
+                        <i class="ri-menu-line"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Menu - EXACTLY as homepage -->
+    <div class="nav-mobile">
+        <div class="mobile-nav-content">
+            <div class="mobile-nav-header">
+                <h3>Aframira Chronicles</h3>
+                <button class="mobile-close-btn">
+                    <i class="ri-close-line"></i>
+                </button>
+            </div>
+            
+            <ul class="mobile-nav-list">
+                <li class="mobile-nav-item">
+                    <a href="/" class="mobile-nav-link">
+                        <span><i class="ri-home-4-line"></i> Home</span>
+                    </a>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="../../category.html" class="mobile-nav-link">
+                        <span>Africa</span>
+                        <i class="ri-arrow-down-s-line"></i>
+                    </a>
+                    <div class="mobile-submenu" id="africa-submenu">
+                        <a href="#"><i class="ri-arrow-right-s-line"></i> West Africa</a>
+                        <a href="#"><i class="ri-arrow-right-s-line"></i> East Africa</a>
+                        <a href="#"><i class="ri-arrow-right-s-line"></i> Southern Africa</a>
+                        <a href="#"><i class="ri-arrow-right-s-line"></i> North Africa</a>
+                        <a href="#"><i class="ri-arrow-right-s-line"></i> Central Africa</a>
+                        <a href="#"><i class="ri-arrow-right-s-line"></i> Elections</a>
+                        <a href="#"><i class="ri-arrow-right-s-line"></i> Governance</a>
+                        <a href="#"><i class="ri-arrow-right-s-line"></i> Economy</a>
+                    </div>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="#" class="mobile-nav-link">
+                        <span>World</span>
+                    </a>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="#" class="mobile-nav-link">
+                        <span>Politics</span>
+                    </a>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="#" class="mobile-nav-link">
+                        <span>Business</span>
+                    </a>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="#" class="mobile-nav-link" onclick="toggleSubmenu(event, this, 'tech-submenu')">
+                        <span>Technology</span>
+                        <i class="ri-arrow-down-s-line"></i>
+                    </a>
+                    <div class="mobile-submenu" id="tech-submenu">
+                        <a href="#"><i class="ri-arrow-right-s-line"></i> Startups</a>
+                        <a href="#"><i class="ri-arrow-right-s-line"></i> Innovation</a>
+                        <a href="#"><i class="ri-arrow-right-s-line"></i> Digital Economy</a>
+                        <a href="#"><i class="ri-arrow-right-s-line"></i> Cybersecurity</a>
+                        <a href="#"><i class="ri-arrow-right-s-line"></i> 5G Rollout</a>
+                        <a href="#"><i class="ri-arrow-right-s-line"></i> Fintech</a>
+                    </div>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="#" class="mobile-nav-link">
+                        <span>Health</span>
+                    </a>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="#" class="mobile-nav-link">
+                        <span>Entertainment</span>
+                    </a>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="#" class="mobile-nav-link">
+                        <span>Sports</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="main-content">
+            <div class="article-main">
+                <div class="article-container">
+                    <div class="article-hero">
+                        <img src="https://assets.weforum.org/article/image/GaiwwzcjZ6DfknVdNNNRUdEQf5rWAp3V5AwZ8gfCQtM.jpg" alt="Solar panels in Nigeria" class="article-hero-image">
+                        <div class="article-hero-content">
+                            <span class="article-category">ENERGY • DATA REVOLUTION</span>
+                            <h1 class="article-title">Nigeria’s Renewable Energy Data Revolution: A Blueprint for West Africa’s Energy Security</h1>
+                            <div class="article-meta">
+                                <div class="author-info">
+                                    <img src="https://ui-avatars.com/api/?name=Flora+Ima&background=C10000&color=fff&size=50" alt="Flora Ima" class="author-avatar">
+                                    <div><strong>Flora Ima</strong><div>November 20, 2019 • 5 min read</div></div>
+                                </div>
+                                <div><i class="ri-eye-line"></i> 12,847 views</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="article-actions">
+                        <div><strong>Share this article:</strong></div>
+                        <div class="social-share">
+                            <a href="#" class="share-btn facebook" onclick="shareArticle('facebook')"><i class="ri-facebook-fill"></i></a>
+                            <a href="#" class="share-btn twitter" onclick="shareArticle('twitter')"><i class="ri-twitter-fill"></i></a>
+                            <a href="#" class="share-btn linkedin" onclick="shareArticle('linkedin')"><i class="ri-linkedin-fill"></i></a>
+                            <a href="#" class="share-btn whatsapp" onclick="shareArticle('whatsapp')"><i class="ri-whatsapp-fill"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="article-body">
+                        <p><strong>November 20, 2019 – By Flora Ima</strong></p>
+                        <!-- 265x265 image exactly as specified, placed in root folder (assets/img/nigeria-energy-dashboard.jpg) -->
+                        <img src="./akilomi.png" alt="Nigeria Renewable Energy Dashboard Interface" class="inline-img-265" style="width:265px; height:265px;" onerror="this.onerror=null; this.src='https://picsum.photos/id/28/265/265';">
+                        <div class="op-ed-author" style="margin-top:0;">Dr. Akilomi (Policy expert - ACF)</div>
+                        <p>In July 2019, Nigeria took a decisive leap toward climate accountability and sustainable energy planning with the launch of the National Renewable Energy Data & Carbon Accounting Dashboard, developed by the Nigerian Bulk Electricity Trading PLC (NBET) in partnership with the Federal Ministry of Power. This pioneering platform—the first of its kind in Africa—consolidates real-time renewable energy generation data, project performance metrics, and carbon offset calculations into a single, nationally accessible database.</p>
+                        <p>What makes this project transformative is not only its technical sophistication but its policy backbone: a ministerial directive mandating quarterly data submissions from all renewable energy developers and operators. By ensuring consistency, transparency, and scientific accuracy in energy and carbon reporting, Nigeria has created a model that strengthens both domestic energy security and its commitments under the Paris Agreement.</p>
+                        <p>The potential for regional ignition is clear. West Africa’s energy landscape has long been constrained by fragmented data systems and inconsistent climate reporting. By adopting a centralized, policy-backed platform, other ECOWAS member states could align renewable energy planning with carbon accountability, unlocking investment confidence and fostering cross-border power trade.</p>
+                        <p>This Nigerian innovation demonstrates that data is not just a technical tool—it is an instrument of sovereignty, security, and sustainability. If replicated regionally, it could be the cornerstone of a West African renewable energy market that is transparent, resilient, and climate-responsible.</p>
+                        <div class="op-ed-author">Flora Ima<div class="op-ed-author-title">Energy & Climate Correspondent, Aframira Chronicles</div></div>
+                    </div>
+                </div>
+
+                <!-- Related Articles (dynamic) -->
+                <div class="related-articles"><h2 class="section-title">Related Articles</h2><div class="related-grid" id="relatedArticles"></div></div>
+
+                <!-- Comments Section -->
+                <div class="comments-section"><div class="comments-header"><h2 class="section-title" style="margin-bottom:0;">Join the Discussion</h2><div class="comments-count" id="commentsCount">0 Comments</div></div>
+                <div class="comment-form"><h3 style="margin-bottom:20px;">Leave a Comment</h3><div class="form-group"><label>Name *</label><input type="text" id="commentName" class="form-control"></div>
+                <div class="form-group"><label>Email *</label><input type="email" id="commentEmail" class="form-control"></div>
+                <div class="form-group"><label>Comment *</label><textarea id="commentMessage" class="form-control" placeholder="Share your thoughts on Nigeria's energy data revolution..."></textarea></div>
+                <button class="subscribe-btn" id="submitComment">Post Comment</button></div>
+                <div class="comments-list" id="commentsList"></div></div>
+            </div>
+
+            <!-- Sidebar unchanged structure -->
+            <div class="sidebar">
+                <div class="sidebar-widget"><h3 class="widget-title">Latest Articles</h3><div class="sidebar-articles" id="latestArticles"></div></div>
+                <div class="sidebar-widget"><h3 class="widget-title">Trending Now</h3><ul class="trending-list" id="trendingArticles"></ul></div>
+                <div class="sidebar-widget"><h3 class="widget-title">Categories</h3><div class="category-list">...</div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer - EXACTLY as homepage -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Aframira Chronicles</h3>
+                    <p style="color: #aaa; font-size: 14px; margin-bottom: 20px; line-height: 1.6;">
+                        Africa's leading independent news organization, delivering trusted journalism from across the continent and around the world since 2010.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon"><i class="ri-facebook-fill"></i></a>
+                        <a href="#" class="social-icon"><i class="ri-twitter-fill"></i></a>
+                        <a href="#" class="social-icon"><i class="ri-instagram-fill"></i></a>
+                        <a href="#" class="social-icon"><i class="ri-youtube-fill"></i></a>
+                        <a href="#" class="social-icon"><i class="ri-linkedin-fill"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Categories</h3>
+                    <ul class="footer-links">
+                        <li><a href="category.html?cat=politics"><i class="ri-arrow-right-s-line"></i> Politics</a></li>
+                        <li><a href="category.html?cat=business"><i class="ri-arrow-right-s-line"></i> Business & Economy</a></li>
+                        <li><a href="category.html?cat=technology"><i class="ri-arrow-right-s-line"></i> Technology</a></li>
+                        <li><a href="category.html?cat=health"><i class="ri-arrow-right-s-line"></i> Health & Science</a></li>
+                        <li><a href="category.html?cat=sports"><i class="ri-arrow-right-s-line"></i> Sports</a></li>
+                        <li><a href="category.html?cat=entertainment"><i class="ri-arrow-right-s-line"></i> Entertainment</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="ri-arrow-right-s-line"></i> About Us</a></li>
+                        <li><a href="#"><i class="ri-arrow-right-s-line"></i> Careers</a></li>
+                        <li><a href="#"><i class="ri-arrow-right-s-line"></i> Contact</a></li>
+                        <li><a href="#"><i class="ri-arrow-right-s-line"></i> Ethics Policy</a></li>
+                        <li><a href="#"><i class="ri-arrow-right-s-line"></i> Privacy Policy</a></li>
+                        <li><a href="#"><i class="ri-arrow-right-s-line"></i> Terms of Service</a></li>
+                        <li><a href="#"><i class="ri-arrow-right-s-line"></i> Cookie Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Stay Informed</h3>
+                    <p style="color: #aaa; font-size: 14px; margin-bottom: 20px;">
+                        Subscribe to our daily newsletter for the top African stories.
+                    </p>
+                    <div class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Enter your email">
+                        <button class="subscribe-btn" style="width: 100%; margin-top: 10px;">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024 Aframira Chronicles. All rights reserved.</p>
+                <p>Headquarters: Lagos, Nigeria</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // UPDATED articlesData: main article is now Nigeria Renewable Energy
+        const articlesData = [
+            { id: "nigeria-renewable-data", category: "energy", title: "Nigeria’s Renewable Energy Data Revolution: A Blueprint for West Africa’s Energy Security", excerpt: "NBET launches first-of-its-kind carbon accounting dashboard.", image: "https://images.unsplash.com/photo-1508514177221-1881f9b6f8a3?w=400&h=250&fit=crop", author: "Flora Ima", time: "Nov 20, 2019", views: "12,847", link: "#" },
+            { id: "bridget-obehi", category: "op-ed", title: "OP-ED: Why Africa Must Act Now on Energy Security - Bridget Obehi Irekponor Shows the Way", excerpt: "Prof Adekuble Olade argues for urgent action.", image: "https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=400&h=250&fit=crop", author: "Prof Adekuble Olade", time: "Dec 15, 2024", views: "21,548", link: "../why-africa-must-act-now-on-energy-security/" },
+            { id: "article-2", category: "technology", title: "African Fintech Startups Secure $200M in Q1 2024", excerpt: "Digital banking attracts major VC investments.", image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=250&fit=crop", author: "Ngozi Eze", time: "1 day ago", views: "18,921", link: "#" },
+            { id: "article-3", category: "environment", title: "Great Green Wall Project Hits 20% Completion Milestone", excerpt: "Anti-desertification initiative shows progress.", image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=400&h=250&fit=crop", author: "Kwame Asante", time: "3 days ago", views: "15,327", link: "#" },
+            { id: "article-4", category: "politics", title: "AU Announces New Continental Security Force", excerpt: "Rapid response force for peacekeeping.", image: "https://images.unsplash.com/photo-1511895426328-dc8714191300?w=400&h=250&fit=crop", author: "Amara Diallo", time: "5 hours ago", views: "22,543", link: "#" },
+            { id: "article-5", category: "business", title: "AfCFTA Trade Volume Grows 35% in First Quarter", excerpt: "Continental free trade area shows strong growth.", image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=250&fit=crop", author: "Chinedu Okoro", time: "1 day ago", views: "19,876", link: "#" }
+        ];
+
+        // NEW comments relevant to the renewable energy article
+        const comments = [
+            { name: "Oluwaseun Adebayo", date: "November 21, 2019, 9:14 AM", message: "Finally, Nigeria is leading with data-driven energy planning. This dashboard will attract investors who demand transparency. Kudos to NBET and the Ministry of Power.", likes: 58 },
+            { name: "Dr. Fatima Bello", date: "November 21, 2019, 2:35 PM", message: "As someone who works on climate finance, I can attest that standardized carbon accounting is a game changer. This is exactly what West Africa needs to unlock green funds.", likes: 42 },
+            { name: "Kwame Nkrumah II", date: "November 22, 2019, 10:03 AM", message: "ECOWAS should adopt this framework immediately. Reliable energy data is the missing link for cross-border power pools. Nigeria just gave us the blueprint.", likes: 37 },
+            { name: "Amara Chukwu", date: "November 22, 2019, 5:47 PM", message: "The mandatory quarterly submissions will ensure accountability. No more guesswork on renewable capacity. This is how you build a resilient energy future.", likes: 29 },
+            { name: "Dr. Akilomi (ACF)", date: "November 23, 2019, 12:22 PM", message: "I am proud to have advised on the policy framework. Data sovereignty is energy sovereignty. Other African nations: take note and replicate.", likes: 91 },
+            { name: "Ismaila Ceesay", date: "November 24, 2019, 8:50 AM", message: "This is the kind of innovation that makes me hopeful for West Africa’s energy transition. Transparent data = investor confidence.", likes: 23 }
+        ];
+
+        function loadRelatedArticles() {
+            document.getElementById('relatedArticles').innerHTML = articlesData.slice(1,4).map(a => `
+                <article class="related-card"><a href="${a.link}"><img src="${a.image}" class="related-image"><div class="related-content"><span class="related-category">${a.category}</span><h3 class="related-title">${a.title}</h3><div class="article-meta" style="margin-top:10px;font-size:14px;"><span>${a.time}</span><span><i class="ri-eye-line"></i> ${a.views}</span></div></div></a></article>
+            `).join('');
+        }
+        function loadLatestArticles() {
+            document.getElementById('latestArticles').innerHTML = articlesData.slice(1,5).map(a => `
+                <article class="sidebar-article"><a href="${a.link}" style="display:flex;gap:15px;"><img src="${a.image}" class="sidebar-article-image"><div class="sidebar-article-content"><span class="sidebar-article-category">${a.category}</span><h4 class="sidebar-article-title">${a.title}</h4><div class="sidebar-article-meta">${a.time}</div></div></a></article>
+            `).join('');
+        }
+        function loadTrendingArticles() {
+            let sorted = [...articlesData].sort((a,b)=>parseInt(b.views.replace(/,/g,''))-parseInt(a.views.replace(/,/g,''))).slice(0,5);
+            document.getElementById('trendingArticles').innerHTML = sorted.map((a,i)=>`<li class="trending-item"><a href="${a.link}" style="display:flex;align-items:center;width:100%;"><div class="trending-number">${i+1}</div><div class="trending-content"><h4>${a.title}</h4><div style="font-size:12px;">${a.category} • ${a.views} views</div></div></a></li>`).join('');
+        }
+        function loadComments() {
+            document.getElementById('commentsCount').innerHTML = `${comments.length} Comment${comments.length!==1?'s':''}`;
+            document.getElementById('commentsList').innerHTML = comments.map(c=>`
+                <div class="comment"><div class="comment-header"><div class="comment-avatar">${c.name.charAt(0)}</div><div><div class="comment-author">${c.name}</div><div class="comment-date">${c.date}</div></div></div><div class="comment-body">${c.message}</div><div class="comment-actions"><span class="comment-action" onclick="likeComment(this)"><i class="ri-thumb-up-line"></i> Like (${c.likes})</span><span class="comment-action" onclick="replyToComment(this)"><i class="ri-reply-line"></i> Reply</span></div></div>
+            `).join('');
+        }
+        function submitComment(){ let name=document.getElementById('commentName').value.trim(), email=document.getElementById('commentEmail').value.trim(), msg=document.getElementById('commentMessage').value.trim(); if(!name||!email||!msg){alert('Please fill all fields.');return;} if(!email.includes('@')){alert('Valid email required.');return;} comments.unshift({name,date:new Date().toLocaleString(),message:msg,likes:0}); document.getElementById('commentName').value=''; document.getElementById('commentEmail').value=''; document.getElementById('commentMessage').value=''; loadComments(); alert('Comment posted!'); }
+        function shareArticle(platform){ let url=window.location.href, title=document.title; let shareUrl=''; if(platform==='facebook') shareUrl=`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`; else if(platform==='twitter') shareUrl=`https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`; else if(platform==='linkedin') shareUrl=`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(url)}`; else if(platform==='whatsapp') shareUrl=`https://wa.me/?text=${encodeURIComponent(title+' '+url)}`; if(shareUrl) window.open(shareUrl,'_blank','width=600,height=400'); }
+        function likeComment(el){ let likesSpan=el.innerHTML.match(/\((\d+)\)/); if(likesSpan){ let newLikes=parseInt(likesSpan[1])+1; el.innerHTML=`<i class="ri-thumb-up-fill"></i> Like (${newLikes})`; el.style.color='var(--primary-red)';} }
+        function replyToComment(){ alert('Reply feature would open a form in production.'); }
+        function toggleMobileMenu(){ document.querySelector('.nav-mobile').classList.toggle('active'); document.body.style.overflow=document.querySelector('.nav-mobile').classList.contains('active')?'hidden':''; }
+        function toggleSubmenu(event,el,id){ event.preventDefault(); el.classList.toggle('active'); let sub=document.getElementById(id); if(sub.classList.contains('active')){ sub.classList.remove('active'); sub.style.maxHeight='0'; } else { sub.classList.add('active'); sub.style.maxHeight=sub.scrollHeight+'px'; } }
+        document.addEventListener('DOMContentLoaded',()=>{ loadRelatedArticles(); loadLatestArticles(); loadTrendingArticles(); loadComments(); document.querySelector('.mobile-menu-toggle')?.addEventListener('click',toggleMobileMenu); document.querySelector('.mobile-close-btn')?.addEventListener('click',toggleMobileMenu); document.querySelector('.nav-mobile')?.addEventListener('click',function(e){if(e.target===this) toggleMobileMenu();}); document.getElementById('submitComment')?.addEventListener('click',submitComment); document.querySelectorAll('.newsletter-form .subscribe-btn').forEach(btn=>btn.addEventListener('click',function(){let inp=this.previousElementSibling; if(inp&&inp.value.includes('@')){alert('Thank you!'); inp.value='';} else alert('Valid email required.');})); document.querySelector('.search-btn')?.addEventListener('click',()=>alert('Search modal would open.')); });
+        window.shareArticle=shareArticle; window.likeComment=likeComment; window.replyToComment=replyToComment; window.toggleMobileMenu=toggleMobileMenu; window.toggleSubmenu=toggleSubmenu;
+    </script>
+</body>
+</html>
